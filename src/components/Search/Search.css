@@ -1,0 +1,180 @@
+.search {
+	width: 100%;
+	margin-top: 70px;
+	margin-bottom: 11px;
+	position: relative;
+	padding-bottom: 69px;
+	border-bottom: 1px solid #424242;
+}
+
+.search__main {
+	width: 100%;
+	height: 72px;
+	background-color: #2f2f2f;
+	border-radius: 9px;
+	position: relative;
+}
+
+.search__form {
+	margin-left: 63px;
+	margin-right: 257px;
+	display: flex;
+	height: 100%;
+	align-items: center;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.search__magnifier {
+	width: 34px;
+	height: 100%;
+	background-image: url(../../images/search/magnifier.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	top: 1px;
+	left: 19px;
+}
+
+.search__input {
+	font-family: Inter;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 20px;
+	letter-spacing: 0px;
+	text-align: left;
+	color: #8b8b8b;
+	background-color: #2f2f2f;
+	border: none;
+	padding: 0;
+	max-width: 250px;
+}
+
+.search___form-button {
+	height: 34px;
+	width: 58px;
+	background-color: #4285f4;
+	color: #ffffff;
+	border-radius: 30px;
+	border: none;
+	padding: 0;
+	font-family: Inter;
+	font-size: 11px;
+	font-weight: 500;
+	line-height: 18px;
+	letter-spacing: 0px;
+}
+
+.search___form-button:hover {
+	opacity: 0.8;
+}
+
+.search__checkbox {
+	position: absolute;
+	top: 17px;
+	right: 29px;
+	padding-left: 29px;
+	display: flex;
+	align-items: center;
+	column-gap: 14px;
+	border-left: 1px solid #424242;
+
+	height: 40px;
+}
+
+.search__checkbox-span {
+	font-family: Inter;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 18px;
+	letter-spacing: 0em;
+	text-align: left;
+}
+
+.search__checkbox-button {
+	width: 36px;
+	height: 20px;
+	background-image: url(../../images/search/chekboxOn.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+search__checkbox-button_disabled {
+	background-image: url(../../images/search/chekboxOn.svg);
+}
+
+.search__checkbox-button_enable {
+	background-image: url(../../images/search/chekboxOff.svg);
+}
+
+@media screen and (max-width: 769px) {
+	.search {
+		padding-bottom: 109px;
+	}
+	.search__checkbox {
+		right: 21px;
+		padding-left: 19px;
+	}
+
+	.search__form {
+		margin-right: 227px;
+	}
+}
+
+@media screen and (max-width: 676px) {
+	.search {
+		margin-top: 30px;
+		margin-left: 10px;
+		margin-right: 10px;
+		width: 300px;
+	}
+	.search__main {
+		width: 100%;
+	}
+	.search__form {
+		width: 100%;
+		margin: 0;
+		justify-content: space-around;
+	}
+
+	.search__magnifier {
+		visibility: hidden;
+	}
+
+	.search__input {
+		width: 50%;
+		font-family: Inter;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0px;
+	}
+	.search___form-button {
+		font-family: Inter;
+		font-size: 11px;
+		font-weight: 500;
+		line-height: 18px;
+		letter-spacing: 0px;
+		text-align: center;
+	}
+	.search__checkbox {
+		position: relative;
+		right: -56px;
+		top: 35px;
+		border: none;
+		align-items: center;
+		width: 150px;
+	}
+
+	.search__checkbox-span {
+		font-family: Inter;
+		font-size: 11px;
+		font-weight: 400;
+		line-height: 18px;
+		letter-spacing: 0em;
+		text-align: left;
+	}
+}

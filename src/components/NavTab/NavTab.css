@@ -1,0 +1,128 @@
+.navigate {
+	width: 520px;
+	position: fixed;
+	background-color: #202020;
+	flex-direction: column;
+	z-index: 1500;
+	row-gap: 622px;
+	right: 0;
+	max-height: 1024px;
+}
+
+.navigate__button-close {
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	right: 27px;
+	top: 28px;
+	background-image: url(../../images/NavTab/buttonClose.svg);
+	cursor: pointer;
+	background-position: center;
+	border: none;
+	background-color: transparent;
+}
+
+.navigate__button-close:hover {
+	opacity: 0, 5;
+}
+
+.navigate__button-close:hover {
+	opacity: 0.5;
+}
+
+.navigate__main-rout {
+	display: flex;
+	flex-direction: column;
+	width: 340px;
+	margin: 159px auto 2px auto;
+	row-gap: 28px;
+	align-items: center;
+}
+
+.navigate__rout {
+	border: none;
+	color: #ffffff;
+	font-family: Inter;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 22px;
+	letter-spacing: 0px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.navigate__rout:nth-child(2) {
+	border-bottom: 1px solid #ffffff;
+	width: 72px;
+}
+
+.navigate__rout:hover {
+	opacity: 0.5;
+}
+
+.navigate__button_active {
+	text-decoration: underline;
+}
+
+.navigate__profile {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	text-decoration: none;
+}
+
+.navigation__profile-menu {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	text-decoration: none;
+	width: 100px;
+	height: 32px;
+	background-image: url(../../images/profile/profileLink.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 621px auto 90px auto;
+}
+
+.navigate__profile-title {
+	font-family: Inter;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 22px;
+	letter-spacing: 0px;
+	text-align: center;
+	color: #ffffff;
+}
+
+.navigate__profile-icon {
+	width: 30px;
+	height: 30px;
+}
+
+@media screen and (max-width: 520px) {
+	.navigate {
+		width: 100%;
+	}
+
+	.navigate__button-close {
+		right: 18px;
+		top: 18px;
+	}
+
+	.navigate__main-rout {
+		margin-top: 145px;
+		width: 320px;
+		row-gap: 24px;
+	}
+
+	.navigate__rout:nth-child(2) {
+		border-bottom: 1px solid #ffffff;
+		width: 72px;
+		padding-bottom: 7px;
+	}
+
+	.navigation__profile-menu {
+		margin-top: 444px;
+		margin-bottom: 46px;
+	}
+}
