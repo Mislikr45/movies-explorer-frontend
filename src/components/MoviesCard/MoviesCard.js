@@ -1,8 +1,16 @@
 import React from "react";
 import "./MoviesCard.css";
 
-function MoviesCard(props) {
-	const { movie } = props;
+function MoviesCard({movie, disabled, enabled}) {
+	const [isActive, setIsActive] = React.useState(true);
+	const moviesButton = `${
+		isActive ? disabled : enabled
+	  }`;
+
+	function handleCheck() {
+		setIsActive(!isActive);
+	}
+   console.log(disabled);
 	return (
 		<li className="movies__card">
 			<img
@@ -14,12 +22,9 @@ function MoviesCard(props) {
 				<div className="movies__card-container">
 					<h2 className="movies__card-title">{movie.nameRU}</h2>
 					<button
-						className={`movies__card-button ${
-							props.isSavedMoviesPage
-								? "movies__card-delete"
-								: "movies__card-like"
-						}`}
+						className={moviesButton}
 						type="button"
+						onClick={handleCheck}
 					/>
 				</div>
 				<span className="movies__card-time">{movie.duration}</span>

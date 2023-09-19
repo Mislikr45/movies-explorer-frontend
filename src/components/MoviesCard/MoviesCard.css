@@ -61,6 +61,11 @@
 .movies__card-like {
 	background-image: url(../../images/MovieItem/movieLike.svg);
 }
+
+.movies__card-like_active {
+	background-image: url(../../images/MovieItem/movieLikeActive.svg);
+}
+
 .movies__card-checkBox:hover {
 	opacity: 0.8;
 }

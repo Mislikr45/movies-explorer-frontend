@@ -13,6 +13,8 @@ function Movies() {
 			<MoviesCardList
 				moviesList={moviesList.slice(0, 5)}
 				isMovieButton={false}
+				disabled = {"movies__card-button movies__card-like"}
+			    enabled = {"movies__card-button movies__card-like_active"}
 			/>
 			<button className="movies__button-more" type="button">
 				Ещё

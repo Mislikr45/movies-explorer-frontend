@@ -12,6 +12,8 @@ function SavedMovies() {
 			<MoviesCardList
 				moviesList={moviesList.slice(0, 2)}
 				isSavedMoviesPage={true}
+				disabled = {"movies__card-button movies__card-delete"}
+			    enabled = {"movies__card-button movies__card-delete"}
 			/>
 			</main>
 		</section>

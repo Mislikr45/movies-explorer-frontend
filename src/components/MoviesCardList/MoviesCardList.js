@@ -2,15 +2,17 @@ import React, { Children } from "react";
 import "./MoviesCardList.css";
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-function MoviesCardList(props) {
+function MoviesCardList({moviesList, isSavedMoviesPage, disabled, enabled}) {
 	return (
 		<ul className="movies__list">
-			{props.moviesList.map((movie) => {
+			{moviesList.map((movie) => {
 				return (
 					<MoviesCard
 						movie={movie}
 						key={movie.movieId}
-						isSavedMoviesPage={props.isSavedMoviesPage}
+						isSavedMoviesPage={isSavedMoviesPage}
+						disabled={disabled}
+						enabled={enabled}
 					/>
 				);
 			})}
