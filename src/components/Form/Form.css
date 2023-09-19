@@ -15,9 +15,13 @@
 	height: 38px;
 }
 
+.form__logo:hover {
+    opacity: 0.7;
+  }
+
 .form__title {
 	margin: 37px 0 0 0;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 24px;
 	font-weight: 500;
 	line-height: 29px;
@@ -37,7 +41,7 @@
 	padding: 0;
 	color: #ffffff;
 	border-radius: 3px;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 14px;
 	font-weight: 500;
 	line-height: 17px;
@@ -55,7 +59,7 @@
 	margin-top: 16px;
 	margin-bottom: 70px;
 	gap: 6px;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 17px;
@@ -70,19 +74,20 @@
 .form__offer-link {
 	margin: 0;
 	color: #4285f4;
+	cursor: pointer;
 }
 
 .form__offer-link:hover {
-	/* cursor: pointer; */
-	opacity: 2;
-}
+    opacity: 0.7;
+  }
+
 
 @media screen and (max-width: 769px) {
 	.form__greetings {
 		margin-top: 232px;
 	}
 	.form__offer {
-		margin-top: 69px;
+		margin-top: 16px;
 		margin-bottom: 232px;
 	}
 }
@@ -99,24 +104,20 @@
 
 	.form__title {
 		margin: 50px 0 0 0;
-		/* font-family: Inter;
-        font-size: 24px;
-        font-weight: 500;
-        line-height: 29px;
-        letter-spacing: 0em;
-            color: #FFFFFF; */
 	}
+
 	.form__offer {
 		margin-top: 14px;
 		margin-bottom: 30px;
 		font-size: 12px;
 		line-height: 14px;
 	}
+	
 	.form__button {
 		margin-top: 157px;
 		width: 260px;
 		height: 45px;
-		font-family: Inter;
+	  font-family: "Inter", Arial, sans-serif;
 		font-size: 12px;
 		font-weight: 500;
 		line-height: 15px;

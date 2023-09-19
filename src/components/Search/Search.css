@@ -37,7 +37,7 @@
 }
 
 .search__input {
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 20px;
@@ -48,7 +48,12 @@
 	border: none;
 	padding: 0;
 	max-width: 250px;
+	outline: none;
 }
+
+.search__input:focus {
+	outline: solid grey;
+  }
 
 .search___form-button {
 	height: 34px;
@@ -58,7 +63,7 @@
 	border-radius: 30px;
 	border: none;
 	padding: 0;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 11px;
 	font-weight: 500;
 	line-height: 18px;
@@ -78,12 +83,15 @@
 	align-items: center;
 	column-gap: 14px;
 	border-left: 1px solid #424242;
-
 	height: 40px;
 }
 
+.search__checkbox:hover {
+    opacity: 0.7;
+  }
+
 .search__checkbox-span {
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 13px;
 	font-weight: 400;
 	line-height: 18px;
@@ -124,12 +132,11 @@ search__checkbox-button_disabled {
 	}
 }
 
-@media screen and (max-width: 676px) {
+@media screen and (max-width: 666px) {
 	.search {
 		margin-top: 30px;
-		margin-left: 10px;
-		margin-right: 10px;
-		width: 300px;
+		margin-left: auto;
+    margin-right: auto;
 	}
 	.search__main {
 		width: 100%;
@@ -146,14 +153,14 @@ search__checkbox-button_disabled {
 
 	.search__input {
 		width: 50%;
-		font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 		font-size: 14px;
 		font-weight: 400;
 		line-height: 20px;
 		letter-spacing: 0px;
 	}
 	.search___form-button {
-		font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 		font-size: 11px;
 		font-weight: 500;
 		line-height: 18px;
@@ -161,20 +168,23 @@ search__checkbox-button_disabled {
 		text-align: center;
 	}
 	.search__checkbox {
-		position: relative;
-		right: -56px;
-		top: 35px;
+		position: absolute;
+		top: 107px;
+		left: 57px;
 		border: none;
 		align-items: center;
-		width: 150px;
 	}
 
 	.search__checkbox-span {
-		font-family: Inter;
+		font-family: "Inter", Arial, sans-serif;
 		font-size: 11px;
 		font-weight: 400;
 		line-height: 18px;
 		letter-spacing: 0em;
-		text-align: left;
+		text-align: left;	
 	}
+}
+
+@media screen and (max-width: 648px) {
+	.search {width: 300px}
 }

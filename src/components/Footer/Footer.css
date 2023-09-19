@@ -11,8 +11,7 @@
 }
 
 .footer__title {
-	font-family: Inter;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 13px;
 	font-weight: 400;
 	line-height: 16px;
@@ -37,7 +36,7 @@
 .footer__caption {
 	margin: 0;
 	padding-left: 70px;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 13px;
 	font-weight: 400;
 	line-height: 16px;
@@ -59,9 +58,13 @@
 	list-style-type: none;
 }
 
+.footer__links-item:hover {
+    opacity: 0.7;
+  }
+
 .footer__link {
 	text-decoration: none;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 13px;
 	font-weight: 400;
 	line-height: 16px;
@@ -86,7 +89,7 @@
 		padding-top: 0;
 	}
 	.footer__title {
-		font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 		font-size: 12px;
 		font-weight: 400;
 		line-height: 15px;
@@ -100,7 +103,7 @@
 		padding: 0;
 		padding-top: 13px;
 		padding-bottom: 20px;
-		font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 		font-size: 12px;
 		font-weight: 400;
 		line-height: 15px;
@@ -120,7 +123,7 @@
 	}
 
 	.footer__link {
-		font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 		font-size: 12px;
 		font-weight: 400;
 		line-height: 15px;

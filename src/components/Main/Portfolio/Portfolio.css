@@ -8,7 +8,7 @@
 .portfolio__title {
 	margin: 0;
 	padding-bottom: 34px;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 20px;
@@ -28,6 +28,11 @@
 	justify-content: space-between;
 	text-decoration: none;
 }
+
+.portfolio__link:hover {
+    opacity: 0.7;
+  }
+  
 .portfolio__list-item {
 	padding-bottom: 10px;
 	border-bottom: 1px solid #424242;
@@ -47,7 +52,7 @@
 .portfolio__link-text {
 	text-decoration: none;
 	color: #ffffff;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 30px;
 	font-weight: 400;
 	line-height: 50px;
@@ -62,7 +67,7 @@
 	}
 
 	.portfolio__link-text {
-		font-family: Inter;
+	  font-family: "Inter", Arial, sans-serif;
 		font-size: 28px;
 		font-weight: 400;
 		line-height: 50px;
@@ -76,11 +81,11 @@
 
 @media screen and (max-width: 760px) {
 	.portfolio {
-		padding: 70px 14px 0 14px;
+	    padding: 70px 14px 36px 14px
 	}
 
 	.portfolio__title {
-		font-family: Inter;
+	  font-family: "Inter", Arial, sans-serif;
 		font-size: 14px;
 		font-weight: 400;
 		line-height: 20px;
@@ -91,7 +96,7 @@
 	}
 
 	.portfolio__link-text {
-		font-family: Inter;
+	  font-family: "Inter", Arial, sans-serif;
 		font-size: 18px;
 		font-weight: 400;
 		line-height: 28px;

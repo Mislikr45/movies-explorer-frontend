@@ -9,7 +9,7 @@ function NavTab({ closeNavTab, openNavTab }) {
 				className="navigate__button-close"
 				type="button"
 				onClick={closeNavTab}
-			/>
+				/>
 			<div className="navigate__main-rout">
 				<Link to="/" className="navigate__rout">
 					Главная
@@ -18,10 +18,9 @@ function NavTab({ closeNavTab, openNavTab }) {
 					Фильмы
 				</Link>
 				<Link to="/saved-movies" className="navigate__rout">
-					Сохраненные фильмы
+					Сохранённые фильмы
 				</Link>
 			</div>
-
 			<Link to="/profile" className="navigation__profile-menu" />
 		</nav>
 	);

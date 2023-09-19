@@ -8,8 +8,10 @@ export default function Login() {
 			titleText="Рады видеть!"
 			subOffer="Еще не зарегистрированы?"
 			offerLink="Регистрация"
+			link="/signup"
 		>
 			<section className="login">
+				<main className="login__main">
 				<form className="login__form">
 					<label className="login__label">E-mail</label>
 					<input
@@ -17,6 +19,10 @@ export default function Login() {
 						name="email"
 						type="email"
 						className="login__input"
+						required
+						placeholder="mislik"
+						minLength="2"
+						maxlength="10"
 					/>
 
 					<label className="login__label">Пароль</label>
@@ -25,9 +31,14 @@ export default function Login() {
 						name="password"
 						type="password"
 						className="login__input"
+						placeholder="*****"
+						required
+						minLength="6"
+						maxlength="10"
 					/>
 				</form>
-			</section>
+				</main>
+			</section>			
 		</Form>
 	);
 }

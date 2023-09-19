@@ -7,11 +7,13 @@ import Search from "../Search/Search";
 function SavedMovies() {
 	return (
 		<section className="savedMovies">
+			<main className="savedMovies__main">
 			<Search />
 			<MoviesCardList
 				moviesList={moviesList.slice(0, 2)}
 				isSavedMoviesPage={true}
 			/>
+			</main>
 		</section>
 	);
 }

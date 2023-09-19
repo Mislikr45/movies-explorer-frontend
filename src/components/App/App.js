@@ -24,7 +24,9 @@ function App() {
 							path="/"
 							element={
 								<>
-									<Header />
+									<Header 
+									className='header header_landing'
+									/>
 									<Main />
 									<Footer />
 								</>
@@ -35,7 +37,9 @@ function App() {
 							path="/movies"
 							element={
 								<>
-									<Header />
+									<Header
+									className='header' 
+									/>
 									<Movies />
 									<Footer />
 								</>
@@ -46,7 +50,9 @@ function App() {
 							path="/saved-movies"
 							element={
 								<>
-									<Header />
+									<Header
+									className='header'
+									/>
 									<SavedMovies />
 									<Footer />
 								</>
@@ -57,7 +63,9 @@ function App() {
 							path="/profile"
 							element={
 								<>
-									<Header />
+									<Header 
+									className='header'
+									/>
 									<Profile />
 								</>
 							}

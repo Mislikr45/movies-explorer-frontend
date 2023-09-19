@@ -8,9 +8,8 @@ function AboutMe() {
 	return (
 		<section className="aboutMe">
 			<h2 className="aboutMe__title">Студент</h2>
-
 			<div className="aboutMe__resume">
-				<img className="aboutMe__resume-photo" src={photo} alt="photography" />
+				<img className="aboutMe__resume-photo" src={photo} alt="фотография резюме" />
 				<h2 className="aboutMe__resume-name">Виталий</h2>
 				<p className="aboutMe__resume-summary">Фронтенд-разработчик, 30 лет</p>
 				<p className="aboutMe__resume-biography">

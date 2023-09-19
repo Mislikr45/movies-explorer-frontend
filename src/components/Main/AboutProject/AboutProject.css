@@ -1,5 +1,5 @@
 .aboutProject {
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-weight: 400;
 	display: flex;
 	flex-direction: column;
@@ -10,7 +10,7 @@
 
 .aboutProject__title {
 	width: 100%;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 22px;
 	font-weight: 400;
 	line-height: 27px;
@@ -30,7 +30,7 @@
 }
 
 .about-project__tabel-title {
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 20px;
 	font-weight: 400;
 	line-height: 24px;
@@ -43,7 +43,7 @@
 
 .about-project__tabel-text {
 	margin: 0;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 20px;
@@ -63,7 +63,7 @@
 .aboutProject__road-week {
 	text-align: center;
 	margin: 0;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 17px;
@@ -78,7 +78,7 @@
 
 .aboutProject__road-span {
 	text-align: center;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 14px;
 	font-weight: 500;
 	line-height: 17px;
@@ -104,7 +104,7 @@
 	}
 
 	.about-project__tabel-text {
-		font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 		font-size: 12px;
 		font-weight: 400;
 		line-height: 18px;
@@ -124,7 +124,7 @@
 	}
 
 	.aboutProject__title {
-		font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 		font-size: 18px;
 		font-weight: 400;
 		line-height: 22px;
@@ -135,7 +135,7 @@
 	}
 
 	.about-project__tabel-title {
-		font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 		font-size: 18px;
 		font-weight: 400;
 		line-height: 22px;
@@ -147,7 +147,7 @@
 	}
 
 	.about-project__tabel-title {
-		font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 		font-size: 18px;
 		font-weight: 400;
 		line-height: 22px;
@@ -158,7 +158,7 @@
 		margin-bottom: 14px;
 	}
 	.about-project__tabel-text {
-		font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 		font-size: 11px;
 		font-weight: 400;
 		line-height: 16px;
@@ -171,7 +171,7 @@
 		grid-template-columns: 36% 64%;
 	}
 	.aboutProject__road-span {
-		font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 		font-size: 11px;
 		font-weight: 400;
 		line-height: 13px;
@@ -180,7 +180,7 @@
 	}
 
 	.aboutProject__road-week {
-		font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 		font-size: 11px;
 		font-weight: 400;
 		line-height: 13px;

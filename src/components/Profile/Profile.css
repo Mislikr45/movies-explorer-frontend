@@ -1,4 +1,9 @@
 .profile {
+width: 100%;
+}
+
+.prodile__main{
+
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -10,7 +15,7 @@
 	margin-bottom: 123px;
 	color: white;
 	text-align: center;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 24px;
 	font-weight: 500;
 	line-height: 29px;
@@ -26,7 +31,7 @@
 
 .profile__label {
 	color: #ffffff;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 11px;
 	font-weight: 400;
 	line-height: 13.31px;
@@ -39,8 +44,10 @@
 }
 
 .profile__input {
+	outline: none;
+	border-bottom: 1px solid #424242;
 	color: #ffffff;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 11px;
 	font-weight: 400;
 	line-height: 13.31px;
@@ -53,14 +60,23 @@
 	text-align: right;
 }
 
+.profile__input:hover {
+    opacity: 0.7;
+  }
+
+.profile__input:focus {
+	outline: solid grey;
+  }
+
 .profile__input:first-child {
 	border-bottom: 1px solid #424242;
 	padding-bottom: 17px;
 }
 
 .profile__button-exit {
+	cursor: pointer;
 	margin-bottom: 70px;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 13px;
 	font-weight: 500;
 	line-height: 16px;
@@ -71,10 +87,15 @@
 	border: none;
 }
 
+.profile__button-exit:hover {
+    opacity: 0.7;
+  }
+
 .profile__button-edite {
+	cursor: pointer;
 	margin-top: 215px;
 	margin-bottom: 16px;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 13px;
 	font-weight: 400;
 	line-height: 16px;
@@ -84,6 +105,10 @@
 	background-color: #202020;
 	border: none;
 }
+
+.profile__button-edite:hover {
+    opacity: 0.7;
+  }
 
 @media screen and (max-width: 769px) {
 	.profile__greetings {
@@ -98,10 +123,11 @@
 	}
 }
 
-@media screen and (max-width: 321px) {
+@media screen and (max-width: 425px) {
 	.profile__greetings {
 		margin-top: 70px;
 		margin-bottom: 80px;
+		width: 100%;
 	}
 	.profile__button-edite {
 		margin-top: 379px;
@@ -113,4 +139,8 @@
 		font-size: 12px;
 		line-height: 14.52px;
 	}
-}
+	
+    .profile__form{
+	    width: 260px;
+    }
+    }

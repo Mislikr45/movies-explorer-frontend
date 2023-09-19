@@ -8,6 +8,7 @@ function Movies() {
 	// const [isMovieButton, setMovieButton] = React.useState(true);
 	return (
 		<section className="movies">
+			<main className="movies__main">
 			<Search />
 			<MoviesCardList
 				moviesList={moviesList.slice(0, 5)}
@@ -16,6 +17,7 @@ function Movies() {
 			<button className="movies__button-more" type="button">
 				Ещё
 			</button>
+			</main>
 		</section>
 	);
 }

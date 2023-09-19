@@ -9,8 +9,10 @@ export default function Register() {
 			titleText="Добро пожаловать!"
 			subOffer="Уже зарегистрированы?"
 			offerLink="Войти"
+			link="/signin"
 		>
 			<section className="register">
+				<main className="register__main">
 				<form className="register__form">
 					<label className="register__label">Имя</label>
 					<input
@@ -18,6 +20,10 @@ export default function Register() {
 						name="name"
 						type="name"
 						className="register__input"
+						placeholder="Sergey"
+						required
+						minLength="2"
+						maxlength="10"
 					/>
 
 					<label className="register__label">E-mail</label>
@@ -26,6 +32,8 @@ export default function Register() {
 						name="email"
 						type="email"
 						className="register__input"
+						placeholder="mislikr45@gmail.com"
+						required
 					/>
 
 					<label className="register__label">Пароль</label>
@@ -34,8 +42,13 @@ export default function Register() {
 						name="password"
 						type="password"
 						className="register__input"
+						placeholder="******"
+						minLength="6"
+						maxlength="10"
+						required
 					/>
 				</form>
+				</main>
 			</section>
 		</Form>
 	);

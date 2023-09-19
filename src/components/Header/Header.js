@@ -10,7 +10,7 @@ import Navigation from "../Navigation/Navigation";
 import Overlay from "../Overlay/Overlay";
 import NavTab from "../NavTab/NavTab";
 
-function Header() {
+function Header({className}) {
 	const location = useLocation();
 	const { pathname } = location;
 	const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -30,6 +30,7 @@ function Header() {
 	const closeNavTab = () => {
 		setShowNavTab(false);
 	};
+
 
 	const navContent = () => {
 		if (pathname === "/") {
@@ -75,7 +76,12 @@ function Header() {
 								</Link>
 							</li>
 						</ul>
-						<Link to="/profile" className="navigation__profile" />
+						<Link to="/profile" className="navigation__profile" >
+					
+						<p className="navigation__profile-title">Аккаунт</p>
+						<div className="navigation__profile-icon"></div>
+					
+						</Link>
 					</Navigation>
 				);
 			}
@@ -83,9 +89,11 @@ function Header() {
 	};
 
 	return (
-		<header className="header">
+		<header className={className}>
 			<div className="headear__navigation">
-				<img className="header__logo" src={logo} alt="logo" />
+			<Link to="/" className="header__link" >
+				<img className="header__logo" src={logo} alt="Логотип" />
+				</Link>
 				{navContent()}
 			</div>
 			{showNavTab && (

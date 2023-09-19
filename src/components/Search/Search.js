@@ -1,6 +1,5 @@
 import "./Search.css";
 import React from "react";
-import { useEffect, useState } from "react";
 
 export default function Search() {
 	const [isActive, setIsActive] = React.useState(true);
@@ -26,13 +25,15 @@ export default function Search() {
 						type="movies"
 						className="search__input"
 						placeholder="Фильм"
+						required
 					/>
-					<button className="search___form-button">Найти</button>
-				</form>
-				<div className="search__checkbox">
+					<button className="search___form-button" type="submit">Найти</button>
+					<div className="search__checkbox">
 					<button className={moviesShot} type="button" onClick={handleCheck} />
 					<span className="search__checkbox-span">Короткометражки</span>
 				</div>
+				</form>
+			
 			</div>
 		</section>
 	);

@@ -25,7 +25,7 @@
 }
 .movies__card-title {
 	margin: 0;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 13px;
 	font-weight: 500;
 	line-height: 16px;
@@ -34,7 +34,7 @@
 }
 .movies__card-time {
 	color: #8b8b8b;
-	font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
 	font-size: 11px;
 	font-weight: 400;
 	line-height: 13px;
@@ -53,14 +53,19 @@
 	border: none;
 	cursor: pointer;
 }
+
+.movies__card-button:hover {
+    opacity: 0.7;
+  }
+
 .movies__card-like {
-	background-image: url(../../images/MovieItem/movieLike.png);
+	background-image: url(../../images/MovieItem/movieLike.svg);
 }
 .movies__card-checkBox:hover {
 	opacity: 0.8;
 }
 .movies__card-delete {
-	background-image: url(../../../src/images/MovieItem/buttonDelet.png);
+	background-image: url(../../../src/images/MovieItem/buttonDelet.svg);
 }
 .movies__card-delete:hover {
 	opacity: 0.5;
