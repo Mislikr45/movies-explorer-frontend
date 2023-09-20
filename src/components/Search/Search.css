@@ -56,6 +56,7 @@
   }
 
 .search___form-button {
+	cursor: pointer;
 	height: 34px;
 	width: 58px;
 	background-color: #4285f4;

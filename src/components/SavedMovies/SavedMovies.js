@@ -6,8 +6,7 @@ import Search from "../Search/Search";
 
 function SavedMovies() {
 	return (
-		<section className="savedMovies">
-			<main className="savedMovies__main">
+		<main className="savedMovies">
 			<Search />
 			<MoviesCardList
 				moviesList={moviesList.slice(0, 2)}
@@ -15,8 +14,7 @@ function SavedMovies() {
 				disabled = {"movies__card-button movies__card-delete"}
 			    enabled = {"movies__card-button movies__card-delete"}
 			/>
-			</main>
-		</section>
+		</main>
 	);
 }
 

@@ -28,14 +28,6 @@
     opacity: 0.7;
   }
 
-.header__link {
-	text-decoration: none;
-  font-family: "Inter", Arial, sans-serif;
-	font-size: 13px;
-	font-weight: 500;
-	line-height: 18px;
-	color: #ffffff;
-}
 
 .header__profile {
 	display: flex;
@@ -45,11 +37,8 @@
 	text-decoration: none;
 }
 
-/* .header__profile:hover {
-    opacity: 0.7;
-  } */
-  .navigation__profile-title{
-	font-family: Inter;
+ .navigation__profile-title{
+	font-family: "Inter", "Arial", sans-serif;
 	font-size: 13px;
 	font-weight: 500;
 	line-height: 12px;
@@ -63,7 +52,7 @@
 	height: 26px;
   }
 .header__profile-title {
-  font-family: "Inter", Arial, sans-serif;
+	font-family: "Inter", "Arial", sans-serif;
 	font-size: 13px;
 	font-weight: 500;
 	line-height: 12px;

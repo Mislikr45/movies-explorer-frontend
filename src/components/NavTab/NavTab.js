@@ -21,7 +21,10 @@ function NavTab({ closeNavTab, openNavTab }) {
 					Сохранённые фильмы
 				</Link>
 			</div>
-			<Link to="/profile" className="navigation__profile-menu" />
+			<Link to="/profile" className="navigation__profile-menu" >					
+					<p className="navigation__profile-title">Аккаунт</p>
+					<div className="navigation__profile-icon"></div>				
+					</Link>
 		</nav>
 	);
 }

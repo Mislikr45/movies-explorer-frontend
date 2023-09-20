@@ -7,11 +7,10 @@ import { moviesList } from "../../utils/constants";
 function Movies() {
 	// const [isMovieButton, setMovieButton] = React.useState(true);
 	return (
-		<section className="movies">
-			<main className="movies__main">
+		<main className="movies">
 			<Search />
 			<MoviesCardList
-				moviesList={moviesList.slice(0, 5)}
+				moviesList={moviesList.slice(0, 16)}
 				isMovieButton={false}
 				disabled = {"movies__card-button movies__card-like"}
 			    enabled = {"movies__card-button movies__card-like_active"}
@@ -19,8 +18,7 @@ function Movies() {
 			<button className="movies__button-more" type="button">
 				Ещё
 			</button>
-			</main>
-		</section>
+		</main>
 	);
 }
 

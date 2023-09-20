@@ -10,8 +10,7 @@ export default function Login() {
 			offerLink="Регистрация"
 			link="/signup"
 		>
-			<section className="login">
-				<main className="login__main">
+			<main className="login">
 				<form className="login__form">
 					<label className="login__label">E-mail</label>
 					<input
@@ -37,8 +36,7 @@ export default function Login() {
 						maxLength="10"
 					/>
 				</form>
-				</main>
-			</section>			
+			</main>			
 		</Form>
 	);
 }

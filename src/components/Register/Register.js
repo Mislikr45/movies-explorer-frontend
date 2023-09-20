@@ -11,8 +11,7 @@ export default function Register() {
 			offerLink="Войти"
 			link="/signin"
 		>
-			<section className="register">
-				<main className="register__main">
+			<main className="register">
 				<form className="register__form">
 					<label className="register__label">Имя</label>
 					<input
@@ -47,9 +46,8 @@ export default function Register() {
 						maxLength="10"
 						required
 					/>
-				</form>
-				</main>
-			</section>
+				</form>			
+			</main>
 		</Form>
 	);
 }

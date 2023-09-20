@@ -1,9 +1,3 @@
-/* .navigation {
-
-  
-    align-items: center;
-        z-index: 1500;
-  } */
 
   .navigation__landing {
     position: absolute;
@@ -18,7 +12,7 @@
     margin: 0;
     color: #fff;
     text-align: right;
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -38,7 +32,7 @@
     height: 32px;
     text-align: center;
     color: #000;
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -54,7 +48,7 @@
     color: white;
     cursor: pointer;
     text-decoration: none;
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
     font-size: 13px;
     font-weight: 500;
     line-height: 18px;
@@ -96,7 +90,7 @@ align-items: center;
   }
 
   .navigation__profile-title {
-    font-family: "Inter", Arial, sans-serif;
+    font-family: "Inter", "Arial", sans-serif;
    font-size: 13px;
    font-weight: 500;
    line-height: 12px;
@@ -172,7 +166,6 @@ align-items: center;
   .navigation {
     gap: 14px;
     position: absolute;
-    top: 21px;
     right: 38px;
   }}
 

@@ -39,7 +39,7 @@ function Header({className}) {
 					<Link className="navigation__link" to="/signup">
 						Регистрация
 					</Link>
-					<Link className="navigation__button" to="/signin">
+					<Link className="navigation__button" type="button" to="/signin">
 						Войти
 					</Link>
 				</Navigation>

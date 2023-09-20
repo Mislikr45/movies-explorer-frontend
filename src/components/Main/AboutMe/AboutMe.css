@@ -7,7 +7,7 @@
 }
 
 .aboutMe__title {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
 	font-size: 22px;
 	font-weight: 400;
 	line-height: 27px;
@@ -37,7 +37,7 @@
 }
 
 .aboutMe__resume-name {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
 	font-size: 50px;
 	font-weight: 400;
 	line-height: 58px;
@@ -48,7 +48,7 @@
 }
 
 .aboutMe__resume-summary {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
 	font-size: 18px;
 	font-weight: 500;
 	line-height: 20px;
@@ -57,7 +57,7 @@
 }
 
 .aboutMe__resume-biography {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 22px;
@@ -67,7 +67,7 @@
 
 .aboutMe__link {
 	padding-top: 93px;
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
 	font-size: 14px;
 	font-weight: 500;
 	line-height: 17px;
@@ -102,7 +102,7 @@
 	}
 
 	.aboutMe__resume-name {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
 		font-size: 40px;
 		font-weight: 400;
 		line-height: 40px;
@@ -111,7 +111,7 @@
 	}
 
 	.aboutMe__resume-summary {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
 		font-size: 12px;
 		font-weight: 500;
 		line-height: 18px;
@@ -120,7 +120,7 @@
 		padding-top: 15px;
 	}
 	.aboutMe__resume-biography {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
 		font-size: 12px;
 		font-weight: 400;
 		line-height: 18px;
@@ -137,7 +137,7 @@
 	}
 
 	.aboutMe__title {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
 		font-size: 18px;
 		font-weight: 400;
 		line-height: 22px;
@@ -160,7 +160,7 @@
 	}
 
 	.aboutMe__resume-name {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
 		font-size: 30px;
 		font-weight: 400;
 		line-height: 36px;
@@ -170,7 +170,7 @@
 	}
 
 	.aboutMe__resume-summary {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
 		font-size: 11px;
 		font-weight: 500;
 		line-height: 16px;
@@ -180,7 +180,7 @@
 	}
 
 	.aboutMe__resume-biography {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
 		font-size: 11px;
 		font-weight: 400;
 		line-height: 16px;
@@ -189,7 +189,7 @@
 	}
 
 	.aboutMe__link {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
 		font-size: 14px;
 		font-weight: 500;
 		line-height: 17px;
