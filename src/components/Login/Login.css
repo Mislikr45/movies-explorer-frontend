@@ -66,6 +66,9 @@
 }
 
 @media screen and (max-width: 450px) {
+	.login__main{
+		margin-bottom: 70px;
+	}
 	.login__input {
 		width: 260px;
 		font-family: "Inter", Arial, sans-serif;
