@@ -22,7 +22,7 @@ export default function Login() {
 						required
 						placeholder="mislik"
 						minLength="2"
-						maxlength="10"
+						maxLength="10"
 					/>
 
 					<label className="login__label">Пароль</label>
@@ -34,7 +34,7 @@ export default function Login() {
 						placeholder="*****"
 						required
 						minLength="6"
-						maxlength="10"
+						maxLength="10"
 					/>
 				</form>
 				</main>

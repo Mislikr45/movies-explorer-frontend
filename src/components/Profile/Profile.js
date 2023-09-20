@@ -21,7 +21,7 @@ export default function Profile() {
 					className="profile__input"
 					placeholder="Сергей"
 					minLength="2"
-				    maxlength="10"
+				    maxLength="10"
 				/>
 
 				<label className="profile__label">E-mail</label>

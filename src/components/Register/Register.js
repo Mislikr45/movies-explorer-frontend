@@ -23,7 +23,7 @@ export default function Register() {
 						placeholder="Sergey"
 						required
 						minLength="2"
-						maxlength="10"
+						maxLength="10"
 					/>
 
 					<label className="register__label">E-mail</label>
@@ -44,7 +44,7 @@ export default function Register() {
 						className="register__input"
 						placeholder="******"
 						minLength="6"
-						maxlength="10"
+						maxLength="10"
 						required
 					/>
 				</form>
