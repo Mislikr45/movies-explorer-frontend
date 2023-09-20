@@ -5,7 +5,7 @@
 	flex-direction: column;
     background-image: url(../../../images/CCCCCC.svg);
 	background-repeat: no-repeat;
-	background-size: 680px 230px;
+	background-size: 722px 244px;
 	background-position: top 256px right 70px;
 	height: 560px;
 }
@@ -31,6 +31,7 @@
 
 @media screen and (max-width: 1270px) {
 	.promo {
+		background-size: 680px 230px;
 		background-position-y: 544px;
 		background-position-x: center; 
 		height: 844px;

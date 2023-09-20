@@ -68,7 +68,9 @@
 	font-weight: 400;
 	line-height: 17px;
 	background-color: #303030;
-	height: 36px;
+	height: 18px;
+	padding-top: 9px;
+    padding-bottom: 9px;
 }
 
 .aboutProject__road-week:first-of-type {
