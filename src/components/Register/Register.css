@@ -65,6 +65,10 @@
 }
 
 @media screen and (max-width: 450px) {
+	.register__form{
+		width: 260px;
+	}
+	
 	.register__input {
 		width: 260px;
 	  font-family: "Inter", Arial, sans-serif;

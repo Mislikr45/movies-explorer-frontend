@@ -22,11 +22,19 @@ width: 100%;
 }
 
 .profile__form {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	row-gap: 18px;
-	border-color: white;
+	display: flex;
+	flex-direction: column;
+	row-gap: 16px;
 	width: 410px;
+}
+.profile__form-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #424242;
+    padding-bottom: 14px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .profile__label {
@@ -38,10 +46,6 @@ width: 100%;
 	letter-spacing: 0em;
 }
 
-.profile__label:first-child {
-	border-bottom: 1px solid #424242;
-	padding-bottom: 17px;
-}
 
 .profile__input {
 	outline: none;
@@ -130,12 +134,12 @@ width: 100%;
 		width: 100%;
 	}
 	.profile__button-edite {
-		margin-top: 379px;
+		margin-top: 361px;
 		font-size: 12px;
 		line-height: 14.52px;
 	}
 	.profile__button-exit {
-		margin-bottom: 40px;
+		margin-bottom: 37px;
 		font-size: 12px;
 		line-height: 14.52px;
 	}
