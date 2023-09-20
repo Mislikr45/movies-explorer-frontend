@@ -97,7 +97,7 @@ width: 100%;
 
 .profile__button-edite {
 	cursor: pointer;
-	margin-top: 215px;
+	margin-top: 199px;
 	margin-bottom: 16px;
   font-family: "Inter", Arial, sans-serif;
 	font-size: 13px;
@@ -120,7 +120,7 @@ width: 100%;
 		margin-bottom: 96px;
 	}
 	.profile__button-edite {
-		margin-top: 210px;
+		margin-top: 189px;
 	}
 	.profile__button-exit {
 		margin-bottom: 269px;
