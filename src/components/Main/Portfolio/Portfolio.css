@@ -1,0 +1,117 @@
+.portfolio {
+	display: flex;
+	flex-direction: column;
+	padding: 100px 70px 91px 70px;
+	background-color: #202020;
+}
+
+.portfolio__title {
+	margin: 0;
+	padding-bottom: 34px;
+  font-family: "Inter", "Arial", sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 20px;
+	color: #8b8b8b;
+}
+
+.portfolio__list {
+	list-style-type: none;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	row-gap: 18px;
+}
+.portfolio__link {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	text-decoration: none;
+}
+
+.portfolio__link:hover {
+    opacity: 0.7;
+  }
+  
+.portfolio__list-item {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #424242;
+}
+
+.portfolio__link-image {
+	background-image: url(../../../images/arrow.svg);
+	background-position: center;
+	width: 29px;
+	height: 60px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin: 0;
+	padding: 0;
+}
+
+.portfolio__link-text {
+	text-decoration: none;
+	color: #ffffff;
+  font-family: "Inter", "Arial", sans-serif;
+	font-size: 30px;
+	font-weight: 400;
+	line-height: 50px;
+	letter-spacing: -0.04em;
+	margin: 0;
+	padding: 0;
+}
+
+@media screen and (max-width: 1000px) {
+	.portfolio {
+		padding: 87px 50px 83px 50px;
+	}
+
+	.portfolio__link-text {
+	  font-family: "Inter", "Arial", sans-serif;
+		font-size: 28px;
+		font-weight: 400;
+		line-height: 50px;
+		letter-spacing: -0.04em;
+		text-align: left;
+	}
+	.portfolio__link-image {
+		width: 27px;
+	}
+}
+
+@media screen and (max-width: 760px) {
+	.portfolio {
+	    padding: 70px 14px 36px 14px
+	}
+
+	.portfolio__title {
+	  font-family: "Inter", "Arial", sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0px;
+		text-align: left;
+		color: #a0a0a0;
+		padding-bottom: 25px;
+	}
+
+	.portfolio__link-text {
+	  font-family: "Inter", "Arial", sans-serif;
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 28px;
+		letter-spacing: -0.04em;
+		text-align: left;
+		color: #ffffff;
+	}
+	.portfolio__link-image {
+		width: 18px;
+		height: 28px;
+	}
+	.portfolio__list {
+		row-gap: 23px;
+	}
+	.portfolio__list-item {
+		padding-bottom: 16px;
+	}
+}

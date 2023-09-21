@@ -1,0 +1,150 @@
+.profile {
+width: 100%;
+}
+
+.prodile__main{
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.profile__greetings {
+	width: 396px;
+	margin-top: 74px;
+	margin-bottom: 123px;
+	color: white;
+	text-align: center;
+  font-family: "Inter", Arial, sans-serif;
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 29px;
+}
+
+.profile__form {
+	display: flex;
+	flex-direction: column;
+	row-gap: 16px;
+	width: 410px;
+}
+.profile__form-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #424242;
+    padding-bottom: 14px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile__label {
+	color: #ffffff;
+  font-family: "Inter", Arial, sans-serif;
+	font-size: 11px;
+	font-weight: 400;
+	line-height: 13.31px;
+	letter-spacing: 0em;
+}
+
+
+.profile__input {
+	outline: none;
+	border-bottom: 1px solid #424242;
+	color: #ffffff;
+  font-family: "Inter", Arial, sans-serif;
+	font-size: 11px;
+	font-weight: 400;
+	line-height: 13.31px;
+	height: 17px;
+	padding: 0;
+	margin: 0;
+	background-color: #202020;
+	border: none;
+	color: #ffffff;
+	text-align: right;
+}
+
+.profile__input:hover {
+    opacity: 0.7;
+  }
+
+.profile__input:focus {
+	outline: solid grey;
+  }
+
+.profile__input:first-child {
+	border-bottom: 1px solid #424242;
+	padding-bottom: 17px;
+}
+
+.profile__button-exit {
+	cursor: pointer;
+	margin-bottom: 70px;
+  font-family: "Inter", Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 16px;
+	letter-spacing: 0px;
+	text-align: center;
+	color: #ee3465;
+	background-color: #202020;
+	border: none;
+}
+
+.profile__button-exit:hover {
+    opacity: 0.7;
+  }
+
+.profile__button-edite {
+	cursor: pointer;
+	margin-top: 199px;
+	margin-bottom: 16px;
+  font-family: "Inter", Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 16px;
+	letter-spacing: 0px;
+	text-align: center;
+	color: #ffffff;
+	background-color: #202020;
+	border: none;
+}
+
+.profile__button-edite:hover {
+    opacity: 0.7;
+  }
+
+@media screen and (max-width: 769px) {
+	.profile__greetings {
+		margin-top: 236px;
+		margin-bottom: 96px;
+	}
+	.profile__button-edite {
+		margin-top: 189px;
+	}
+	.profile__button-exit {
+		margin-bottom: 269px;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.profile__greetings {
+		margin-top: 70px;
+		margin-bottom: 80px;
+		width: 100%;
+	}
+	.profile__button-edite {
+		margin-top: 361px;
+		font-size: 12px;
+		line-height: 14.52px;
+	}
+	.profile__button-exit {
+		margin-bottom: 37px;
+		font-size: 12px;
+		line-height: 14.52px;
+	}
+	
+    .profile__form{
+	    width: 260px;
+    }
+    }

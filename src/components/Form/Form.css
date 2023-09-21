@@ -1,0 +1,126 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form__greetings {
+	width: 396px;
+	margin-top: 70px;
+	margin-bottom: 40px;
+}
+
+.form__logo {
+	width: 38px;
+	height: 38px;
+}
+
+.form__logo:hover {
+    opacity: 0.7;
+  }
+
+.form__title {
+	margin: 37px 0 0 0;
+  font-family: "Inter", "Arial", sans-serif;
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 29px;
+	letter-spacing: 0em;
+	color: #ffffff;
+}
+
+.form__button {
+	margin-top: 69px;
+	border: none;
+	width: 396px;
+	height: 45px;
+	background-color: #3456f3;
+	border-color: #4285f4;
+	max-width: 396px;
+	min-height: 45px;
+	padding: 0;
+	color: #ffffff;
+	border-radius: 3px;
+  font-family: "Inter", "Arial", sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 17px;
+	letter-spacing: 0em;
+	text-align: center;
+}
+
+.form__button:hover {
+	cursor: pointer;
+	opacity: 80%;
+}
+
+.form__offer {
+	display: flex;
+	margin-top: 16px;
+	margin-bottom: 70px;
+	gap: 6px;
+  font-family: "Inter", "Arial", sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 17px;
+	letter-spacing: 0em;
+}
+
+.form__offer-subtitle {
+	margin: 0;
+	color: #8b8b8b;
+}
+
+.form__offer-link {
+	margin: 0;
+	color: #4285f4;
+	cursor: pointer;
+}
+
+.form__offer-link:hover {
+    opacity: 0.7;
+  }
+
+
+@media screen and (max-width: 769px) {
+	.form__greetings {
+		margin-top: 232px;
+	}
+	.form__offer {
+		margin-top: 16px;
+		margin-bottom: 232px;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.form__greetings {
+		margin-top: 56px;
+		margin-bottom: 80px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+
+	.form__title {
+		margin: 47px 0 0 0;
+	}
+
+	.form__offer {
+		margin-top: 14px;
+		margin-bottom: 30px;
+		font-size: 12px;
+		line-height: 14px;
+	}
+	
+	.form__button {
+		margin-top: 157px;
+		width: 260px;
+		height: 45px;
+	  font-family: "Inter", "Arial", sans-serif;
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 15px;
+		letter-spacing: 0em;
+	}
+}
