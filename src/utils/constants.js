@@ -1,6 +1,6 @@
 
 const urlMovie="https://api.nomoreparties.co";
-const urlMain="http://localhost:3000";
+const urlMain="https://api.mislikr45.nomoreparties.co";
 
 
 
