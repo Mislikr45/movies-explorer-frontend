@@ -5,6 +5,7 @@
 }
 .movies__card-photo {
 	width: 270px;
+	height: 151px;
 }
 .movies__card-about {
 	padding-top: 9px;
@@ -52,6 +53,10 @@
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
+}
+
+movies__card-button-enabled {
+	visibility: hidden;
 }
 
 .movies__card-button:hover {

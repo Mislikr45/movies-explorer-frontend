@@ -1,40 +1,81 @@
-import "./Search.css";
 import React from "react";
+import "./Search.css";
 
-export default function Search() {
-	const [isActive, setIsActive] = React.useState(true);
+export default function Search({
+  query,
+  setQuery,
+  isShortFilm,
+  setIsShortFilm,
+  onSearch,
+  onFilter,
+}) {
+  const handleInputChange = (event) => {
+    setQuery(event.target.value);
+  };
 
-	const moviesShot = `${
-		isActive
-			? "search__checkbox-button search__checkbox-button_disabled"
-			: "search__checkbox-button search__checkbox-button_enable"
-	}`;
+  const handleShortFilmToggle = () => {
+    setIsShortFilm(!isShortFilm);
+    onFilter(query, !isShortFilm);
+  };
 
-	function handleCheck() {
-		setIsActive(!isActive);
-	}
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-	return (
-		<section className="search">
-			<div className="search__main">
-				<div className="search__magnifier"></div>
-				<form className="search__form">
-					<input
-						id="movies"
-						name="movies"
-						type="movies"
-						className="search__input"
-						placeholder="Фильм"
-						required
-					/>
-					<button className="search___form-button" type="submit">Найти</button>
-					<div className="search__checkbox">
-					<button className={moviesShot} type="button" onClick={handleCheck} />
-					<span className="search__checkbox-span">Короткометражки</span>
-				</div>
-				</form>
-			
-			</div>
-		</section>
-	);
+    onSearch(query, isShortFilm);
+  };
+  const handleInputKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSubmit(event);
+    }
+  };
+
+  // const moviesShot = `${
+  // 	isActive
+  // 		? "search__checkbox-button search__checkbox-button_disabled"
+  // 		: "search__checkbox-button search__checkbox-button_enable"
+  // }`;
+
+  // function handleCheck() {
+  // 	setIsActive(!isActive);
+  // }
+
+  return (
+    <section className="search">
+      <div className="search__main">
+        <div className="search__magnifier"></div>
+        <form className="search__form" onSubmit={handleSubmit}>
+          <input
+            id="movies"
+            name="movies"
+            type="movies"
+            className="search__input"
+            required
+            value={query}
+            onChange={handleInputChange}
+            onKeyDown={handleInputKeyDown}
+            placeholder="Фильм"
+          />
+          <button
+            className="search___form-button"
+            type="submit"
+            onSubmit={handleSubmit}
+          >
+            Найти
+          </button>
+          <div className="search__checkbox">
+            <button
+              className={
+                isShortFilm
+                  ? "search__checkbox-button search__checkbox-button_enable"
+                  : "search__checkbox-button search__checkbox-button_disabled"
+              }
+              type="button"
+              onClick={handleShortFilmToggle}
+            />
+            <span className="search__checkbox-span">Короткометражки</span>
+          </div>
+        </form>
+      </div>
+    </section>
+  );
 }

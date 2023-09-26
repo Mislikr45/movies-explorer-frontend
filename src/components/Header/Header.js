@@ -10,7 +10,7 @@ import Navigation from "../Navigation/Navigation";
 import Overlay from "../Overlay/Overlay";
 import NavTab from "../NavTab/NavTab";
 
-function Header({className}) {
+function Header({loggedIn}) {
 	const location = useLocation();
 	const { pathname } = location;
 	const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -31,11 +31,14 @@ function Header({className}) {
 		setShowNavTab(false);
 	};
 
-
+  
 	const navContent = () => {
-		if (pathname === "/") {
+		if (pathname === "/") {  
+	
+			if (!loggedIn) {
 			return (
-				<Navigation className="navigation__landing">
+				
+					<Navigation className="navigation__landing">
 					<Link className="navigation__link" to="/signup">
 						Регистрация
 					</Link>
@@ -43,7 +46,35 @@ function Header({className}) {
 						Войти
 					</Link>
 				</Navigation>
-			);
+				
+				
+			);} else {
+				return (
+					<Navigation className="navigation_main">
+						<ul className="navigation__movie">
+							<li className="navigation__movie-item">
+								<Link className="navigation__nav-link" to="/movies">
+									Фильмы
+								</Link>
+							</li>
+							<li className="navigation__movie-item">
+								<Link
+									className="navigation__nav-link navigation__nav-link_active"
+									to="/saved-movies"
+								>
+									Сохраненные фильмы
+								</Link>
+							</li>
+						</ul>
+						<Link to="/profile" className="navigation__profile" >
+					
+						<p className="navigation__profile-title">Аккаунт</p>
+						<div className="navigation__profile-icon"></div>
+					
+						</Link>
+					</Navigation>
+				);
+			}
 		} else if (
 			pathname === "/movies" ||
 			pathname === "/saved-movies" ||
@@ -89,7 +120,7 @@ function Header({className}) {
 	};
 
 	return (
-		<header className={className}>
+		<header className={pathname === '/signup' || pathname === '/signin' ? 'header_headen' : pathname === '/' ? 'header_landing' : 'header'}>
 			<div className="headear__navigation">
 			<Link to="/" className="header__link" >
 				<img className="header__logo" src={logo} alt="Логотип" />
