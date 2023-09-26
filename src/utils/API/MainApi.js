@@ -1,4 +1,4 @@
-import {urlMain, urlMovie} from "../constants"
+import {urlMain, urlImg} from "../constants"
 
 export default class MainApi { 
   constructor({ url, headers, urlMovie }) { 
@@ -77,7 +77,7 @@ editeProfile( name, email ) {
 }
 export const mainApi = new MainApi({ 
     url: urlMain, 
-    urlMovie:urlMovie,
+    urlMovie:urlImg,
     headers: { 
       Authorization : `Bearer ${localStorage.getItem("token")}`, 
       "Content-Type": "application/json", 
