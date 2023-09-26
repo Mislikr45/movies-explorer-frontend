@@ -14,13 +14,13 @@ function NavTab({ closeNavTab, openNavTab }) {
 				onClick={closeNavTab}
 				/>
 			<div className="navigate__main-rout">
-				<Link to="/" className={pathname === '/' ? 'navigate__rout navigate__rout-underline' : 'navigate__rout'}>
+				<Link to="/" className={pathname === '/' ? 'navigate__rout navigate__rout-underline' : 'navigate__rout'} onClick={closeNavTab}>
 					Главная
 				</Link>
-				<Link to="/movies" className={pathname === '/movies' ? 'navigate__rout navigate__rout-underline' : 'navigate__rout'}>
+				<Link to="/movies" className={pathname === '/movies' ? 'navigate__rout navigate__rout-underline' : 'navigate__rout'} onClick={closeNavTab}>
 					Фильмы
 				</Link>
-				<Link to="/saved-movies" className={pathname === '/saved-movies' ? 'navigate__rout navigate__rout-underline' : 'navigate__rout'}>
+				<Link to="/saved-movies" className={pathname === '/saved-movies' ? 'navigate__rout navigate__rout-underline' : 'navigate__rout'} onClick={closeNavTab}>
 					Сохранённые фильмы
 				</Link>
 			</div>
