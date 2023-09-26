@@ -48,7 +48,6 @@ function SavedMovies({ saveMovies, onDelete, userProfile }) {
     setSearchResults(filteredResults);
   };
 
-  console.log(saveMovies);
   return (
     <main className="savedMovies">
       <Search

@@ -12,7 +12,6 @@ function MoviesCard({
   userProfile,
 }) {
   const [isActive, setIsActive] = React.useState(false);
-  console.log(movie)
   const imageUrl = !isSavedMovies ? urlImg + movie.image.url : movie.image;
 
   const moviesButtonSaved = `${
