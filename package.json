@@ -1,5 +1,5 @@
 {
-  "name": "mesto-react",
+  "name": "movies-explorer-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,7 +15,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && scp -r  mislikr45r45@51.250.78.192:/home/mislikr45r45/react-mesto-api-full-gha/frontend/build"
+    "deploy": "npm run build && scp -r  mislikr45r45@51.250.78.192:/home/mislikr45r45/movies-explorer-frontend/build"
   },
   "eslintConfig": {
     "extends": [
