@@ -73,7 +73,7 @@ function App() {
       .then(([userProfile, moviesUser, movies]) => {
         setCurrentUser(userProfile);
         setMovies(movies);
-
+        console.log(userProfile, moviesUser, movies)
         setMoviesUser(moviesUser);
       })
       .catch((error) => console.log(`Ошибка: ${error}`));
