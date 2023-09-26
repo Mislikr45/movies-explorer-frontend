@@ -63,6 +63,10 @@ class MovieApi {
   getMovies() {
     return fetch(`${this._baseUrl}`, {
       method: "GET",
+      headers: { 
+        "Content-Type": "application/json", 
+        'Accept': 'application/json', 
+      } 
     })
       .then(this._handelResponse)
       .then((movies) => {
