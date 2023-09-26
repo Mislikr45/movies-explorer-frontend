@@ -68,11 +68,11 @@ function App() {
     Promise.all([
       mainApi.getUserInfo(),
       mainApi.getMoviesUser(),
-      movieApi.getMovies(),
+      // movieApi.getMovies(),
     ])
       .then(([userProfile, moviesUser, movies]) => {
         setCurrentUser(userProfile);
-        setMovies(movies);
+        // setMovies(movies);
         console.log(userProfile, moviesUser, movies)
         setMoviesUser(moviesUser);
       })
