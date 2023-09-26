@@ -12,7 +12,7 @@ function MoviesCard({
   userProfile,
 }) {
   const [isActive, setIsActive] = React.useState(false);
-  const imageUrl = isSavedMovies ? movie.image : urlImg + movie.image.url;
+  const imageUrl = urlImg + movie.image.url;
 
   const moviesButtonSaved = `${
     userProfile._id === movie.owner ? disabled : enabled
