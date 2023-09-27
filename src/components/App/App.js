@@ -42,7 +42,6 @@ function App() {
     if (localStorage.getItem("token")) {
       const jwt = localStorage.getItem("token");
       auth.checkToken(jwt).then((res) => {
-        console.log(res);
         setUser({ email: res.email });
         if (res) {
           setLoggedIn(true);
@@ -95,7 +94,6 @@ function App() {
   }
 
   function handleRegister(email, password, name) {
-    console.log("app");
     auth
       .register(email, password, name)
       .then((res) => {
@@ -112,7 +110,6 @@ function App() {
     auth
       .authorize({ email, password })
       .then((data) => {
-        console.log(data);
         localStorage.setItem("jwt", data.token);
         setUser({ email: email });
         setLoggedIn(true);
@@ -142,8 +139,6 @@ function App() {
   }
 
   function saveMovie(movie) {
-    console.log("add movie app");
-    console.log(movie);
     // setIsloading(true)
     mainApi
       .handleAddMovieApi(movie)

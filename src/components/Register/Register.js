@@ -30,8 +30,6 @@ export default function Register({onRegister, error}) {
 		  setIsEmpty(
 			formValue.name.trim() === "" || formValue.email.trim() === "" || formValue.password.trim() === ""
 		  );
-		  console.log(isEmpty)
-		  console.log(InputValid)
 	  }, [formValue.name, formValue.email, formValue.password]);
 
 	  const handleChange = (e) => {

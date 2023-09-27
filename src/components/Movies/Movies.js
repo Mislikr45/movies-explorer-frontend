@@ -136,7 +136,6 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc }) {
     setHasSearched(true);
     localStorage.setItem("searchResults", JSON.stringify(searchResults));
     setVisibleMovies(onVisibleMovie());
-    console.log(searchResults);
     setTimeout(() => {
       setIsLoading(false);
     }, 800);
