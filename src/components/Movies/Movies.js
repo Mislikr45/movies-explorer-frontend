@@ -36,6 +36,10 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc }) {
   }, [query]);
 
   useEffect(() => {
+    getMovieFunc()
+  }, [setIsLoading]);
+
+  useEffect(() => {
     localStorage.setItem("isShortFilm", isShortFilm);
   }, [isShortFilm]);
 
@@ -107,7 +111,7 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc }) {
     setIsLoading(true);
     let filteredMovies = movies;
     if (movies.length === 0) {
-      filteredMovies = await getMovieFunc();
+      filteredMovies = await movies;
     }
 
     let searchResults;
