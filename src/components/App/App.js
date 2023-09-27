@@ -101,7 +101,7 @@ function App() {
         navigate("/signin", { replace: true });
       })
       .catch((err) => {
-        setErorRegister(err)
+        setErorRegister("что-то пошло не так");
         checkRegisterAdd();
       });
   }
@@ -118,7 +118,7 @@ function App() {
         navigate("/movie", { replace: true });
       })
       .catch((err) => {
-        setErorLogin(err)
+        setErorLogin("что-то пошло не так");
         checkRegisterAdd();
       });
   }
