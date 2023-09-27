@@ -101,7 +101,11 @@ export default function Register({onRegister, error}) {
 						required
 					/>
 					<p className="register-error">{error}</p>
-					<button className="form__button" type="submit" onSubmit={handleSubmit}>Зарегистрироваться</button>		
+					<button className={`form__button${isEmpty || !isValid
+                ? "form__button-disable"
+                : ""
+            }`}
+					type="submit" onSubmit={handleSubmit}>Зарегистрироваться</button>		
 				</form>	
 				
 			</main>
