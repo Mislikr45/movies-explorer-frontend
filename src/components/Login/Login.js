@@ -32,7 +32,7 @@ export default function Login({onLogin, error}) {
 	
 			  setIsValid(InputValid());
 			  setIsEmpty(
-				formValue.email.trim() === ""
+				 formValue.email.trim() === ""
 				|| formValue.password.trim() === ""
 			  );
 			  console.log(isEmpty)
@@ -90,7 +90,7 @@ export default function Login({onLogin, error}) {
             }`}
 					type="submit" 
 					onSubmit={handleSubmit}
-					disabled={isEmpty || !isValid ? false : true}					
+					disabled={isEmpty || !isValid ? true : false}					
 					>Войти</button>	
 				</form>
 			</main>			

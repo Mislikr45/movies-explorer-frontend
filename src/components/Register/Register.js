@@ -105,7 +105,7 @@ export default function Register({onRegister, error}) {
                 ? "form__button-disable"
                 : ""
             }`}
-			disabled={isEmpty || !isValid ? false : true}
+			disabled={isEmpty || !isValid ? true : false}		
 					type="submit" onSubmit={handleSubmit}>Зарегистрироваться</button>		
 				</form>	
 				
