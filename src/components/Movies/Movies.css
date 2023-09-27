@@ -23,6 +23,10 @@
 	border-radius: 6px;
 }
 
+movies__button-more_enabled {
+	visibility: hidden;
+}
+
 .movies__button-more:hover {
 	opacity: 0.8;
 }

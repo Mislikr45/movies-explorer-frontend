@@ -115,7 +115,6 @@ function App() {
         localStorage.setItem("jwt", data.token);
         setUser({ email: email });
         setLoggedIn(true);
-        console.log(data.token);
         setErorLogin('');
         navigate("/movies", { replace: true });        
       })
