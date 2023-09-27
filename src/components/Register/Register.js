@@ -21,7 +21,7 @@ export default function Register({onRegister, error}) {
 		const InputValid = () => {
 			const nameValid = formValue.name.length >= 2 && formValue.name.length <= 10;
 			const emailValid = email_check.test(formValue.email.trim());
-			const passwordValid = formValue.password.length >= 8;
+			const passwordValid = formValue.password.length >= 6;
 	  
 			return nameValid && emailValid && passwordValid;
 		  };
@@ -97,15 +97,15 @@ export default function Register({onRegister, error}) {
 						className="register__input"
 						placeholder="******"
 						minLength="6"
-						maxLength="10"
 						required
-						// {isEmpty || !isValid ? disabled : ""}
+						
 					/>
 					<p className="register-error">{error}</p>
 					<button className={`form__button ${isEmpty || !isValid
                 ? "form__button-disable"
                 : ""
             }`}
+			disabled={isEmpty || !isValid ? false : true}
 					type="submit" onSubmit={handleSubmit}>Зарегистрироваться</button>		
 				</form>	
 				

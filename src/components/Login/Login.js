@@ -1,5 +1,6 @@
 import Form from "../Form/Form";
 import "./Login.css";
+import { email_check } from "../../utils/constants"
 import React, { useState } from "react";
 
 export default function Login({onLogin, error}) {
@@ -7,6 +8,9 @@ export default function Login({onLogin, error}) {
 		email: "",
 		password: "",
 	  });
+
+	  const [isValid, setIsValid] = useState(false);
+	  const [isEmpty, setIsEmpty] = useState(true);
 	
 	  const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -17,13 +21,31 @@ export default function Login({onLogin, error}) {
 		  });
 		};
 
+		React.useEffect(() => {
+	 
+			const InputValid = () => {
+				const emailValid = email_check.test(formValue.email.trim());
+				const passwordValid = formValue.password.length >= 6;
+		  
+				return emailValid && passwordValid;
+			  };
+	
+			  setIsValid(InputValid());
+			  setIsEmpty(
+				formValue.email.trim() === ""
+				|| formValue.password.trim() === ""
+			  );
+			  console.log(isEmpty)
+			  console.log(InputValid)
+		  }, [formValue.email, formValue.password]);
+	
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const { email, password } = formValue;
 	console.log(onLogin)
 	console.log( email, password )
     onLogin({ email, password });
-	console.log("1");
   };
 	return (
 		<Form
@@ -61,7 +83,15 @@ export default function Login({onLogin, error}) {
                         onChange={handleChange}
 					/>
 					<p className="login-error">{error}</p>
-					<button className="form__button" type="submit" onSubmit={handleSubmit}>Войти</button>	
+					<button 
+					className={`form__button ${isEmpty || !isValid
+                ? "form__button-disable"
+                : ""
+            }`}
+					type="submit" 
+					onSubmit={handleSubmit}
+					disabled={isEmpty || !isValid ? false : true}					
+					>Войти</button>	
 				</form>
 			</main>			
 		</Form>
