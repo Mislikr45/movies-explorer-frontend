@@ -98,6 +98,7 @@ function App() {
     auth
       .register(email, password, name)
       .then((res) => {
+        setErorRegister("");
         navigate("/signin", { replace: true });
       })
       .catch((err) => {
@@ -115,7 +116,8 @@ function App() {
         setUser({ email: email });
         setLoggedIn(true);
         console.log(data.token);
-        navigate("/movie", { replace: true });
+        setErorLogin('');
+        navigate("/movies", { replace: true });        
       })
       .catch((err) => {
         setErorLogin("что-то пошло не так");

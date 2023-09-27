@@ -35,16 +35,12 @@ export default function Login({onLogin, error}) {
 				 formValue.email.trim() === ""
 				|| formValue.password.trim() === ""
 			  );
-			  console.log(isEmpty)
-			  console.log(InputValid)
 		  }, [formValue.email, formValue.password]);
 	
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const { email, password } = formValue;
-	console.log(onLogin)
-	console.log( email, password )
     onLogin({ email, password });
   };
 	return (
