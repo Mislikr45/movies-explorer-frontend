@@ -84,7 +84,8 @@ function App() {
 
   function getMoviesBest() {
     movieApi.getMovies()
-    .then((movies) => { setMovies(movies) })
+    .then((movies) => { setMovies(movies)
+    console.log(setMovies) })
     .catch((error) => console.log(`Ошибка: ${error}`))
   }
 

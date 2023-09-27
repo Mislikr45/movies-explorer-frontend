@@ -5,10 +5,11 @@ import Preloader from "./Preloader/Preloader";
 import Search from "../Search/Search";
 import { useEffect, useState } from "react";
 
-function Movies({ movies, onSave, onDelete, userProfile }) {
+function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc }) {
   // const [isMovieButton, setMovieButton] = React.useState(true);
   const [visibleMovies, setVisibleMovies] = useState(onVisibleMovie());
   const [windowWith, setwindowWith] = useState([]);
+  const [visibleButton, setvisibleButton] = useState(false);
   // результаты поиска
   const [searchResults, setSearchResults] = useState(
     JSON.parse(localStorage.getItem("searchResults")) || [],
@@ -50,6 +51,7 @@ function Movies({ movies, onSave, onDelete, userProfile }) {
       return 5;
     }
   }
+
   const handleShowMoreClick = () => {
     const screenWidth = window.innerWidth;
     if (screenWidth >= 1279) {
@@ -60,6 +62,7 @@ function Movies({ movies, onSave, onDelete, userProfile }) {
       setVisibleMovies((prevVisibleCards) => prevVisibleCards + 2);
     }
   };
+
   let resize = window.addEventListener("resize", (e) => {
     return setwindowWith(e.target.innerWidth);
   });
@@ -74,13 +77,14 @@ function Movies({ movies, onSave, onDelete, userProfile }) {
   }, [windowWith]);
 
   const filterMovies = (query, isShortFilm) => {
+    
     setIsLoading(true);
 
     let filteredMovies = movies;
-    console.log(setSearchResults);
 
     if (isShortFilm) {
       filteredMovies = filteredMovies.filter((movie) => movie.duration <= 40);
+
     }
 
     const filteredResults = filteredMovies.filter((movie) => {
@@ -96,13 +100,14 @@ function Movies({ movies, onSave, onDelete, userProfile }) {
     setTimeout(() => {
       setIsLoading(false);
     }, 300);
+
   };
 
   const handleSearch = async (query, isShortFilm) => {
     setIsLoading(true);
     let filteredMovies = movies;
     if (movies.length === 0) {
-      filteredMovies = await movies;
+      filteredMovies = await getMovieFunc();
     }
 
     let searchResults;
@@ -146,10 +151,11 @@ function Movies({ movies, onSave, onDelete, userProfile }) {
       />
       {isLoading ? (
         <Preloader />
-      ) : !movies || (hasSearched && searchResults.length === 0) ? (
+      ) : !movies || (hasSearched && searchResults.length === 0) ? ( 
+
         <p className="movies__info">Ничего не найдено.</p>
       ) : (
-        <MoviesCardList
+         <MoviesCardList
           moviesList={searchResults.slice(0, visibleMovies)}
           isMovieButton={false}
           disabled={"movies__card-button movies__card-like"}
@@ -160,7 +166,7 @@ function Movies({ movies, onSave, onDelete, userProfile }) {
         />
       )}
       <button
-        className="movies__button-more"
+        className={hasSearched && searchResults.length === 0 ? "movies__button-more" : ""}
         type="button"
         onClick={handleShowMoreClick}
       >
