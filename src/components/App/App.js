@@ -29,10 +29,12 @@ function App() {
   const [user, setUser] = useState({ email: "" });
   const [loggedIn, setLoggedIn] = useState(false);
   const [checkRegister, setCheckRegister] = useState(false); //Регистрация
+  const [erorLogin, setErorLogin]=useState("");
+  const [erorRegister, setErorRegister]=useState("");
 
   const navigate = useNavigate();
 
-  useEffect(() => {
+  React.useEffect(() => {
     handleTokenCheck();
   }, [loggedIn]);
 
@@ -49,6 +51,7 @@ function App() {
       });
     }
   };
+  
 
   function checkRegisterAdd() {
     setCheckRegister(true);
@@ -68,15 +71,22 @@ function App() {
     Promise.all([
       mainApi.getUserInfo(),
       mainApi.getMoviesUser(),
-      movieApi.getMovies(),
+      // movieApi.getMovies(),
     ])
       .then(([userProfile, moviesUser, movies]) => {
         setCurrentUser(userProfile);
-        setMovies(movies);
+        // setMovies(movies);
         setMoviesUser(moviesUser);
       })
       .catch((error) => console.log(`Ошибка: ${error}`));
   }, [navigate]);
+
+
+  function getMoviesBest() {
+    movieApi.getMovies()
+    .then((movies) => { setMovies(movies) })
+    .catch((error) => console.log(`Ошибка: ${error}`))
+  }
 
   // console.log(moviesUser)
   function checkRegisterAdd() {
@@ -91,6 +101,7 @@ function App() {
         navigate("/signin", { replace: true });
       })
       .catch((err) => {
+        setErorRegister(err)
         checkRegisterAdd();
       });
   }
@@ -104,10 +115,10 @@ function App() {
         setUser({ email: email });
         setLoggedIn(true);
         console.log(data.token);
-        navigate("/", { replace: true });
+        navigate("/movie", { replace: true });
       })
       .catch((err) => {
-        console.log(err);
+        setErorLogin(err)
         checkRegisterAdd();
       });
   }
@@ -180,6 +191,7 @@ function App() {
                 savedMovies={moviesUser}
                 onSave={saveMovie}
                 onDelete={deleteFilm}
+                getMovieFunc={getMoviesBest}
               />
             }
           />
@@ -212,14 +224,20 @@ function App() {
 
           <Route
             path="/signin"
-            element={<Login onLogin={handleAuthorization} />}
+            element={<Login
+               onLogin={handleAuthorization} 
+               error={erorLogin}
+               />}
           />
 
           <Route
             path="/signup"
             element={
               <>
-                <Register onRegister={handleRegister} />
+                <Register
+                onRegister={handleRegister}                
+                error={erorRegister}
+                />
               </>
             }
           />

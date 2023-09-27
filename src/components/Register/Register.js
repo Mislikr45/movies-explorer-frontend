@@ -1,17 +1,39 @@
 import Form from "../Form/Form";
 import "./Register.css";
 import React, { useState } from "react";
+import email_check from "../../utils/constants"
 
 
 
-
-export default function Register({onRegister}) {
+export default function Register({onRegister, error}) {
 	const [formValue, setFormValue] = useState({
 		name:"",
 		email: "",
 		password: "",
 	  });
+
+	  const [isValid, setIsValid] = useState(false);
+	  const [isEmpty, setIsEmpty] = useState(true);
 	
+
+	  React.useEffect(() => {
+	 
+		const InputValid = () => {
+			const nameValid = formValue.name.length >= 2 && formValue.name.length <= 20;
+			const emailValid = email_check.test(formValue.email);
+			const passwordValid = formValue.password.length >= 8;
+	  
+			return nameValid && emailValid && passwordValid;
+		  };
+
+		  setIsValid(InputValid());
+		  setIsEmpty(
+			formValue.name.trim() === "" || formValue.email.trim() === "" || formValue.password.trim() === ""
+		  );
+		  console.log(isEmpty)
+		  console.log(InputValid)
+	  }, [formValue.name, formValue.email, formValue.password]);
+
 	  const handleChange = (e) => {
 		const { name, value } = e.target;
 	
@@ -60,7 +82,7 @@ export default function Register({onRegister}) {
 						type="email"
 						value={formValue.email}
                         onChange={handleChange}
-						className="register__input"
+						className={setIsValid ? "register__input" : ""}
 						placeholder="mislikr45@gmail.com"
 						required
 					/>
@@ -78,6 +100,7 @@ export default function Register({onRegister}) {
 						maxLength="10"
 						required
 					/>
+					<p className="register-error">{error}</p>
 					<button className="form__button" type="submit" onSubmit={handleSubmit}>Зарегистрироваться</button>		
 				</form>	
 				

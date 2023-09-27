@@ -2,7 +2,7 @@ import Form from "../Form/Form";
 import "./Login.css";
 import React, { useState } from "react";
 
-export default function Login({onLogin}) {
+export default function Login({onLogin, error}) {
 	const [formValue, setFormValue] = useState({
 		email: "",
 		password: "",
@@ -60,6 +60,7 @@ export default function Login({onLogin}) {
 						value={formValue.password}
                         onChange={handleChange}
 					/>
+					<p className="login-error">{error}</p>
 					<button className="form__button" type="submit" onSubmit={handleSubmit}>Войти</button>	
 				</form>
 			</main>			
