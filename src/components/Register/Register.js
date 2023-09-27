@@ -1,7 +1,7 @@
 import Form from "../Form/Form";
 import "./Register.css";
 import React, { useState } from "react";
-import email_check from "../../utils/constants"
+import { email_check } from "../../utils/constants"
 
 
 
@@ -19,7 +19,7 @@ export default function Register({onRegister, error}) {
 	  React.useEffect(() => {
 	 
 		const InputValid = () => {
-			const nameValid = formValue.name.length >= 2 && formValue.name.length <= 20;
+			const nameValid = formValue.name.length >= 2 && formValue.name.length <= 10;
 			const emailValid = email_check.test(formValue.email.trim());
 			const passwordValid = formValue.password.length >= 8;
 	  
@@ -99,9 +99,10 @@ export default function Register({onRegister, error}) {
 						minLength="6"
 						maxLength="10"
 						required
+						// {isEmpty || !isValid ? disabled : ""}
 					/>
 					<p className="register-error">{error}</p>
-					<button className={`form__button${isEmpty || !isValid
+					<button className={`form__button ${isEmpty || !isValid
                 ? "form__button-disable"
                 : ""
             }`}
