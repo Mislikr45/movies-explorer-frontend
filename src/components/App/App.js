@@ -35,7 +35,7 @@ function App() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
+  React.useEffect(() => {
     handleTokenCheck();
   }, [loggedIn]);
 
@@ -66,11 +66,13 @@ function App() {
     setLoggedIn(false);
     navigate("/signin");
   };
+
 function getUserData() {
   mainApi.getUserInfo()
   .then((userProfile) => { console.log("token"); setCurrentUser(userProfile)})
   .catch((error) => console.log(`Ошибка: ${error}`))
 }
+
   // React.useEffect(() => {
   //   Promise.all([
   //     mainApi.getUserInfo(),

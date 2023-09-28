@@ -1,7 +1,6 @@
 .savedMovies {
-	max-width: 100%;
-	margin: 0 auto 237px;
-	padding: 0;
+	margin: 0 70px 81px;
+    padding: 0;
 }
 @media screen and (max-width: 768px) {
 	.savedMovies {
