@@ -1,10 +1,9 @@
 import {urlMain, urlImg} from "../constants"
 
 export default class MainApi { 
-  constructor({ url, headers, urlMovie }) { 
+  constructor({ url, urlMovie }) { 
     this._baseUrl = urlMain; 
     this._urlMovie = urlMovie; 
-    this._headers = headers; 
   } 
     _checkResponse(res) { 
     if (!res.ok) { 
@@ -32,7 +31,10 @@ export default class MainApi {
 editeProfile( name, email ) { 
     return fetch(`${this._baseUrl}/users/me `, { 
       method: "PATCH", 
-      headers: this._headers, 
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify( 
         name, 
         email, 
@@ -45,7 +47,10 @@ editeProfile( name, email ) {
     console.log(localStorage.getItem("token"))
     return fetch(`${this._baseUrl}/movies`, { 
       method: "GET", 
-      headers: this._headers, 
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "application/json",
+      },
     }).then(this._checkResponse); 
   } 
 
@@ -54,7 +59,10 @@ editeProfile( name, email ) {
     console.log(movie)
     return fetch(`${this._baseUrl}/movies`, { 
       method: "POST", 
-      headers: this._headers, 
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "application/json",
+      }, 
       body: JSON.stringify({ 
         country: movie.country,
         director: movie.director,
@@ -75,7 +83,10 @@ editeProfile( name, email ) {
   deleteMovie(movieId) { 
     return fetch(`${this._baseUrl}/movies/${movieId}`, { 
       method: "DELETE", 
-      headers: this._headers, 
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "application/json",
+      },
     }).then(this._checkResponse); 
   } 
 
@@ -83,9 +94,4 @@ editeProfile( name, email ) {
 export const mainApi = new MainApi({ 
     url: urlMain, 
     urlMovie:urlImg,
-    headers: { 
-      Authorization : `Bearer ${localStorage.getItem("token")}`, 
-      "Content-Type": "application/json", 
-      'Accept': 'application/json', 
-    } 
   }); 

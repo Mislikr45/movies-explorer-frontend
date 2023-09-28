@@ -83,7 +83,7 @@ function getUserData() {
   //       setMoviesUser(moviesUser);
   //     })
   //     .catch((error) => console.log(`Ошибка: ${error}`));
-  // }, [loggedIn]);
+  // }, [navigate]);
 
 
 
