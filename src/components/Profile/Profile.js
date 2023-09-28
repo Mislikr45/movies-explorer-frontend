@@ -2,8 +2,9 @@ import "./Profile.css";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
-export default function Profile({userData, onUpdateData, onOut}) {
+export default function Profile({userData, onUpdateData, onOut, func}) {
 	const navigate = useNavigate();
+	React.useEffect(() => {func()}, [])
 	function Exit() {
 		onOut();
 		navigate("/");}

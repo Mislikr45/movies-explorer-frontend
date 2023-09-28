@@ -43,16 +43,13 @@ function App() {
     if (localStorage.getItem("token")) {
       const jwt = localStorage.getItem("token");
       console.log(jwt)
-      auth.checkToken(jwt).then((res) => {
-        setUser({ email: res.email });
-        if (res) {
-          setLoggedIn(true);
-          navigate("/movies", { replace: true });
-          mainApi.getUserInfo()
-          .then((userProfile) => { console.log("token"); setCurrentUser(userProfile)})
-          .catch((error) => console.log(`Ошибка: ${error}`))
-         }
-      });
+      // auth.checkToken(jwt).then((res) => {
+      //   setUser({ email: res.email });
+      //   if (res) {
+      //     setLoggedIn(true);
+      //     navigate("/movies", { replace: true });       
+      //    }
+      // });
     }
   };
   
@@ -70,7 +67,11 @@ function App() {
     setLoggedIn(false);
     navigate("/signin");
   };
-
+function getUserData() {
+  mainApi.getUserInfo()
+  .then((userProfile) => { console.log("token"); setCurrentUser(userProfile)})
+  .catch((error) => console.log(`Ошибка: ${error}`))
+}
   // React.useEffect(() => {
   //   Promise.all([
   //     mainApi.getUserInfo(),
@@ -223,6 +224,7 @@ function App() {
                 onUpdateData={handleUpdateUser}
                 loggedIn={loggedIn}
                 onOut={handleSignOut}
+                func={getUserData}
               />
             }
           />
