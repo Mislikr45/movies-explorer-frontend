@@ -70,17 +70,17 @@ function App() {
     navigate("/signin");
   };
 
-  React.useEffect(() => {
-    Promise.all([
-      mainApi.getUserInfo(),
-      mainApi.getMoviesUser()
-    ])
-      .then(([userProfile, moviesUser]) => {
-        setCurrentUser(userProfile);
-        setMoviesUser(moviesUser);
-      })
-      .catch((error) => console.log(`Ошибка: ${error}`));
-  }, [loggedIn]);
+  // React.useEffect(() => {
+  //   Promise.all([
+  //     mainApi.getUserInfo(),
+  //     mainApi.getMoviesUser()
+  //   ])
+  //     .then(([userProfile, moviesUser]) => {
+  //       setCurrentUser(userProfile);
+  //       setMoviesUser(moviesUser);
+  //     })
+  //     .catch((error) => console.log(`Ошибка: ${error}`));
+  // }, [loggedIn]);
 
 
 
