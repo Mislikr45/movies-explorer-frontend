@@ -41,7 +41,6 @@ export function authorize( {email, password} ) {
 	})
   .then(checkResponse)
   .then((data) => {
-    console.log(data.jwt)
     if (data.jwt) {
       localStorage.setItem("token" , data.jwt)
       return data

@@ -42,7 +42,6 @@ function App() {
   const handleTokenCheck = () => {
     if (localStorage.getItem("token")) {
       const jwt = localStorage.getItem("token");
-      console.log(jwt)
       auth.checkToken(jwt).then((res) => {
         if (res) {
           getFilmUser()
@@ -75,27 +74,10 @@ function getUserData() {
 }
 
 function getFilmUser() {
-  // console.log('usersmovie')
   mainApi.getMoviesUser()
-  .then((moviesUser) => { console.log(moviesUser); setMoviesUser(moviesUser)})
+  .then((moviesUser) => {setMoviesUser(moviesUser)})
   .catch((error) => console.log(`Ошибка: ${error}`))
 }
-
-  // React.useEffect(() => {
-  //   Promise.all([
-  //     mainApi.getUserInfo(),
-  //     mainApi.getMoviesUser()
-  //   ])
-  //     .then(([userProfile, moviesUser]) => {
-  //       setCurrentUser(userProfile);
-  //       setMoviesUser(moviesUser);
-  //     })
-  //     .catch((error) => console.log(`Ошибка: ${error}`));
-  // }, [navigate]);
-
-
-
-
 
   function getMoviesBest() {
     movieApi.getMovies()
