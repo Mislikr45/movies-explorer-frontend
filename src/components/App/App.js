@@ -32,7 +32,6 @@ function App() {
   const [erorLogin, setErorLogin]=useState("");
   const [erorRegister, setErorRegister]=useState("");
   const {searchMovie, setSarchMovie}= useState(false);
-  const {searchMovieSave, setSarchMovieSave}= useState(false);
 
   const navigate = useNavigate();
 
@@ -69,19 +68,16 @@ function App() {
   };
 
   React.useEffect(() => {
-      mainApi.getUserInfo()
-      .then((userProfile) => {
-        setCurrentUser(userProfile);        
+    Promise.all([
+      mainApi.getUserInfo(),
+      mainApi.getMoviesUser()
+    ])
+      .then(([userProfile, moviesUser]) => {
+        setCurrentUser(userProfile);
+        setMoviesUser(moviesUser);
       })
       .catch((error) => console.log(`Ошибка: ${error}`));
   }, [navigate]);
-
-  function getMoviesBest() {
-    mainApi.getMoviesUser()
-    .then((movies) => { setMoviesUser(moviesUser)
-    console.log(setMoviesUser) })
-    .catch((error) => console.log(`Ошибка: ${error}`))
-  }
 
 
   function getMoviesBest() {
@@ -192,7 +188,7 @@ function App() {
                 onSave={saveMovie}
                 onDelete={deleteFilm}
                 getMovieFunc={getMoviesBest}
-                setSearch={setSarchMovieSave}
+                setSearch={setSarchMovie}
               />
             }
           />
@@ -206,7 +202,6 @@ function App() {
                 saveMovies={moviesUser}
                 loggedIn={loggedIn}
                 onDelete={deleteFilm}
-                setSearch={setSarchMovie}
               />
             }
           />
