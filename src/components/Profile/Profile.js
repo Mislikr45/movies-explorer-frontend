@@ -11,7 +11,7 @@ export default function Profile({userData, onUpdateData, onOut, func}) {
 		navigate("/");}
 
 		const [formValue, setFormValue] = useState({
-			name:userData.name,
+			name: userData.name,
 			email: userData.email,
 
 		  });
@@ -27,10 +27,9 @@ export default function Profile({userData, onUpdateData, onOut, func}) {
 	
 	  const handleSubmit = (e) => {
 		e.preventDefault();
-		const { name, email } = formValue;
-		console.log(onUpdateData)
-		console.log(name, email)
-		onUpdateData({ name, email });
+		const name = formValue.name ? formValue.name : userData.name;
+		const email = formValue.email ? formValue.email : userData.email;
+		onUpdateData({ name , email });
 		console.log("profile");
 	  };
 	
