@@ -32,6 +32,7 @@ function App() {
   const [erorLogin, setErorLogin]=useState("");
   const [erorRegister, setErorRegister]=useState("");
   const {searchMovie, setSarchMovie}= useState(false);
+  const { tokenCheck, setTokenCheck} = useState(false);
 
   const navigate = useNavigate();
 
@@ -40,13 +41,15 @@ function App() {
   }, [loggedIn]);
 
   const handleTokenCheck = () => {
-    if (localStorage.getItem("token")) {
-      const jwt = localStorage.getItem("token");
+    if (localStorage.getItem("jwt")) {
+      const jwt = localStorage.getItem("jwt");
       auth.checkToken(jwt).then((res) => {
         setUser({ email: res.email });
         if (res) {
           setLoggedIn(true);
           navigate("/movies", { replace: true });
+          setTokenCheck(true)
+
         }
       });
     }
@@ -64,7 +67,7 @@ function App() {
     localStorage.removeItem("searchResults");
     localStorage.removeItem("currentPath");
     setLoggedIn(false);
-    navigate("/");
+    navigate("/signin");
   };
 
   React.useEffect(() => {
@@ -77,7 +80,7 @@ function App() {
         setMoviesUser(moviesUser);
       })
       .catch((error) => console.log(`Ошибка: ${error}`));
-  }, [navigate]);
+  }, [setTokenCheck]);
 
 
   function getMoviesBest() {
