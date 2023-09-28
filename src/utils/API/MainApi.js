@@ -38,6 +38,7 @@ editeProfile( name, email ) {
 
 
   getMoviesUser() { 
+    console.log(localStorage.getItem("token"))
     return fetch(`${this._baseUrl}/movies`, { 
       method: "GET", 
       headers: this._headers, 
