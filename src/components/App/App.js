@@ -32,6 +32,7 @@ function App() {
   const [erorLogin, setErorLogin]=useState("");
   const [erorRegister, setErorRegister]=useState("");
   const {searchMovie, setSarchMovie}= useState(false);
+  const {searchMovieSave, setSarchMovieSave}= useState(false);
 
   const navigate = useNavigate();
 

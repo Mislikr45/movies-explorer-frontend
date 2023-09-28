@@ -15,14 +15,13 @@ export default function Search({
   };
 
   const handleShortFilmToggle = () => {
-    setSearch(true);
     setIsShortFilm(!isShortFilm);
     onFilter(query, !isShortFilm);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    setSearch(true);
     onSearch(query, isShortFilm);
   };
   const handleInputKeyDown = (event) => {
