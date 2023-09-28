@@ -47,7 +47,7 @@ function App() {
         setUser({ email: res.email });
         if (res) {
           setLoggedIn(true);
-          navigate("/movies", { replace: true });
+          navigate("/", { replace: true });
         }
       });
     }
@@ -65,7 +65,7 @@ function App() {
     localStorage.removeItem("searchResults");
     localStorage.removeItem("currentPath");
     setLoggedIn(false);
-    navigate("/signin");
+    navigate("/");
   };
 
   React.useEffect(() => {
