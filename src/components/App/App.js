@@ -66,7 +66,7 @@ function App() {
     localStorage.removeItem("searchResults");
     localStorage.removeItem("currentPath");
     setLoggedIn(false);
-    navigate("/");
+    navigate("/signin");
   };
 
   React.useEffect(() => {
@@ -84,8 +84,7 @@ function App() {
 
   function getMoviesBest() {
     movieApi.getMovies()
-    .then((movies) => { setMovies(movies)
-    console.log(setMovies) })
+    .then((movies) => { setMovies(movies)})
     .catch((error) => console.log(`Ошибка: ${error}`))
   }
 
