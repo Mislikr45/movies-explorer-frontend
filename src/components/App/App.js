@@ -141,7 +141,7 @@ React.useEffect(() => {
     mainApi
       .handleAddMovieApi(movie)
       .then((newMovie) => {
-        setMovies([newMovie, ...movies]);
+        setMoviesUser([newMovie, ...movies]);
       })
       .catch((err) => {
         console.log(err);
@@ -156,8 +156,9 @@ React.useEffect(() => {
     mainApi
       .deleteMovie(movie._id)
       .then((item) => {
-        setMovies((prevState) =>
+        setMoviesUser((prevState) =>
           prevState.filter((item) => item._id !== movie._id),
+          console.log()
         );
       })
       .catch((err) => {
