@@ -5,7 +5,7 @@ import Preloader from "./Preloader/Preloader";
 import Search from "../Search/Search";
 import { useEffect, useState } from "react";
 
-function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc }) {
+function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch }) {
   // const [isMovieButton, setMovieButton] = React.useState(true);
   const [visibleMovies, setVisibleMovies] = useState(onVisibleMovie());
   const [windowWith, setwindowWith] = useState([]);
@@ -37,7 +37,7 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc }) {
 
   useEffect(() => {
     getMovieFunc()
-  }, [setIsLoading]);
+  }, [setSearch]);
 
   useEffect(() => {
     localStorage.setItem("isShortFilm", isShortFilm);
@@ -151,6 +151,7 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc }) {
         setIsShortFilm={updateIsShortFilm}
         onSearch={handleSearch}
         onFilter={filterMovies}
+        setSearch={setSearch}
       />
       {isLoading ? (
         <Preloader />

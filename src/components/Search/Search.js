@@ -8,12 +8,14 @@ export default function Search({
   setIsShortFilm,
   onSearch,
   onFilter,
+  setSearch,
 }) {
   const handleInputChange = (event) => {
     setQuery(event.target.value);
   };
 
   const handleShortFilmToggle = () => {
+    setSearch(true);
     setIsShortFilm(!isShortFilm);
     onFilter(query, !isShortFilm);
   };

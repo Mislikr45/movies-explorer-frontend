@@ -31,6 +31,7 @@ function App() {
   const [checkRegister, setCheckRegister] = useState(false); //Регистрация
   const [erorLogin, setErorLogin]=useState("");
   const [erorRegister, setErorRegister]=useState("");
+  const {search, setSearch}= useState(false);
 
   const navigate = useNavigate();
 
@@ -70,11 +71,9 @@ function App() {
     Promise.all([
       mainApi.getUserInfo(),
       mainApi.getMoviesUser(),
-      // movieApi.getMovies(),
     ])
-      .then(([userProfile, moviesUser, movies]) => {
+      .then(([userProfile, moviesUser]) => {
         setCurrentUser(userProfile);
-        // setMovies(movies);
         setMoviesUser(moviesUser);
       })
       .catch((error) => console.log(`Ошибка: ${error}`));
@@ -189,6 +188,7 @@ function App() {
                 onSave={saveMovie}
                 onDelete={deleteFilm}
                 getMovieFunc={getMoviesBest}
+                setSearch={setSearch}
               />
             }
           />
