@@ -110,6 +110,7 @@ function App() {
     auth
       .authorize({ email, password })
       .then((data) => {
+        console.log(data)
         localStorage.setItem("token", data.token);
         setUser({ email: email });
         setLoggedIn(true);
