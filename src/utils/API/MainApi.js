@@ -9,7 +9,7 @@ export default class MainApi {
     if (!res.ok) { 
       return Promise.reject(`Ошибка: ${res.status}`);
     } 
-    return res.json(console.log(res)); 
+    return res.json(); 
   }
 
 // возвращает информацию о пользователе (email и имя)
