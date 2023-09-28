@@ -15,7 +15,7 @@ function MoviesCard({
   const imageUrl = !isSavedMovies ? urlImg + movie.image.url : movie.image;
 
   const moviesButtonSaved = `${
-    userProfile._id === movie.owner ? disabled : enabled
+    userProfile._id === movie.owner ? enabled : disabled
   }`;
 
   const moviesButton = `${isActive ? enabled : disabled}`;
