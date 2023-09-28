@@ -43,13 +43,13 @@ function App() {
     if (localStorage.getItem("token")) {
       const jwt = localStorage.getItem("token");
       console.log(jwt)
-      // auth.checkToken(jwt).then((res) => {
-      //   setUser({ email: res.email });
-      //   if (res) {
-      //     setLoggedIn(true);
-      //     navigate("/movies", { replace: true });       
-      //    }
-      // });
+      auth.checkToken(jwt).then((res) => {
+        setUser({ email: res.email });
+        if (res) {
+          setLoggedIn(true);
+          navigate("/movies", { replace: true });       
+         }
+      });
     }
   };
   
@@ -118,10 +118,11 @@ function getUserData() {
       .then((data) => {
         console.log(data)
         localStorage.setItem("jwt", data.token);
-        setUser({ email: email });
-        setLoggedIn(true);
-        setErorLogin('');
-        navigate("/movies", { replace: true });   
+        // setUser({ email: email });
+        handleTokenCheck();
+        // setLoggedIn(true);
+        // setErorLogin('');
+        // navigate("/movies", { replace: true });   
 
       })
       .catch((err) => {
