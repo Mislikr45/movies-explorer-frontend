@@ -18,7 +18,10 @@ export default class MainApi {
     console.log(localStorage.getItem("token"))
     return fetch(`${this._baseUrl}/users/me`, { 
       method: "GET", 
-      headers: this._headers, 
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "application/json",
+      } 
     }).then(this._checkResponse); 
   } 
 
