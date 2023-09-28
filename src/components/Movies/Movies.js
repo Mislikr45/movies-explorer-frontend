@@ -4,6 +4,7 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Preloader from "./Preloader/Preloader";
 import Search from "../Search/Search";
 import { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
 
 function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch }) {
   // const [isMovieButton, setMovieButton] = React.useState(true);
@@ -35,9 +36,9 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
     localStorage.setItem("query", query);
   }, [query]);
 
-  // useEffect(() => {
-  //   getMovieFunc()
-  // }, [setSearch]);
+  useEffect(() => {
+    getMovieFunc()
+  }, [Navigate]);
 
   useEffect(() => {
     localStorage.setItem("isShortFilm", isShortFilm);
@@ -152,7 +153,6 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
         onSearch={handleSearch}
         onFilter={filterMovies}
         setSearch={setSearch}
-        getMovieFunc={getMovieFunc}
       />
       {isLoading ? (
         <Preloader />

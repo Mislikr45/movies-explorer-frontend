@@ -8,7 +8,6 @@ export default function Search({
   setIsShortFilm,
   onSearch,
   onFilter,
-  setSearch,
   getMovieFunc
 }) {
   const handleInputChange = (event) => {
@@ -22,7 +21,6 @@ export default function Search({
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // setSearch(true);
     getMovieFunc()
     onSearch(query, isShortFilm);
   };
