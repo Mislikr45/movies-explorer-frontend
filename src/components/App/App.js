@@ -119,6 +119,7 @@ function App() {
       .catch((err) => {
         setErorLogin("что-то пошло не так");
         checkRegisterAdd();
+        setLoggedIn(false);
       });
   }
 
