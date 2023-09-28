@@ -48,7 +48,7 @@ function App() {
           setLoggedIn(true);
           navigate("/movies", { replace: true });
           mainApi.getUserInfo()
-          .then((userProfile) => { setCurrentUser(userProfile)})
+          .then((userProfile) => { console.log("token"); setCurrentUser(userProfile)})
           .catch((error) => console.log(`Ошибка: ${error}`))
          }
       });
@@ -70,17 +70,17 @@ function App() {
     navigate("/signin");
   };
 
-  // React.useEffect(() => {
-  //   Promise.all([
-  //     mainApi.getUserInfo(),
-  //     mainApi.getMoviesUser()
-  //   ])
-  //     .then(([userProfile, moviesUser]) => {
-  //       setCurrentUser(userProfile);
-  //       setMoviesUser(moviesUser);
-  //     })
-  //     .catch((error) => console.log(`Ошибка: ${error}`));
-  // }, [loggedIn]);
+  React.useEffect(() => {
+    Promise.all([
+      mainApi.getUserInfo(),
+      mainApi.getMoviesUser()
+    ])
+      .then(([userProfile, moviesUser]) => {
+        setCurrentUser(userProfile);
+        setMoviesUser(moviesUser);
+      })
+      .catch((error) => console.log(`Ошибка: ${error}`));
+  }, [loggedIn]);
 
 
 
