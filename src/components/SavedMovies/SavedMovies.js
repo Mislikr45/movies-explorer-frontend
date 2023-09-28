@@ -4,7 +4,7 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import { useEffect, useState } from "react";
 import Search from "../Search/Search";
 
-function SavedMovies({ saveMovies, onDelete, userProfile }) {
+function SavedMovies({ saveMovies, onDelete, userProfile, setSearch }) {
   useEffect(() => {
     localStorage.setItem("currentPath", "/saved-movies");
   }, []);
@@ -57,6 +57,7 @@ function SavedMovies({ saveMovies, onDelete, userProfile }) {
         setIsShortFilm={setIsShortFilm}
         onSearch={handleSearch}
         onFilter={filterMovies}
+        setSearch={setSearch}
       />
       <MoviesCardList
         moviesList={searchResults}
