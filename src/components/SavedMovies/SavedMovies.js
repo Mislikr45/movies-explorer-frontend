@@ -16,6 +16,8 @@ function SavedMovies({ saveMovies, onDelete, userProfile, setSearch }) {
     filterMovies(query, isShortFilm);
   }, [saveMovies, query, isShortFilm]);
 
+  setSearchResults(saveMovies);
+
   const handleSearch = (newQuery, newIsShortFilm) => {
     setIsShortFilm(newIsShortFilm);
 
