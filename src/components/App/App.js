@@ -45,6 +45,7 @@ function App() {
       console.log(jwt)
       auth.checkToken(jwt).then((res) => {
         if (res) {
+          getFilmUser()
           setLoggedIn(true);
           navigate("/movies", { replace: true });       
          }
@@ -70,6 +71,12 @@ function App() {
 function getUserData() {
   mainApi.getUserInfo()
   .then((userProfile) => { console.log("token"); setCurrentUser(userProfile)})
+  .catch((error) => console.log(`Ошибка: ${error}`))
+}
+
+function getFilmUser() {
+  mainApi.getMoviesUser()
+  .then((moviesUser) => { console.log("token"); setMoviesUser(moviesUser)})
   .catch((error) => console.log(`Ошибка: ${error}`))
 }
 
