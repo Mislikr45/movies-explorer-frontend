@@ -13,10 +13,9 @@ function SavedMovies({ saveMovies, onDelete, userProfile, setSearch }) {
   const [isShortFilm, setIsShortFilm] = useState(false);
 
   useEffect(() => {
+    setSearchResults()
     filterMovies(query, isShortFilm);
   }, [saveMovies, query, isShortFilm]);
-
-  setSearchResults(saveMovies);
 
   const handleSearch = (newQuery, newIsShortFilm) => {
     setIsShortFilm(newIsShortFilm);
