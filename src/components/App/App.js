@@ -42,6 +42,7 @@ function App() {
   const handleTokenCheck = () => {
     if (localStorage.getItem("token")) {
       const jwt = localStorage.getItem("token");
+      console.log(jwt)
       auth.checkToken(jwt).then((res) => {
         setUser({ email: res.email });
         if (res) {
