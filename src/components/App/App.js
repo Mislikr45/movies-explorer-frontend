@@ -35,7 +35,7 @@ function App() {
 
   const navigate = useNavigate();
 
-  React.useEffect(() => {
+  useEffect(() => {
     handleTokenCheck();
   }, [loggedIn]);
 
@@ -44,7 +44,6 @@ function App() {
       const jwt = localStorage.getItem("token");
       console.log(jwt)
       auth.checkToken(jwt).then((res) => {
-        setUser({ email: res.email });
         if (res) {
           setLoggedIn(true);
           navigate("/movies", { replace: true });       
@@ -118,12 +117,7 @@ function getUserData() {
       .then((data) => {
         console.log(data)
         localStorage.setItem("jwt", data.token);
-        // setUser({ email: email });
         handleTokenCheck();
-        // setLoggedIn(true);
-        // setErorLogin('');
-        // navigate("/movies", { replace: true });   
-
       })
       .catch((err) => {
         setErorLogin("что-то пошло не так");
