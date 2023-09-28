@@ -111,7 +111,7 @@ function App() {
       .authorize({ email, password })
       .then((data) => {
         console.log(data)
-        localStorage.setItem("token", data.token);
+        localStorage.setItem("jwt", data.token);
         setUser({ email: email });
         setLoggedIn(true);
         setErorLogin('');
