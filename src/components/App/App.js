@@ -69,7 +69,7 @@ function App() {
 
 function getUserData() {
   mainApi.getUserInfo()
-  .then((userProfile) => { console.log("token"); setCurrentUser(userProfile)})
+  .then((userProfile) => { setCurrentUser(userProfile)})
   .catch((error) => console.log(`Ошибка: ${error}`))
 }
 
@@ -107,7 +107,6 @@ function getFilmUser() {
     auth
       .authorize({ email, password })
       .then((data) => {
-        console.log(data)
         localStorage.setItem("jwt", data.token);
         handleTokenCheck();
       })

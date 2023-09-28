@@ -5,7 +5,6 @@ import React, { useState } from "react";
 export default function Profile({userData, onUpdateData, onOut, func}) {
 	const navigate = useNavigate();
 	React.useEffect(() => {
-		console.log(localStorage.getItem("token"))
 		func()}, [])
 	function Exit() {
 		onOut();
