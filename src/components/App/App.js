@@ -47,7 +47,7 @@ function App() {
         if (res) {
           setLoggedIn(true);
           navigate("/movies", { replace: true });
-          
+          mainApi.getUserInfo().then((userProfile)=> {setCurrentUser(userProfile).catch((error) => console.log(`Ошибка: ${error}`));})
 
         }
       });
@@ -69,17 +69,20 @@ function App() {
     navigate("/signin");
   };
 
-  React.useEffect(() => {
-    Promise.all([
-      mainApi.getUserInfo(),
-      mainApi.getMoviesUser()
-    ])
-      .then(([userProfile, moviesUser]) => {
-        setCurrentUser(userProfile);
-        setMoviesUser(moviesUser);
-      })
-      .catch((error) => console.log(`Ошибка: ${error}`));
-  }, [loggedIn]);
+  // React.useEffect(() => {
+  //   Promise.all([
+  //     mainApi.getUserInfo(),
+  //     mainApi.getMoviesUser()
+  //   ])
+  //     .then(([userProfile, moviesUser]) => {
+  //       setCurrentUser(userProfile);
+  //       setMoviesUser(moviesUser);
+  //     })
+  //     .catch((error) => console.log(`Ошибка: ${error}`));
+  // }, [loggedIn]);
+
+
+
 
 
   function getMoviesBest() {
@@ -115,7 +118,8 @@ function App() {
         setUser({ email: email });
         setLoggedIn(true);
         setErorLogin('');
-        navigate("/movies", { replace: true });        
+        navigate("/movies", { replace: true });   
+
       })
       .catch((err) => {
         setErorLogin("что-то пошло не так");
