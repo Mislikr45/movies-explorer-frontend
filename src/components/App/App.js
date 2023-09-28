@@ -74,7 +74,7 @@ function App() {
         setCurrentUser(userProfile);        
       })
       .catch((error) => console.log(`Ошибка: ${error}`));
-  }, [navigate("/profile")]);
+  }, [navigate]);
 
   function getMoviesBest() {
     mainApi.getMoviesUser()
