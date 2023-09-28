@@ -18,6 +18,7 @@ export default class MainApi {
       method: "GET", 
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`,
+        Accept: "application/json",
         "Content-Type": "application/json",
       } 
     }).then(this._checkResponse); 
@@ -32,6 +33,7 @@ editeProfile( name, email ) {
       method: "PATCH", 
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`,
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify( 
@@ -47,6 +49,7 @@ editeProfile( name, email ) {
       method: "GET", 
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`,
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
     }).then(this._checkResponse); 
@@ -58,6 +61,7 @@ editeProfile( name, email ) {
       method: "POST", 
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`,
+        Accept: "application/json",
         "Content-Type": "application/json",
       }, 
       body: JSON.stringify({ 
@@ -82,7 +86,9 @@ editeProfile( name, email ) {
       method: "DELETE", 
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`,
+        Accept: "application/json",
         "Content-Type": "application/json",
+        
       },
     }).then(this._checkResponse); 
   } 
