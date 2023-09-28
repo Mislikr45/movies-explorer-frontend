@@ -48,8 +48,6 @@ function App() {
         if (res) {
           setLoggedIn(true);
           navigate("/movies", { replace: true });
-          setTokenCheck(true)
-
         }
       });
     }
