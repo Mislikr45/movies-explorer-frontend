@@ -45,7 +45,6 @@ function App() {
       const jwt = localStorage.getItem("token");
       auth.checkToken(jwt).then((res) => {
         if (res) {
-          getFilmUser()
           setLoggedIn(true);
           navigate("/movies", { replace: true });       
          }
@@ -79,6 +78,10 @@ function getFilmUser() {
   .then((moviesUser) => {setMoviesUser(moviesUser)})
   .catch((error) => console.log(`Ошибка: ${error}`))
 }
+
+React.useEffect(() => {
+  getFilmUser();
+}, [navigate]);
 
   function getMoviesBest() {
     movieApi.getMovies()
