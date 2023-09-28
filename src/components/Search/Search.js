@@ -21,7 +21,6 @@ export default function Search({
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    getMovieFunc()
     onSearch(query, isShortFilm);
   };
   const handleInputKeyDown = (event) => {
