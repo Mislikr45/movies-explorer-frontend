@@ -15,6 +15,7 @@ export default class MainApi {
 
 // возвращает информацию о пользователе (email и имя)
   getUserInfo() { 
+    console.log(localStorage.getItem("token"))
     return fetch(`${this._baseUrl}/users/me`, { 
       method: "GET", 
       headers: this._headers, 
