@@ -75,7 +75,7 @@ function getUserData() {
 }
 
 function getFilmUser() {
-  console.log('usersmovie')
+  // console.log('usersmovie')
   mainApi.getMoviesUser()
   .then((moviesUser) => { console.log(moviesUser); setMoviesUser(moviesUser)})
   .catch((error) => console.log(`Ошибка: ${error}`))
