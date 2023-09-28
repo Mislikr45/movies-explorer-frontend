@@ -25,9 +25,6 @@ export default class MainApi {
   } 
 
 // обновляет информацию о пользователе (email и имя)
-
-
-
 editeProfile( name, email ) { 
     return fetch(`${this._baseUrl}/users/me `, { 
       method: "PATCH", 
@@ -83,12 +80,11 @@ editeProfile( name, email ) {
   // удаляет фильм
   deleteMovie(movieId) { 
     return fetch(`${this._baseUrl}/movies/${movieId}`, { 
-      method: "DELETE", 
+      method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`,
         Accept: "application/json",
-        "Content-Type": "application/json",
-        
+        "Content-Type": "application/json",        
       },
     }).then(this._checkResponse); 
   } 
