@@ -35,9 +35,9 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
     localStorage.setItem("query", query);
   }, [query]);
 
-  useEffect(() => {
-    getMovieFunc()
-  }, [setSearch]);
+  // useEffect(() => {
+  //   getMovieFunc()
+  // }, [setSearch]);
 
   useEffect(() => {
     localStorage.setItem("isShortFilm", isShortFilm);
