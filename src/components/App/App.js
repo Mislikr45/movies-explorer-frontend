@@ -158,7 +158,7 @@ React.useEffect(() => {
       .then((item) => {
         setMoviesUser((prevState) =>
           prevState.filter((item) => item._id !== movie._id),
-          console.log(moviesUser)
+          console.log(setMoviesUser)
         );
       })
       .catch((err) => {
