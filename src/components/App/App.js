@@ -47,9 +47,10 @@ function App() {
         if (res) {
           setLoggedIn(true);
           navigate("/movies", { replace: true });
-          mainApi.getUserInfo().then((userProfile) => {setCurrentUser(userProfile)}).catch((error) => console.log(`Ошибка: ${error}`))
-
-        }
+          mainApi.getUserInfo()
+          .then((userProfile) => { setCurrentUser(userProfile)})
+          .catch((error) => console.log(`Ошибка: ${error}`))
+         }
       });
     }
   };
