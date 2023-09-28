@@ -110,7 +110,7 @@ function App() {
     auth
       .authorize({ email, password })
       .then((data) => {
-        localStorage.setItem("jwt", data.token);
+        localStorage.setItem("token", data.token);
         setUser({ email: email });
         setLoggedIn(true);
         setErorLogin('');
