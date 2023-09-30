@@ -24,7 +24,7 @@ import ProtectedRouteElement from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
   //Хуки
-
+  const [isPreloader, setPreloader] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [movies, setMovies] = useState([]);
   const [moviesUser, setMoviesUser] = useState([]);
@@ -81,8 +81,11 @@ function getUserData() {
 
 function getFilmUser() {
   mainApi.getMoviesUser()
-  .then((moviesUser) => {setMoviesUser(moviesUser)})
+  .then((moviesUser) => {
+    setPreloader(true)
+    setMoviesUser(moviesUser)})
   .catch((error) => console.log(`Ошибка: ${error}`))
+  .finally(() => {setPreloader(false)})
 }
 
 React.useEffect(() => {
@@ -202,6 +205,7 @@ React.useEffect(() => {
                 onDelete={deleteFilm}
                 getMovieFunc={getMoviesBest}
                 setSearch={setSarchMovie}
+                isPreloader={isPreloader}
               />
             }
           />

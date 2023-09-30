@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import {DURATION} from '../../utils/constants'
 
-function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch }) {
+function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch, isPreloader }) {
   // const [isMovieButton, setMovieButton] = React.useState(true);
   const [visibleMovies, setVisibleMovies] = useState(onVisibleMovie());
   const [windowWith, setwindowWith] = useState(window.innerWidth);
@@ -37,9 +37,6 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
     localStorage.setItem("query", query);
   }, [query]);
 
-  // useEffect(() => {
-  //   getMovieFunc()
-  // }, [Navigate]);
 
   useEffect(() => {
     localStorage.setItem("isShortFilm", isShortFilm);
@@ -80,8 +77,6 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
   }, [windowWith]);
 
   const filterMovies = (query, isShortFilm) => {
-    
-    setIsLoading(true);
 
     let filteredMovies = movies;
 
@@ -100,14 +95,9 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
     setSearchResults(filteredResults);
     localStorage.setItem("searchResults", JSON.stringify(filteredResults));
 
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 300);
-
   };
 
   const handleSearch = async (query, isShortFilm) => {
-    setIsLoading(true);
     let filteredMovies = movies;
     if (movies.length === 0) {
       filteredMovies = await movies;
@@ -135,9 +125,6 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
     setHasSearched(true);
     localStorage.setItem("searchResults", JSON.stringify(searchResults));
     setVisibleMovies(onVisibleMovie());
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 800);
     return;
   };
 
@@ -153,7 +140,7 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
         setSearch={setSearch}
         getMovieFunc={getMovieFunc}
       />
-      {isLoading ? (
+      {isPreloader ? (
         <Preloader />
       ) : !movies || (hasSearched && searchResults.length === 0) ? ( 
 
