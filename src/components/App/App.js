@@ -103,8 +103,10 @@ React.useEffect(() => {
     auth
       .register(email, password, name)
       .then((res) => {
-        setErorRegister("");
-        navigate("/signin", { replace: true });
+        console.log(email, password)
+       setErorRegister("");
+        handleAuthorization( { email, password })
+
       })
       .catch((err) => {
         setErorRegister("что-то пошло не так");
