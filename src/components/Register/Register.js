@@ -68,9 +68,6 @@ export default function Register({onRegister, error}) {
 						placeholder="Sergey"
 						value={formValue.name}
                         onChange={handleChange}
-						required
-						minLength="2"
-						maxLength="10"
 					/>
 
 					<label className="register__label">E-mail</label>
@@ -82,7 +79,7 @@ export default function Register({onRegister, error}) {
                         onChange={handleChange}
 						className={setIsValid ? "register__input" : ""}
 						placeholder="mislikr45@gmail.com"
-						required
+
 					/>
 
 					<label className="register__label">Пароль</label>
@@ -93,10 +90,7 @@ export default function Register({onRegister, error}) {
 						value={formValue.password}
                         onChange={handleChange}
 						className="register__input"
-						placeholder="******"
-						minLength="6"
-						required
-						
+						placeholder="******"					
 					/>
 					<p className="register-error">{error}</p>
 					<button className={`form__button ${isEmpty || !isValid

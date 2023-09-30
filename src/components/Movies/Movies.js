@@ -172,7 +172,7 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
         />
       )}
       <button
-        className={hasSearched && searchResults.length === 0 ? "movies__button-more" : "movies__button-more_none"}
+        className={hasSearched && searchResults.length === 0 ? "movies__button-more_none" : "movies__button-more"}
         type="button"
         onClick={handleShowMoreClick}
       >

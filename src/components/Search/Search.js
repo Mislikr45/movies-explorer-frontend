@@ -39,7 +39,6 @@ export default function Search({
             name="movies"
             type="movies"
             className="search__input"
-            required
             value={query}
             onChange={handleInputChange}
             onKeyDown={handleInputKeyDown}
