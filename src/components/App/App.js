@@ -118,11 +118,11 @@ React.useEffect(() => {
     auth
       .authorize({ email, password })
       .then((data) => {
+        setLoggedIn(true); 
         localStorage.setItem("jwt", data.token);
         handleTokenCheck();
       })
       .then((data) => {
-        console.log('сработало handleAuthorization')
         navigate("/movies", { replace: true });   
       })
       .catch((err) => {
