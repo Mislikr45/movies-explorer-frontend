@@ -53,12 +53,12 @@ function Header({ loggedIn }) {
                 <NavLink
                   to="/movies"
                   className={({ isActive, isPending }) =>
-                    !isPending
-                      ? "navigation__nav-link"
-                      : !isActive
-                      ? "navigation__nav-link "
-                      : "navigation__nav-link navigation__nav-link-underline"
-                  }
+                  isPending
+                    ? "navigation__nav-link navigation__nav-link-underline"
+                    : isActive
+                    ? "navigation__nav-link "
+                    : "navigation__nav-link"
+                }
                 >
                   Фильмы
                 </NavLink>
@@ -67,12 +67,12 @@ function Header({ loggedIn }) {
                 <NavLink
                   to="/saved-movies"
                   className={({ isActive, isPending }) =>
-                    !isPending
-                      ? "navigation__nav-link"
-                      : !isActive
-                      ? "navigation__nav-link "
-                      : "navigation__nav-link navigation__nav-link-underline"
-                  }
+                  isPending
+                    ? "navigation__nav-link navigation__nav-link-underline"
+                    : isActive
+                    ? "navigation__nav-link "
+                    : "navigation__nav-link"
+                }
                 >
                   Сохраненные фильмы
                 </NavLink>
@@ -107,12 +107,12 @@ function Header({ loggedIn }) {
                 <NavLink
                   to="/movies"
                   className={({ isActive, isPending }) =>
-                    !isPending
-                      ? "navigation__nav-link"
-                      : !isActive
-                      ? "navigation__nav-link "
-                      : "navigation__nav-link navigation__nav-link-underline"
-                  }
+                  isPending
+                    ? "navigation__nav-link navigation__nav-link-underline"
+                    : isActive
+                    ? "navigation__nav-link "
+                    : "navigation__nav-link"
+                }
                 >
                   Фильмы
                 </NavLink>
@@ -121,12 +121,12 @@ function Header({ loggedIn }) {
                 <NavLink
                   to="/saved-movies"
                   className={({ isActive, isPending }) =>
-                    !isPending
-                      ? "navigation__nav-link"
-                      : !isActive
-                      ? "navigation__nav-link "
-                      : "navigation__nav-link navigation__nav-link-underline"
-                  }
+                  isPending
+                    ? "navigation__nav-link navigation__nav-link-underline"
+                    : isActive
+                    ? "navigation__nav-link "
+                    : "navigation__nav-link"
+                }
                 >
                   Сохраненные фильмы
                 </NavLink>
