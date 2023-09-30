@@ -19,6 +19,7 @@ export default function Register({onRegister, error}) {
 	  React.useEffect(() => {
 	 
 		const InputValid = () => {
+			console.log(formValue)
 			const nameValid = formValue.name.length >= 2 && formValue.name.length <= 10;
 			const emailValid = EMAIL_CHECK.test(formValue.email.trim());
 			const passwordValid = formValue.password.length >= 6;
