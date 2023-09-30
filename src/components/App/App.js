@@ -105,7 +105,7 @@ React.useEffect(() => {
       .then((res) => {
         console.log(email, password)
        setErorRegister("");
-        handleAuthorization( { email, password })
+        handleAuthorization( email, password)
 
       })
       .catch((err) => {
