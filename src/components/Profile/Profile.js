@@ -2,10 +2,14 @@ import "./Profile.css";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext"
+import { EMAIL_CHECK } from "../../utils/constants"
 
 export default function Profile({onUpdateData, onOut, func}) {
 	const navigate = useNavigate();
+	const [isValid, setIsValid] = useState(false);
+	const [isEmpty, setIsEmpty] = useState(true);
 	const currentUser = React.useContext(CurrentUserContext);
+
 	React.useEffect(() => {
 		func()}, [])
 	function Exit() {
@@ -26,6 +30,22 @@ export default function Profile({onUpdateData, onOut, func}) {
 				[name]: value,
 			  });
 			};
+
+			React.useEffect(() => {
+	 
+				const InputValid = () => {
+					const nameValid = formValue.name.length >= 2 && formValue.name.length <= 10;
+					const emailValid = EMAIL_CHECK.test(formValue.email.trim());
+	                const equalsName = formValue.name === currentUser.name;
+					const equalsEmail = formValue.email === currentUser.name
+					return nameValid && emailValid && !equalsName && !equalsEmail
+				  };
+		
+				  setIsValid(InputValid());
+				  setIsEmpty(
+					formValue.name.trim() === "" || formValue.email.trim() === "" || formValue.password.trim() === ""
+				  );
+			  }, [formValue.name, formValue.email, formValue.password]);
 	
 	  const handleSubmit = (e) => {
 		e.preventDefault();
@@ -65,7 +85,14 @@ export default function Profile({onUpdateData, onOut, func}) {
                     onChange={handleChange}
 				/>
 				</div>
-				<button className="profile__button-edite" type="submit" onSubmit={handleSubmit}> 
+				<button className=
+				{`profile__button-edite ${isEmpty || !isValid
+					? "profile__button-edite-disable"
+					: ""
+				}`}
+				 type="submit"
+				disabled={isEmpty || !isValid ? true : false}
+				 onSubmit={handleSubmit}> 
 				Редактировать
 			</button>
 			</form>
