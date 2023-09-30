@@ -105,9 +105,14 @@ React.useEffect(() => {
       .then((res) => {
         console.log(email, password)
        setErorRegister("");
-        handleAuthorization( email, password)
+        handleAuthorization( email, password);
+        setLoggedIn(true); 
+        navigate("/movies", { replace: true });   
       })
-      .then(navigate("/movies", { replace: true }))
+      .then((data) => {
+        console.log('сработало handleRegister')
+   
+      })
       .catch((err) => {
         setErorRegister("что-то пошло не так");
         checkRegisterAdd();
@@ -122,6 +127,7 @@ React.useEffect(() => {
         handleTokenCheck();
       })
       .then((data) => {
+        console.log('сработало handleAuthorization')
         navigate("/movies", { replace: true });   
       })
       .catch((err) => {
