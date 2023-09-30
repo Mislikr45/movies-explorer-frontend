@@ -68,6 +68,8 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
 
   useEffect(() => {
     function handleResize() {
+      console.log(window.innerWidth)
+      console.log(onVisibleMovie)
       onVisibleMovie()
       // setVisibleMovies(onVisibleMovie());
     }
