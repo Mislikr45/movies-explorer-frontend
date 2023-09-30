@@ -44,7 +44,7 @@ export default function Profile({onUpdateData, onOut, func}) {
 		
 				  setIsValid(InputValid());
 				  setIsEmpty(
-					formValue.name.trim() === "" || formValue.email.trim() === "" || formValue.password.trim() === ""
+					formValue.name.trim() === "" || formValue.email.trim() === ""
 				  );
 			  }, [formValue.name, formValue.email]);
 	
