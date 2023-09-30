@@ -7,6 +7,11 @@
 	width: 270px;
 	height: 151px;
 }
+
+.movies__link{
+	width: 270px;
+	height: 151px;
+}
 .movies__card-about {
 	padding-top: 9px;
 	display: flex;
@@ -90,6 +95,10 @@ movies__card-button-enabled {
 		width: 339px;
 		height: 190px;
 	}
+	.movies__link{
+		width: 339px;
+		height: 190px;
+	}
 	.movies__card-about {
 		padding-top: 7px;
 	}
@@ -107,6 +116,10 @@ movies__card-button-enabled {
 		width: 270px;
 		height: 168px;
 	}
+	.movies__link{
+		width: 270px;
+		height: 168px;
+	}
 }
 @media screen and (max-width: 640px) {
 	.movies__card {
@@ -115,6 +128,10 @@ movies__card-button-enabled {
 		height: 100%;
 	}
 	.movies__card-photo {
+		width: 300px;
+		height: 168px;
+	}
+	.movies__link{
 		width: 300px;
 		height: 168px;
 	}
