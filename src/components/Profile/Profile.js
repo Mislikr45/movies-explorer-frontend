@@ -34,6 +34,7 @@ export default function Profile({onUpdateData, onOut, func}) {
 			React.useEffect(() => {
 	 
 				const InputValid = () => {
+					console.log(formValue)
 					const nameValid = formValue.name.length >= 2 && formValue.name.length <= 10;
 					const emailValid = EMAIL_CHECK.test(formValue.email.trim());
 	                const equalsName = formValue.name === currentUser.name;
@@ -45,7 +46,7 @@ export default function Profile({onUpdateData, onOut, func}) {
 				  setIsEmpty(
 					formValue.name.trim() === "" || formValue.email.trim() === "" || formValue.password.trim() === ""
 				  );
-			  }, [formValue.name, formValue.email, formValue.password]);
+			  }, [formValue.name, formValue.email]);
 	
 	  const handleSubmit = (e) => {
 		e.preventDefault();
