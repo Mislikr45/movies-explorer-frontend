@@ -69,13 +69,10 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
     }
   };
 
-  // let resize = window.addEventListener("resize", (e) => {
-  //   return setwindowWith(e.target.innerWidth);
-  // });
-
   useEffect(() => {
     function handleResize() {
-      setVisibleMovies(onVisibleMovie());
+      onVisibleMovie()
+      // setVisibleMovies(onVisibleMovie());
     }
     return () => {
       window.removeEventListener("resize", handleResize);
