@@ -28,7 +28,7 @@ export default function Search({
     if (event.key === "Enter") {
       handleSubmit(event);
       getMovieFunc()
-    }
+     }
   };
 
   return (

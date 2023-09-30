@@ -91,7 +91,7 @@ React.useEffect(() => {
 
   function getMoviesBest() {
     movieApi.getMovies()
-    .then((movies) => { setMovies(movies)})
+    .then((movies) => { setMovies(movies); console.log(setMovies(movies))})
     .catch((error) => console.log(`Ошибка: ${error}`))
   }
 
