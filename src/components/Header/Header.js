@@ -52,11 +52,9 @@ function Header({ loggedIn }) {
               <li className="navigation__movie-item">
                 <NavLink
                   to="/movies"
-                  className={({ isActive, isPending }) =>
-                  isPending
+                  className={({ isActive }) =>
+                     isActive
                     ? "navigation__nav-link navigation__nav-link-underline"
-                    : isActive
-                    ? "navigation__nav-link "
                     : "navigation__nav-link"
                 }
                 >
@@ -66,11 +64,9 @@ function Header({ loggedIn }) {
               <li className="navigation__movie-item">
                 <NavLink
                   to="/saved-movies"
-                  className={({ isActive, isPending }) =>
-                  isPending
+                  className={({ isActive }) =>
+                     isActive
                     ? "navigation__nav-link navigation__nav-link-underline"
-                    : isActive
-                    ? "navigation__nav-link "
                     : "navigation__nav-link"
                 }
                 >
@@ -106,11 +102,9 @@ function Header({ loggedIn }) {
               <li className="navigation__movie-item">
                 <NavLink
                   to="/movies"
-                  className={({ isActive, isPending }) =>
-                  isPending
+                  className={({ isActive }) =>
+                     isActive
                     ? "navigation__nav-link navigation__nav-link-underline"
-                    : isActive
-                    ? "navigation__nav-link "
                     : "navigation__nav-link"
                 }
                 >
@@ -120,11 +114,9 @@ function Header({ loggedIn }) {
               <li className="navigation__movie-item">
                 <NavLink
                   to="/saved-movies"
-                  className={({ isActive, isPending }) =>
-                  isPending
+                  className={({ isActive }) =>
+                     isActive
                     ? "navigation__nav-link navigation__nav-link-underline"
-                    : isActive
-                    ? "navigation__nav-link "
                     : "navigation__nav-link"
                 }
                 >
