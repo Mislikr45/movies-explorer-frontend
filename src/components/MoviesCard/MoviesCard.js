@@ -14,7 +14,7 @@ function MoviesCard({
   moveSave,
   
 }) {
-  const [isActive, setIsActive] = React.useState(isLiked);
+  const [isActive, setIsActive] = React.useState();
   const [isActiveLike, setIsActiveLike] = React.useState(false);
   const imageUrl = !isSavedMovies ? URLIMG + movie.image.url : movie.image;
   const currentUser = React.useContext(CurrentUserContext);
