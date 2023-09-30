@@ -55,8 +55,6 @@ export default function Profile({onUpdateData, onOut, func}) {
 		const email = formValue.email ? formValue.email : currentUser.email;
 		onUpdateData({ name , email });
 		alert("Редактирование профия прошло успешно");
-		setFormValue.name = "";
-		setFormValue.email = "";
 	  };
 	
 	return (
