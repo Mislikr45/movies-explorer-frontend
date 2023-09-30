@@ -19,7 +19,7 @@ function MoviesCard({
   const imageUrl = !isSavedMovies ? URLIMG + movie.image.url : movie.image;
   const currentUser = React.useContext(CurrentUserContext);
 
-  const isLiked = moveSave.some(i => i === movie.image.id);
+  const isLiked =isSavedMovies?  moveSave.some(i => i === movie.image.id) : false;
   console.log( isLiked, moveSave, movie.image.id );
    const moviesButtonSaved = `${
     currentUser._id === movie.owner ? enabled : disabled
