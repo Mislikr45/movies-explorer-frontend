@@ -12,6 +12,7 @@ export default function Profile({onUpdateData, onOut, func}) {
 
 	React.useEffect(() => {
 		func()}, [])
+
 	function Exit() {
 		onOut();
 		navigate("/");}
@@ -53,7 +54,7 @@ export default function Profile({onUpdateData, onOut, func}) {
 		const name = formValue.name ? formValue.name : currentUser.name;
 		const email = formValue.email ? formValue.email : currentUser.email;
 		onUpdateData({ name , email });
-		console.log("profile");
+		alert("Редактирование профия прошло успешно")
 	  };
 	
 	return (
@@ -68,8 +69,6 @@ export default function Profile({onUpdateData, onOut, func}) {
 					name="name"
 					type="name"
 					className="profile__input"
-					// minLength="2"
-				    // maxLength="10"
 					value={formValue.name}
                     onChange={handleChange}
 				/>
