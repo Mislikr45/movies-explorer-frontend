@@ -49,7 +49,7 @@ function App() {
       auth.checkToken(jwt).then((res) => {
         if (res) {
           setLoggedIn(true); 
-          navigate(pathname);
+          navigate(pathname, { replace: true });
          }
          else { handleSignOut()
          }
@@ -106,8 +106,8 @@ React.useEffect(() => {
         console.log(email, password)
        setErorRegister("");
         handleAuthorization( email, password)
-
       })
+      .then(navigate("/movies", { replace: true }))
       .catch((err) => {
         setErorRegister("что-то пошло не так");
         checkRegisterAdd();
