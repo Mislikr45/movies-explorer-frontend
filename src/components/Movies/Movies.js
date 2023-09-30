@@ -10,7 +10,7 @@ import {DURATION} from '../../utils/constants'
 function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch }) {
   // const [isMovieButton, setMovieButton] = React.useState(true);
   const [visibleMovies, setVisibleMovies] = useState(onVisibleMovie());
-  const [windowWith, setwindowWith] = useState([]);
+  const [windowWith, setwindowWith] = useState(window.innerWidth);
   const [visibleButton, setvisibleButton] = useState(false);
   // результаты поиска
   const [searchResults, setSearchResults] = useState(
@@ -69,9 +69,9 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
     }
   };
 
-  let resize = window.addEventListener("resize", (e) => {
-    return setwindowWith(e.target.innerWidth);
-  });
+  // let resize = window.addEventListener("resize", (e) => {
+  //   return setwindowWith(e.target.innerWidth);
+  // });
 
   useEffect(() => {
     function handleResize() {
