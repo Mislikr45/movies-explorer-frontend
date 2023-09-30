@@ -51,7 +51,7 @@ function Header({ loggedIn }) {
             <ul className="navigation__movie">
               <li className="navigation__movie-item">
 			  <NavLink
-                  to="/messages"
+                  to="/movies"
                   className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "active" : ""
                   }
@@ -61,7 +61,7 @@ function Header({ loggedIn }) {
               </li>
               <li className="navigation__movie-item">
               <NavLink
-                  to="/messages"
+                  to="/saved-movies"
                   className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "active" : ""
                   }
@@ -97,7 +97,7 @@ function Header({ loggedIn }) {
             <ul className="navigation__movie">
               <li className="navigation__movie-item">
                 <NavLink
-                  to="/messages"
+                  to="/movies"
                   className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "active" : ""
                   }
@@ -110,7 +110,7 @@ function Header({ loggedIn }) {
               </li>
               <li className="navigation__movie-item">
 			  <NavLink
-                  to="/messages"
+                  to="/saved-movies"
                   className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "active" : ""
                   }
