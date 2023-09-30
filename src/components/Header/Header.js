@@ -50,20 +50,28 @@ function Header({ loggedIn }) {
           <Navigation className="navigation_main">
             <ul className="navigation__movie">
               <li className="navigation__movie-item">
-			  <NavLink
+                <NavLink
                   to="/movies"
                   className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
+                    !isPending
+                      ? "navigation__nav-link"
+                      : !isActive
+                      ? "navigation__nav-link "
+                      : "navigation__nav-link navigation__nav-link-underline"
                   }
                 >
                   Фильмы
                 </NavLink>
               </li>
               <li className="navigation__movie-item">
-              <NavLink
+                <NavLink
                   to="/saved-movies"
                   className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
+                    !isPending
+                      ? "navigation__nav-link"
+                      : !isActive
+                      ? "navigation__nav-link "
+                      : "navigation__nav-link navigation__nav-link-underline"
                   }
                 >
                   Сохраненные фильмы
@@ -99,18 +107,26 @@ function Header({ loggedIn }) {
                 <NavLink
                   to="/movies"
                   className={({ isActive, isPending }) =>
-                    isPending ? "navigation__nav-link" : isActive ? "navigation__nav-link " : "navigation__nav-link navigation__nav-link-underline"
+                    !isPending
+                      ? "navigation__nav-link"
+                      : !isActive
+                      ? "navigation__nav-link "
+                      : "navigation__nav-link navigation__nav-link-underline"
                   }
                 >
                   Фильмы
                 </NavLink>
               </li>
               <li className="navigation__movie-item">
-			  <NavLink
+                <NavLink
                   to="/saved-movies"
                   className={({ isActive, isPending }) =>
-                  isPending ? "navigation__nav-link" : isActive ? "navigation__nav-link " : "navigation__nav-link navigation__nav-link-underline"
-                }
+                    !isPending
+                      ? "navigation__nav-link"
+                      : !isActive
+                      ? "navigation__nav-link "
+                      : "navigation__nav-link navigation__nav-link-underline"
+                  }
                 >
                   Сохраненные фильмы
                 </NavLink>
