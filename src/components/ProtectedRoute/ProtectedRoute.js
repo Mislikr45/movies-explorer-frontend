@@ -1,11 +1,14 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
+
 
 const ProtectedRouteElement = ({ element: Component, ...props }) => {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
   return props.loggedIn ? (
     <Component {...props} />
   ) : (
-    <Navigate to="/" replace />
+    navigate(pathname)
   );
 };
 
