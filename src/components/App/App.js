@@ -49,7 +49,7 @@ function App() {
       auth.checkToken(jwt).then((res) => {
         if (res) {
           setLoggedIn(true); 
-          navigate(pathname, { replace: true });
+          // navigate( { replace: true });
          }
          else { handleSignOut()
          }
