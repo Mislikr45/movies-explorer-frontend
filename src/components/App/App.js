@@ -41,7 +41,7 @@ function App() {
 
   React.useEffect(() => {
     handleTokenCheck();
-  }, [loggedIn, navigate]);
+  }, [loggedIn]);
 
   const handleTokenCheck = () => {
     if (localStorage.getItem("token")) {
