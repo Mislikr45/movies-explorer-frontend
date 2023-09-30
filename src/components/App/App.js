@@ -9,6 +9,8 @@ import * as auth from "../../utils/auth";
 import { mainApi } from "../../utils/API/MainApi";
 import { movieApi } from "../../utils/API/MoviesApi";
 
+import { CurrentUserContext } from "../../contexts/CurrentUserContext"; 
+
 import Movies from "../Movies/Movies";
 import SavedMovies from "../SavedMovies/SavedMovies.js";
 import Profile from "../Profile/Profile";
@@ -141,9 +143,7 @@ React.useEffect(() => {
     mainApi
       .handleAddMovieApi(movie)
       .then((newMovie) => {
-        console.log(newMovie) 
         setMoviesUser([newMovie, ...movies]);
-        console.log(setMoviesUser)
       })
       .catch((err) => {
         console.log(err);
@@ -170,6 +170,7 @@ React.useEffect(() => {
   }
 
   return (
+    <CurrentUserContext.Provider value={currentUser}> 
     <div className="page__container">
       <div className="app">
         <Header loggedIn={loggedIn} />
@@ -185,7 +186,6 @@ React.useEffect(() => {
               <ProtectedRouteElement
                 loggedIn={loggedIn}
                 element={Movies}
-                userProfile={currentUser}
                 movies={movies}
                 savedMovies={moviesUser}
                 onSave={saveMovie}
@@ -201,7 +201,6 @@ React.useEffect(() => {
             element={
               <ProtectedRouteElement
                 element={SavedMovies}
-                userProfile={currentUser}
                 saveMovies={moviesUser}
                 loggedIn={loggedIn}
                 onDelete={deleteFilm}
@@ -214,7 +213,6 @@ React.useEffect(() => {
             element={
               <ProtectedRouteElement
                 element={Profile}
-                userData={currentUser}
                 onUpdateData={handleUpdateUser}
                 loggedIn={loggedIn}
                 onOut={handleSignOut}
@@ -246,6 +244,7 @@ React.useEffect(() => {
         <Footer />
       </div>
     </div>
+    </CurrentUserContext.Provider> 
   );
 }
 

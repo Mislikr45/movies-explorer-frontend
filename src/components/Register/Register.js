@@ -1,7 +1,7 @@
 import Form from "../Form/Form";
 import "./Register.css";
 import React, { useState } from "react";
-import { email_check } from "../../utils/constants"
+import { EMAIL_CHECK } from "../../utils/constants"
 
 
 
@@ -20,7 +20,7 @@ export default function Register({onRegister, error}) {
 	 
 		const InputValid = () => {
 			const nameValid = formValue.name.length >= 2 && formValue.name.length <= 10;
-			const emailValid = email_check.test(formValue.email.trim());
+			const emailValid = EMAIL_CHECK.test(formValue.email.trim());
 			const passwordValid = formValue.password.length >= 6;
 	  
 			return nameValid && emailValid && passwordValid;

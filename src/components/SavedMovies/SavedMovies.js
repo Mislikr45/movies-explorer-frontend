@@ -3,6 +3,7 @@ import "./SavedMovies.css";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import { useEffect, useState } from "react";
 import Search from "../Search/Search";
+import {DURATION} from '../../utils/constants'
 
 function SavedMovies({ saveMovies, onDelete, userProfile, setSearch }) {
   useEffect(() => {
@@ -26,7 +27,7 @@ function SavedMovies({ saveMovies, onDelete, userProfile, setSearch }) {
         movie.nameEN.toLowerCase().includes(newQuery.toLowerCase());
 
       if (newIsShortFilm) {
-        return includesQuery && movie.duration <= 40;
+        return includesQuery && movie.duration <= DURATION;
       } else {
         return includesQuery;
       }
@@ -37,7 +38,7 @@ function SavedMovies({ saveMovies, onDelete, userProfile, setSearch }) {
   const filterMovies = (query, isShortFilm) => {
     let filteredMovies = saveMovies;
     if (isShortFilm) {
-      filteredMovies = filteredMovies.filter((movie) => movie.duration <= 40);
+      filteredMovies = filteredMovies.filter((movie) => movie.duration <= DURATION);
     }
     const filteredResults = filteredMovies.filter((movie) => {
       return (

@@ -1,5 +1,5 @@
 
-import { urlMovie } from "../constants";
+import { URLMOVIE } from "../constants";
 class MovieApi {
   constructor({ baseUrl }) {
     this._baseUrl = baseUrl;
@@ -29,5 +29,5 @@ class MovieApi {
 }
 
 export const movieApi = new MovieApi({
-  baseUrl: urlMovie,
+  baseUrl: URLMOVIE,
 });

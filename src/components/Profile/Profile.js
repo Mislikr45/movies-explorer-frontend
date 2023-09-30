@@ -1,9 +1,11 @@
 import "./Profile.css";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext"
 
-export default function Profile({userData, onUpdateData, onOut, func}) {
+export default function Profile({onUpdateData, onOut, func}) {
 	const navigate = useNavigate();
+	const currentUser = React.useContext(CurrentUserContext);
 	React.useEffect(() => {
 		func()}, [])
 	function Exit() {
@@ -11,8 +13,8 @@ export default function Profile({userData, onUpdateData, onOut, func}) {
 		navigate("/");}
 
 		const [formValue, setFormValue] = useState({
-			name: userData.name,
-			email: userData.email,
+			name: currentUser.name,
+			email: currentUser.email,
 
 		  });
 		
@@ -27,8 +29,8 @@ export default function Profile({userData, onUpdateData, onOut, func}) {
 	
 	  const handleSubmit = (e) => {
 		e.preventDefault();
-		const name = formValue.name ? formValue.name : userData.name;
-		const email = formValue.email ? formValue.email : userData.email;
+		const name = formValue.name ? formValue.name : currentUser.name;
+		const email = formValue.email ? formValue.email : currentUser.email;
 		onUpdateData({ name , email });
 		console.log("profile");
 	  };
@@ -36,7 +38,7 @@ export default function Profile({userData, onUpdateData, onOut, func}) {
 	return (
 		<section className="profile">
 			<main className="prodile__main">
-			<h1 className="profile__greetings">Привет, {userData.name}!</h1>
+			<h1 className="profile__greetings">Привет, {currentUser.name}!</h1>
 			<form className="profile__form" onSubmit={handleSubmit}>
 				<div className="profile__form-container">
 				<label className="profile__label">Имя</label>
@@ -45,7 +47,7 @@ export default function Profile({userData, onUpdateData, onOut, func}) {
 					name="name"
 					type="name"
 					className="profile__input"
-					placeholder={userData.name}
+					placeholder={currentUser.name}
 					minLength="2"
 				    maxLength="10"
 					value={formValue.name}
@@ -60,7 +62,7 @@ export default function Profile({userData, onUpdateData, onOut, func}) {
 					name="email"
 					type="email"
 					className="profile__input"
-					placeholder={userData.email}
+					placeholder={currentUser.email}
 					value={formValue.email}
                     onChange={handleChange}
 				/>

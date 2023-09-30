@@ -1,8 +1,8 @@
-import {urlMain, urlImg} from "../constants"
+import {URLMAIN, URLIMG} from "../constants"
 
 export default class MainApi { 
   constructor({ url, urlMovie }) { 
-    this._baseUrl = urlMain; 
+    this._baseUrl = url; 
     this._urlMovie = urlMovie; 
   } 
     _checkResponse(res) { 
@@ -91,6 +91,6 @@ editeProfile( name, email ) {
 
 }
 export const mainApi = new MainApi({ 
-    url: urlMain, 
-    urlMovie:urlImg,
+    url: URLMAIN, 
+    urlMovie:URLIMG,
   }); 

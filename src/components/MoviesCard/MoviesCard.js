@@ -1,6 +1,7 @@
 import React from "react";
 import "./MoviesCard.css";
 import { urlImg } from "../../utils/constants";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext"
 
 function MoviesCard({
   movie,
@@ -9,13 +10,13 @@ function MoviesCard({
   onSave,
   onDelete,
   isSavedMovies,
-  userProfile,
 }) {
   const [isActive, setIsActive] = React.useState(false);
   const imageUrl = !isSavedMovies ? urlImg + movie.image.url : movie.image;
+  const currentUser = React.useContext(CurrentUserContext);
 
   const moviesButtonSaved = `${
-    userProfile._id === movie.owner ? enabled : disabled
+    currentUser._id === movie.owner ? enabled : disabled
   }`;
 
   const moviesButton = `${isActive ? enabled : disabled}`;

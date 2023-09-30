@@ -1,5 +1,5 @@
-import { urlMain } from "./constants";
-const BASE_URL = urlMain;
+import { URLMAIN } from "./constants";
+const BASE_URL = URLMAIN;
 
 function checkResponse(res) { 
   if (!res.ok) { 

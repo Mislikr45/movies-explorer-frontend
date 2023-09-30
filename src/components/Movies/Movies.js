@@ -5,6 +5,7 @@ import Preloader from "./Preloader/Preloader";
 import Search from "../Search/Search";
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
+import {DURATION} from '../../utils/constants'
 
 function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch }) {
   // const [isMovieButton, setMovieButton] = React.useState(true);
@@ -88,7 +89,7 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
     let filteredMovies = movies;
 
     if (isShortFilm) {
-      filteredMovies = filteredMovies.filter((movie) => movie.duration <= 40);
+      filteredMovies = filteredMovies.filter((movie) => movie.duration <= DURATION);
 
     }
 
@@ -118,7 +119,7 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
     let searchResults;
 
     if (isShortFilm) {
-      filteredMovies = movies.filter((movie) => movie.duration <= 40);
+      filteredMovies = movies.filter((movie) => movie.duration <= DURATION);
       searchResults = filteredMovies.filter((movie) => {
         return (
           movie.nameRU.toLowerCase().includes(query.toLowerCase()) ||

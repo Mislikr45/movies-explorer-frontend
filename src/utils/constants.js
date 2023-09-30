@@ -1,14 +1,16 @@
 
-const urlMovie="https://api.nomoreparties.co/beatfilm-movies";
-const urlMain="https://api.mislikr45r45.nomoredomainsrocks.ru";
-const urlImg="https://api.nomoreparties.co";
-const email_check = /^\S+@\S+\.\S+$/;
+const URLMOVIE="https://api.nomoreparties.co/beatfilm-movies";
+const URLMAIN="https://api.mislikr45r45.nomoredomainsrocks.ru";
+const URLIMG="https://api.nomoreparties.co";
+const EMAIL_CHECK = /^\S+@\S+\.\S+$/;
+const DURATION = 40;
 
 
 
 module.exports = {
-	urlMovie,
-	urlMain,
-	urlImg,
-	email_check
+	URLMOVIE,
+	URLMAIN,
+	URLIMG,
+	EMAIL_CHECK,
+	DURATION
   };

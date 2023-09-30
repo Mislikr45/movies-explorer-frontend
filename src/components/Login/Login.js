@@ -1,6 +1,6 @@
 import Form from "../Form/Form";
 import "./Login.css";
-import { email_check } from "../../utils/constants"
+import { EMAIL_CHECK } from "../../utils/constants"
 import React, { useState } from "react";
 
 export default function Login({onLogin, error}) {
@@ -24,7 +24,7 @@ export default function Login({onLogin, error}) {
 		React.useEffect(() => {
 	 
 			const InputValid = () => {
-				const emailValid = email_check.test(formValue.email.trim());
+				const emailValid = EMAIL_CHECK.test(formValue.email.trim());
 				const passwordValid = formValue.password.length >= 6;
 		  
 				return emailValid && passwordValid;
