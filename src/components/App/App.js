@@ -51,7 +51,8 @@ function App() {
           setLoggedIn(true); 
           console.log(loggedIn)
          }
-         else { handleSignOut()
+         else { console.log('yt')
+          handleSignOut()
          }
       });
     }
