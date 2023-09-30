@@ -99,30 +99,21 @@ function Header({ loggedIn }) {
                 <NavLink
                   to="/movies"
                   className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
+                    isPending ? "navigation__nav-link" : isActive ? "navigation__nav-link " : "navigation__nav-link navigation__nav-link-underline"
                   }
                 >
                   Фильмы
                 </NavLink>
-                {/* <Link className="navigation__nav-link" to="/movies">
-                  Фильмы
-                </Link> */}
               </li>
               <li className="navigation__movie-item">
 			  <NavLink
                   to="/saved-movies"
                   className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
-                  }
+                  isPending ? "navigation__nav-link" : isActive ? "navigation__nav-link " : "navigation__nav-link navigation__nav-link-underline"
+                }
                 >
                   Сохраненные фильмы
                 </NavLink>
-                {/* <Link
-                  className="navigation__nav-link navigation__nav-link_active"
-                  to="/saved-movies"
-                >
-                  Сохраненные фильмы
-                </Link> */}
               </li>
             </ul>
             <Link to="/profile" className="navigation__profile">
