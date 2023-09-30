@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function NotFound() {
 	const navigate = useNavigate();
 	const goBack = () => {
-		navigate(-1)
+		navigate(-2)
 	}
 	return (
 		<main className="noteFound">
