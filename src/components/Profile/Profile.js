@@ -47,9 +47,8 @@ export default function Profile({onUpdateData, onOut, func}) {
 					name="name"
 					type="name"
 					className="profile__input"
-					placeholder={currentUser.name}
-					minLength="2"
-				    maxLength="10"
+					// minLength="2"
+				    // maxLength="10"
 					value={formValue.name}
                     onChange={handleChange}
 				/>
@@ -62,7 +61,6 @@ export default function Profile({onUpdateData, onOut, func}) {
 					name="email"
 					type="email"
 					className="profile__input"
-					placeholder={currentUser.email}
 					value={formValue.email}
                     onChange={handleChange}
 				/>
