@@ -49,6 +49,7 @@ function App() {
       auth.checkToken(jwt).then((res) => {
         if (res) {
           setLoggedIn(true); 
+          console.log(loggedIn)
          }
          else { handleSignOut()
          }
