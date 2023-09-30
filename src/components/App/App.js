@@ -47,8 +47,9 @@ function App() {
       const jwt = localStorage.getItem("token");
       auth.checkToken(jwt).then((res) => {
         if (res) {
-          setLoggedIn(true);
-          navigate("/movies", { replace: true });       
+          setLoggedIn(true); 
+         }
+         else { handleSignOut()
          }
       });
     }
@@ -115,6 +116,9 @@ React.useEffect(() => {
       .then((data) => {
         localStorage.setItem("jwt", data.token);
         handleTokenCheck();
+      })
+      .then((data) => {
+        navigate("/movies", { replace: true });   
       })
       .catch((err) => {
         setErorLogin("что-то пошло не так");
