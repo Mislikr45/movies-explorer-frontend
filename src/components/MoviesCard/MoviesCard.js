@@ -2,6 +2,7 @@ import React from "react";
 import "./MoviesCard.css";
 import { URLIMG } from "../../utils/constants";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext"
+import { Link } from "react-router-dom";
 
 function MoviesCard({
   movie,
@@ -39,7 +40,14 @@ function MoviesCard({
 
   return (
     <li className="movies__card">
-      <img className="movies__card-photo" src={imageUrl} alt={movie.nameRU} />
+      <Link
+							className="movies__link"
+							target="_blank"
+							to="{movie.trailerlink}"
+						>
+			      <img className="movies__card-photo" src={imageUrl} alt={movie.nameRU} />
+						</Link>
+
       <div className="movies__card-about">
         <div className="movies__card-container">
           <h2 className="movies__card-title">{movie.nameRU}</h2>
