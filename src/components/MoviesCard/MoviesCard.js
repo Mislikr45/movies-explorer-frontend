@@ -44,7 +44,7 @@ function MoviesCard({
       <Link
 							className="movies__link"
 							target="_blank"
-							to="{movie.trailerLink}"
+							to={movie.trailerLink}
 						>
 			      <img className="movies__card-photo" src={imageUrl} alt={movie.nameRU} />
 						</Link>
