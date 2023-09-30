@@ -22,10 +22,12 @@ export default function Search({
   const handleSubmit = (event) => {
     event.preventDefault();
     onSearch(query, isShortFilm);
+    getMovieFunc()
   };
   const handleInputKeyDown = (event) => {
     if (event.key === "Enter") {
       handleSubmit(event);
+      getMovieFunc()
     }
   };
 

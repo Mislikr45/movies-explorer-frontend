@@ -37,9 +37,9 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
     localStorage.setItem("query", query);
   }, [query]);
 
-  useEffect(() => {
-    getMovieFunc()
-  }, [Navigate]);
+  // useEffect(() => {
+  //   getMovieFunc()
+  // }, [Navigate]);
 
   useEffect(() => {
     localStorage.setItem("isShortFilm", isShortFilm);
@@ -151,6 +151,7 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
         onSearch={handleSearch}
         onFilter={filterMovies}
         setSearch={setSearch}
+        getMovieFunc={getMovieFunc}
       />
       {isLoading ? (
         <Preloader />
