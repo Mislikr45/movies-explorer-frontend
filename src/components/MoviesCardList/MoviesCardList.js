@@ -2,7 +2,7 @@
 import "./MoviesCardList.css";
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-function MoviesCardList({moviesList, isSavedMovies, disabled, enabled, onSave, onDelete, userProfile}) {
+function MoviesCardList({moviesList, isSavedMovies, disabled, enabled, onSave, onDelete, userProfile, moveSave}) {
 	return (
 		<ul className="movies__list">
 			{moviesList.map((movie) => {
@@ -16,6 +16,7 @@ function MoviesCardList({moviesList, isSavedMovies, disabled, enabled, onSave, o
 						onSave={onSave}
 				        onDelete={onDelete}
 						userProfile={userProfile}
+						moveSave={moveSave}
 					/>
 				);
 			})}

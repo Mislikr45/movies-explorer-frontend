@@ -11,14 +11,17 @@ function MoviesCard({
   onSave,
   onDelete,
   isSavedMovies,
+  moveSave,
+  
 }) {
-  console.log(movie)
-  const [isActive, setIsActive] = React.useState(false);
+  const [isActive, setIsActive] = React.useState(isLiked);
   const [isActiveLike, setIsActiveLike] = React.useState(false);
   const imageUrl = !isSavedMovies ? URLIMG + movie.image.url : movie.image;
   const currentUser = React.useContext(CurrentUserContext);
 
-  const moviesButtonSaved = `${
+  const isLiked = moveSave.movieId.some(i => i === movie.image.id);
+  console.log(isLiked, moveSave.movieId, movie.image.id );
+   const moviesButtonSaved = `${
     currentUser._id === movie.owner ? enabled : disabled
   }`;
 

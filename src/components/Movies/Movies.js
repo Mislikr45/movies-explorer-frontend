@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import {DURATION} from '../../utils/constants'
 
-function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch, isPreloader }) {
+function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch, isPreloader, moveSave }) {
   // const [isMovieButton, setMovieButton] = React.useState(true);
   const [visibleMovies, setVisibleMovies] = useState(onVisibleMovie());
   const [windowWith, setwindowWith] = useState(window.innerWidth);
@@ -156,6 +156,7 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
           onSave={onSave}
           onDelete={onDelete}
           userProfile={userProfile}
+          moveSave={moveSave}
         />
       )}
       <button

@@ -206,6 +206,7 @@ React.useEffect(() => {
                 getMovieFunc={getMoviesBest}
                 setSearch={setSarchMovie}
                 isPreloader={isPreloader}
+                moveSave={moviesUser}
               />
             }
           />
