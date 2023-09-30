@@ -181,7 +181,7 @@ React.useEffect(() => {
         <Routes>
           <Route path="*" element={<NotFound />} />
 
-          <Route path="/" element={<Main loggedIn={loggedIn} />} />
+          <Route path="/" replace="true" element={<Main loggedIn={loggedIn} />} />
 
           <Route
             path="/movies"
