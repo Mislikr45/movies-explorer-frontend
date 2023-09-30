@@ -67,7 +67,7 @@ function App() {
     localStorage.removeItem("searchResults");
     localStorage.removeItem("currentPath");
     setLoggedIn(false);
-    navigate("/signin");
+    navigate("/signin", { replace: true });
   };
 
 function getUserData() {
