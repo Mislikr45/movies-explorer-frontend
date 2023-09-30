@@ -54,7 +54,7 @@ export default function Search({
           <div className="search__checkbox">
             <button
               className={
-                isShortFilm
+                !isShortFilm
                   ? "search__checkbox-button search__checkbox-button_enable"
                   : "search__checkbox-button search__checkbox-button_disabled"
               }
