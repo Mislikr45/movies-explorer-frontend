@@ -17,8 +17,8 @@ export default function Profile({onUpdateData, onOut, func}) {
 		navigate("/");}
 
 		const [formValue, setFormValue] = useState({
-			name: currentUser.name,
-			email: currentUser.email,
+			name:"",
+			email: "",
 
 		  });
 		
