@@ -50,7 +50,7 @@ function App() {
         if (res) {
           setLoggedIn(true); 
           console.log(pathname)
-          navigate( pathname, { replace: true });
+          navigate( pathname);
          }
          else { handleSignOut()
          }
