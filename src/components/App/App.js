@@ -49,7 +49,8 @@ function App() {
       auth.checkToken(jwt).then((res) => {
         if (res) {
           setLoggedIn(true); 
-          // navigate( { replace: true });
+          console.log(pathname)
+          navigate( pathname, { replace: true });
          }
          else { handleSignOut()
          }
