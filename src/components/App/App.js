@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useNavigate, navigate } from "react-router-dom";
 
 import "./App.css";
@@ -35,6 +35,7 @@ function App() {
   const [erorRegister, setErorRegister]=useState("");
   const {searchMovie, setSarchMovie}= useState(false);
   const {searchMovieSave, setSarchMovieSave}= useState(false);
+  const { pathname } = useLocation();
 
   const navigate = useNavigate();
 
@@ -48,6 +49,7 @@ function App() {
       auth.checkToken(jwt).then((res) => {
         if (res) {
           setLoggedIn(true); 
+          navigate(pathname);
          }
          else { handleSignOut()
          }
