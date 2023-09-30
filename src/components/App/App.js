@@ -107,11 +107,6 @@ React.useEffect(() => {
        setErorRegister("");
         handleAuthorization( email, password);
         setLoggedIn(true); 
-        navigate("/movies", { replace: true });   
-      })
-      .then((data) => {
-        console.log('сработало handleRegister')
-   
       })
       .catch((err) => {
         setErorRegister("что-то пошло не так");
