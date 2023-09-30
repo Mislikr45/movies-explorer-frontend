@@ -12,6 +12,7 @@ function MoviesCard({
   onDelete,
   isSavedMovies,
 }) {
+  console.log(movie)
   const [isActive, setIsActive] = React.useState(false);
   const imageUrl = !isSavedMovies ? URLIMG + movie.image.url : movie.image;
   const currentUser = React.useContext(CurrentUserContext);
