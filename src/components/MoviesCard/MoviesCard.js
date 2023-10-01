@@ -53,10 +53,13 @@ function MoviesCard({
  
   function handleDeleteMovie() {
     var deleteMovie = moveSave.find(function (moviedelete) { if (moviedelete.movieId === movie.id) return moviedelete._id} )
-    // var deleteId = deleteMovie.map(function (movie){return movie._id})
     console.log(deleteMovie, movie);
     onDelete(deleteMovie);
     setIsLiked(false)
+  }
+
+  function handleDeleteSavedMovies() {
+    onDelete(movie);
   }
 
   return (
@@ -75,7 +78,7 @@ function MoviesCard({
           <button
             className={!isSavedMovies ? moviesButtonSaved : disabled}
             type="button"
-            onClick={!isSavedMovies ? !isLiked? handleAddMovie : handleDeleteMovie : handleDeleteMovie}
+            onClick={!isSavedMovies ? !isLiked? handleAddMovie : handleDeleteMovie : handleDeleteSavedMovies}
           />
         </div>
         <span className="movies__card-time">{durationFormat}</span>
