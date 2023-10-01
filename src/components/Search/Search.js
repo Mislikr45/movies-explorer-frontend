@@ -10,9 +10,10 @@ export default function Search({
   onFilter,
   getMovieFunc
 }) {
-  const handleInputChange = () => {
-    console.log(query)
-    // setQuery(event.target.value);
+  const handleInputChange = (event) => {
+    
+    console.log(event.target.value)
+    setQuery(event.target.value);
   };
 
   const handleShortFilmToggle = () => {
