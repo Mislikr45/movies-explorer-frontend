@@ -96,7 +96,7 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
 
     setSearchResults(filteredResults);
     localStorage.setItem("searchResults", JSON.stringify(filteredResults));
-    console.log(searchResults)
+    console.log(searchResults);
   };
 
   const handleSearch = async (query, isShortFilm) => {
@@ -127,7 +127,7 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
     setHasSearched(true);
     localStorage.setItem("searchResults", JSON.stringify(searchResults));
     setVisibleMovies(onVisibleMovie());
-  console.log(searchResults, onVisibleMovie )
+  console.log(searchResults, onVisibleMovie );
     return;
   };
   
