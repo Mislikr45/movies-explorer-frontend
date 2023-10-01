@@ -23,10 +23,16 @@ import NotFound from "../NotFound/NotFound";
 import ProtectedRouteElement from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
-
+  const [loggedIn, setLoggedIn] = useState(false);
   React.useEffect(() => {
-    handleTokenCheck();
-  }, [loggedIn, navigate]);
+    const jwt = localStorage.getItem("token");
+    auth.checkToken(jwt).then((res) => {
+      if (res) {
+        setLoggedIn(true); 
+        console.log(loggedIn)
+       }
+  })
+  }, [loggedIn]);
 
 
   const handleTokenCheck = () => {
@@ -51,7 +57,7 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [moviesUser, setMoviesUser] = useState([]);
   const [user, setUser] = useState({ email: "" });
-  const [loggedIn, setLoggedIn] = useState(false);
+
   const [checkRegister, setCheckRegister] = useState(false); //Регистрация
   const [erorLogin, setErorLogin]=useState("");
   const [erorRegister, setErorRegister]=useState("");
