@@ -21,16 +21,18 @@ export default function Search({
   };
   console.log(movieFuncDone)
   const handleSubmit = (event) => {
-    getMovieFunc()
-    console.log(movieFuncDone)
-    if(!movieFuncDone) {
-      console.log()
-      event.preventDefault();
-      onSearch(query, isShortFilm);
+    if (!movieFuncDone) {getMovieFunc() } else {
+      if(movieFuncDone) {
+        console.log(movieFuncDone)
+        event.preventDefault();
+        onSearch(query, isShortFilm);
+      }
+      else {console.log('ощибка')}
+     
     }
-    else {console.log('ощибка')}
+    }
+
    
-  };
   const handleInputKeyDown = (event) => {
     if (event.key === "Enter") {
       handleSubmit(event);
