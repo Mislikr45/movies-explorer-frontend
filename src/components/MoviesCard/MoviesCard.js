@@ -45,9 +45,9 @@ function MoviesCard({
   const durationFormat = durationHours(movie.duration);
   let movieHandleAdd;
   function handleAddMovie() {
-    onSave(movie).then((result) =>{ return {movieHandleAdd:result} });
+    onSave(movie).then((result) =>{ return console.log(result)});
     setIsLiked(true)
-    console.log(movieHandleAdd)
+    // console.log(movieHandleAdd)
   }
  
   function handleDeleteMovie() {
