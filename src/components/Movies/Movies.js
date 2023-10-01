@@ -79,7 +79,7 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
   }, [windowWith]);
 
   const filterMovies = (query, isShortFilm) => {
-
+    console.log(query)
     let filteredMovies = movies;
 
     if (isShortFilm) {
@@ -129,7 +129,7 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
     setVisibleMovies(onVisibleMovie());
     return;
   };
-
+  
   return (
     <main className="movies">
       <Search
