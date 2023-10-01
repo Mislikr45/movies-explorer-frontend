@@ -45,8 +45,8 @@ function MoviesCard({
   const durationFormat = durationHours(movie.duration);
 
   function handleAddMovie() {
-    var deleteMovie = moveSave.filter(function (moviedelete) {return moviedelete.movieId === movie.id} )
-    console.log(deleteMovie._id, movie);
+    var deleteMovie = moveSave.filter(function (moviedelete) { if (moviedelete.movieId === movie.id) return moviedelete._id} )
+    console.log(deleteMovie, movie);
     // onSave(movie);
     // setIsLiked(true)
   }
