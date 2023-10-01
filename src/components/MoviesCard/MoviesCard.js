@@ -14,6 +14,18 @@ function MoviesCard({
   moveSave,
   
 }) {
+
+  const allIdSave=moveSave.map(function (movie){return movie.movieId
+  })
+    const checkliked = !isSavedMovies? allIdSave.some(i => i === movie.id) : false;
+    
+  console.log(isSavedMovies, movie, allIdSave, checkliked, isLiked);
+  
+     const moviesButtonSaved = `${
+      checkliked? enabled : disabled
+    }`;
+
+
   const [isActive, setIsActive] = React.useState(false);
   const [isLiked, setIsLiked] = React.useState(checkliked);
   const [isActiveLike, setIsActiveLike] = React.useState(false);
@@ -21,15 +33,7 @@ function MoviesCard({
   const currentUser = React.useContext(CurrentUserContext);
   console.log(moveSave);
 
-  const allIdSave=moveSave.map(function (movie){return movie.movieId
-})
-  const checkliked = !isSavedMovies? allIdSave.some(i => i === movie.id) : false;
-  
-console.log(isSavedMovies, movie, allIdSave, checkliked, isLiked);
-
-   const moviesButtonSaved = `${
-    checkliked? enabled : disabled
-  }`;
+ 
 
   const moviesButton = `${isActive ? enabled : disabled}`;
 
