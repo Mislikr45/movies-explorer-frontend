@@ -23,7 +23,7 @@ function MoviesCard({
 
   const allIdSave=moveSave.map(function (movie){return movie.movieId
 })
-  const checkliked = isSavedMovies? allIdSave.some(i => i === movie.id) : 'сохраненые фильмы';
+  const checkliked = !isSavedMovies? allIdSave.some(i => i === movie.id) : 'сохраненые фильмы';
   
 console.log(allIdSave);
 console.log(isSavedMovies, movie, allIdSave, checkliked);
