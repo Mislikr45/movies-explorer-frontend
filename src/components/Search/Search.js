@@ -39,12 +39,12 @@ export default function Search({
     }
   }
    
-  const handleInputKeyDown = (event) => {
-    if (event.key === "Enter") {
-      handleSubmit(event);
-      getMovieFunc()
-     }
-  };
+  // const handleInputKeyDown = (event) => {
+  //   if (event.key === "Enter") {
+  //     handleSubmit(event);
+  //     getMovieFunc()
+  //    }
+  // };
 
   return (
     <section className="search">
