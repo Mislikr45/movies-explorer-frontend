@@ -20,11 +20,13 @@ export default function Search({
     onFilter(query, !isShortFilm);
   };
   console.log(movieFuncDone)
+  
   const handleSubmit = (event) => {
+    event.preventDefault();
     if (!movieFuncDone) {getMovieFunc() } else {
       if(movieFuncDone) {
         console.log(movieFuncDone)
-        event.preventDefault();
+
         onSearch(query, isShortFilm);
       }
       else {console.log('ощибка')}
