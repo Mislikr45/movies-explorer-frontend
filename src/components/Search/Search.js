@@ -58,7 +58,6 @@ export default function Search({
             className="search__input"
             value={query}
             onChange={handleInputChange}
-            onKeyDown={handleInputKeyDown}
             placeholder="Фильм"
           />
           <button
