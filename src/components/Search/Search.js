@@ -19,11 +19,6 @@ export default function Search({
     setIsShortFilm(!isShortFilm);
     onFilter(query, !isShortFilm);
   };
-
-  // const sub = (event) => {
-  //   event.preventDefault();
-  //   console.log(event.target.value);
-  // }
   
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -39,12 +34,12 @@ export default function Search({
     }
   }
    
-  // const handleInputKeyDown = (event) => {
-  //   if (event.key === "Enter") {
-  //     handleSubmit(event);
-  //     getMovieFunc()
-  //    }
-  // };
+  const handleInputKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSubmit(event);
+      getMovieFunc()
+     }
+  };
 
   return (
     <section className="search">
@@ -63,7 +58,7 @@ export default function Search({
           <button
             className="search___form-button"
             type="submit"
-            onSubmit={handleSubmit}
+            // onSubmit={handleSubmit}
           >
             Найти
           </button>
