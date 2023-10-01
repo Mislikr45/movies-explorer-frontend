@@ -70,7 +70,7 @@ function App() {
   const {searchMovie, setSarchMovie}= useState(false);
   const {searchMovieSave, setSarchMovieSave}= useState(false);
   const { pathname } = useLocation();
-  const {movieFuncDone, SetmovieFuncDone} = useState(false)
+  const {movieFuncDone, SetmovieFuncDone} = useState(false);
 
   const navigate = useNavigate();
 
