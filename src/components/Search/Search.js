@@ -28,13 +28,14 @@ export default function Search({
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(query);
-    if (!movieFuncDone) {getMovieFunc() } else {
-      if(movieFuncDone) { if (query) {console.log(';jgf 0')} onSearch(query, isShortFilm);
+    if (!query) {return console.log('жопа')}
+    // if (!movieFuncDone) {getMovieFunc() } else {
+    //   if(movieFuncDone) {onSearch(query, isShortFilm);
         
-      }
-      else {console.log('ощибка')}
+    //   }
+      // else {console.log('ощибка')}
      
-    }
+    // }
     }
 
    
