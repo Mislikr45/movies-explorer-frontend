@@ -73,7 +73,7 @@ function App() {
   const {movieFuncDone, setMovieFuncDone} = useState(false);
 
   const navigate = useNavigate();
-
+  console.log(movieFuncDone)
 
 
  
