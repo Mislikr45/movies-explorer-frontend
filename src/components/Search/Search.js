@@ -11,6 +11,7 @@ export default function Search({
   getMovieFunc
 }) {
   const handleInputChange = (event) => {
+     console.log(query)
     setQuery(event.target.value);
   };
 
