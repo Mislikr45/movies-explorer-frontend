@@ -18,7 +18,9 @@ function MoviesCard({
   const [isActiveLike, setIsActiveLike] = React.useState(false);
   const imageUrl = !isSavedMovies ? URLIMG + movie.image.url : movie.image;
   const currentUser = React.useContext(CurrentUserContext);
+  console.log(moveSave);
 
+  // const allIdSave=moveSave.map(function (movie){return movie.})
   // const isLiked =isSavedMovies?  moveSave.some(i => i === movie.image.id) : false;
   // console.log( isLiked, moveSave, movie.image.id );
    const moviesButtonSaved = `${
