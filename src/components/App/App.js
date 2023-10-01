@@ -32,7 +32,7 @@ function App() {
         console.log(loggedIn)
        }
   })
-  }, [loggedIn]);
+  }, [navigate]);
 
 
   const handleTokenCheck = () => {
