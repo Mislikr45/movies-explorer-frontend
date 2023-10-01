@@ -74,10 +74,6 @@ function App() {
   const { pathname } = useLocation();
 
   const navigate = useNavigate();
-  console.log(movieFuncDone)
-
-
- 
   
 
   function checkRegisterAdd() {
@@ -123,8 +119,6 @@ React.useEffect(() => {
     .then((movies) => { setMovies(movies); setMovieFuncDone(true); console.log(setMovies(movies))})
     .catch((error) => console.log(`Ошибка: ${error}`))
   }
-
-  console.log(movieFuncDone, isPreloader)
 
   function checkRegisterAdd() {
     setCheckRegister(true);
