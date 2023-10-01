@@ -207,7 +207,6 @@ function App() {
     mainApi
       .deleteMovie(movie._id)
       .then((item) => {
-        console.log(item);
         setMoviesUser(
           (saveMovies) => saveMovies.filter((item) => item._id !== movie._id),
         );

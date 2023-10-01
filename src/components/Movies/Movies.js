@@ -146,7 +146,6 @@ function Movies({
     setHasSearched(true);
     localStorage.setItem("searchResults", JSON.stringify(searchResults));
     setVisibleMovies(onVisibleMovie());
-    console.log(searchResults);
     return;
   };
 

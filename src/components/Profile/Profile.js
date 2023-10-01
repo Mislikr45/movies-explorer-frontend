@@ -35,7 +35,6 @@ export default function Profile({onUpdateData, onOut, func}) {
 			React.useEffect(() => {
 	 
 				const InputValid = () => {
-					console.log(formValue)
 					const nameValid = formValue.name.length >= 2 && formValue.name.length <= 30;
 					const emailValid = EMAIL_CHECK.test(formValue.email.trim());
 	                const equalsName = formValue.name === currentUser.name;
