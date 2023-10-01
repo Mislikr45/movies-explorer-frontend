@@ -26,7 +26,7 @@ function MoviesCard({
   const checkliked = isSavedMovies? allIdSave.some(i => i === movie.id) : 'сохраненые фильмы';
   
 console.log(allIdSave);
-console.log(movie,allIdSave, checkliked);
+console.log(isSavedMovies, movie, allIdSave, checkliked);
 
    const moviesButtonSaved = `${
     currentUser._id === movie.owner ? enabled : disabled
