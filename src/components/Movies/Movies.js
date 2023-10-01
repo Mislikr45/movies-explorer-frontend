@@ -126,10 +126,10 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
     setHasSearched(true);
     localStorage.setItem("searchResults", JSON.stringify(searchResults));
     setVisibleMovies(onVisibleMovie());
-  console.log(searchResults, onVisibleMovie, visibleMovies );
+  console.log(searchResults);
     return;
   };
-  console.log(searchResults.length,  onVisibleMovie, );
+  console.log(searchResults.length, onVisibleMovie, visibleMovies );
 
   return (
     <main className="movies">
