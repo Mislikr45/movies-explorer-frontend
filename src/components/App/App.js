@@ -35,10 +35,8 @@ function App() {
       auth.checkToken(jwt).then((res) => {
         if (res) {
           setLoggedIn(true);
-          console.log(loggedIn);
           navigate(pathname);
         } else {
-          console.log("yt");
           handleSignOut();
         }
       });
@@ -52,7 +50,6 @@ function App() {
         if (res) {
           setLoggedIn(true);
         } else {
-          console.log("yt");
           handleSignOut();
         }
       });
