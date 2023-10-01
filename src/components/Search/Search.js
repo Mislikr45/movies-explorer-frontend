@@ -19,6 +19,11 @@ export default function Search({
     setIsShortFilm(!isShortFilm);
     onFilter(query, !isShortFilm);
   };
+
+  const sub = (event) => {
+    event.preventDefault();
+    console.log(event.target.value);
+  }
   
   const handleSubmit = (event) => {
     event.preventDefault();
