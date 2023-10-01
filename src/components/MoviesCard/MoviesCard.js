@@ -29,7 +29,7 @@ console.log(allIdSave);
 console.log(isSavedMovies, movie, allIdSave, checkliked);
 
    const moviesButtonSaved = `${
-    disabled
+    checkliked? enabled : disabled
   }`;
 
   const moviesButton = `${isActive ? enabled : disabled}`;
@@ -64,7 +64,7 @@ console.log(isSavedMovies, movie, allIdSave, checkliked);
         <div className="movies__card-container">
           <h2 className="movies__card-title">{movie.nameRU}</h2>
           <button
-            className={!isSavedMovies ? checkliked? enabled : disabled : moviesButton}
+            className={!isSavedMovies ? moviesButtonSaved : disabled}
             type="button"
             onClick={!isSavedMovies ? handleAddMovie : handleDeleteMovie}
           />
