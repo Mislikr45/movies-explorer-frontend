@@ -23,13 +23,11 @@ function MoviesCard({
 
   const allIdSave=moveSave.map(function (movie){return movie.movieId
 })
-  const checkliked = allIdSave.some(i => i === movie.id);
+  const checkliked = isSavedMovies? allIdSave.some(i => i === movie.id) : 'сохраненые фильмы';
   
 console.log(allIdSave);
 console.log(movie,allIdSave, checkliked);
 
-  // const isLiked =isSavedMovies?  moveSave.some(i => i === movie.image.id) : false;
-  // console.log( isLiked, moveSave, movie.image.id );
    const moviesButtonSaved = `${
     currentUser._id === movie.owner ? enabled : disabled
   }`;
