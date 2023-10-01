@@ -27,6 +27,7 @@ export default function Search({
   
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(query);
     if (!movieFuncDone) {getMovieFunc() } else {
       if(movieFuncDone) { if (query) {console.log(';jgf 0')} onSearch(query, isShortFilm);
         
