@@ -5,7 +5,8 @@ import Preloader from "./Preloader/Preloader";
 import Search from "../Search/Search";
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import {DURATION} from '../../utils/constants'
+import {DURATION,	CARD_ADD_MOBILE, CARD_ADD_HD, CARD_ADD_FULLHD,
+  CARD_FULLHD, CARD_HD,	CARD_TABLET, CARD_MOBILE,} from '../../utils/constants'
 
 function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch, isPreloader, moveSave }) {
   // const [isMovieButton, setMovieButton] = React.useState(true);
@@ -45,24 +46,24 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
   function onVisibleMovie() {
     const screenWidth = window.innerWidth;
     if (screenWidth >= 1279) {
-      return 16;
+      return CARD_FULLHD;
     } else if (screenWidth >= 768) {
-      return 12;
+      return CARD_HD;
     } else if (screenWidth >= 641) {
-      return 8;
+      return CARD_TABLET;
     } else {
-      return 5;
+      return CARD_MOBILE;
     }
   }
 
   const handleShowMoreClick = () => {
     const screenWidth = window.innerWidth;
     if (screenWidth >= 1279) {
-      setVisibleMovies((prevVisibleCards) => prevVisibleCards + 4);
+      setVisibleMovies((prevVisibleCards) => prevVisibleCards + CARD_ADD_FULLHD);
     } else if (screenWidth >= 1040) {
-      setVisibleMovies((prevVisibleCards) => prevVisibleCards + 3);
+      setVisibleMovies((prevVisibleCards) => prevVisibleCards + CARD_ADD_HD);
     } else {
-      setVisibleMovies((prevVisibleCards) => prevVisibleCards + 2);
+      setVisibleMovies((prevVisibleCards) => prevVisibleCards + CARD_ADD_MOBILE);
     }
   };
 
