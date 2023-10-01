@@ -51,7 +51,6 @@ function App() {
       auth.checkToken(jwt).then((res) => {
         if (res) {
           setLoggedIn(true);
-          console.log(loggedIn);
         } else {
           console.log("yt");
           handleSignOut();
@@ -208,14 +207,12 @@ function App() {
   }
 
   function deleteFilm(movie) {
-    console.log(movie);
     mainApi
       .deleteMovie(movie._id)
       .then((item) => {
         console.log(item);
         setMoviesUser(
           (saveMovies) => saveMovies.filter((item) => item._id !== movie._id),
-          console.log(setMoviesUser),
         );
       })
       .catch((err) => {

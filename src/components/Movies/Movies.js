@@ -149,8 +149,6 @@ function Movies({
     console.log(searchResults);
     return;
   };
-  console.log(searchResults.length);
-  console.log(visibleMovies);
 
   return (
     <main className="movies">

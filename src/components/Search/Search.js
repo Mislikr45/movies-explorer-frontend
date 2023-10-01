@@ -22,7 +22,6 @@ export default function Search({
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(query);
     if (!query) {
       return alert("Нужно ввести ключевое слово");
     } else {
