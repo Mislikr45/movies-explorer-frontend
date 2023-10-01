@@ -18,7 +18,7 @@ function MoviesCard({
   const allIdSave=moveSave.map(function (movie){return movie.movieId
   })
     const checkliked = !isSavedMovies? allIdSave.some(i => i === movie.id) : false;
-    
+    // const chekDelete = !isSavedMovies? allIdSave.some(i => i === movie.id) : false;
   
   
      const moviesButtonSaved = `${
@@ -43,16 +43,19 @@ function MoviesCard({
     return `${hours} ч ${remainingMinutes} мин`;
   }
   const durationFormat = durationHours(movie.duration);
-  let movieHandleAdd;
+
   function handleAddMovie() {
-    onSave(movie).then((result) =>{ return console.log(result)});
-    setIsLiked(true)
-    // console.log(movieHandleAdd)
+    var deleteMovie = moveSave.filter(function (moviedelete) {return moviedelete.movieId === movie.id} )
+    console.log(deleteMovie, movie);
+    // onSave(movie);
+    // setIsLiked(true)
   }
  
   function handleDeleteMovie() {
-    onDelete(movie);
-    setIsLiked(false)
+    var deleteMovie = moveSave.filter(function (moviedelete) {return moviedelete.movieId === movie.id} )
+    console.log(deleteMovie, movie);
+    // onDelete(movie);
+    // setIsLiked(false)
   }
 
   return (
