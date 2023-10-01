@@ -165,7 +165,7 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
         />
       )}
       <button
-        className={searchResults.length < visibleMovies && searchResults.length === 0 ? "movies__button-more_none" : "movies__button-more"}
+        className={searchResults.length < visibleMovies ? "movies__button-more_none" : "movies__button-more"}
         type="button"
         onClick={handleShowMoreClick}
       >
