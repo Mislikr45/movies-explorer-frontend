@@ -46,7 +46,7 @@ function MoviesCard({
 
   function handleAddMovie() {
     var deleteMovie = moveSave.filter(function (moviedelete) { if (moviedelete.movieId === movie.id) return moviedelete._id} )
-    console.log({deleteMovie}, movie);
+    console.log(deleteMovie, movie);
     // onSave(movie);
     // setIsLiked(true)
   }
