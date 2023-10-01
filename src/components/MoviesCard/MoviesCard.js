@@ -79,7 +79,7 @@ function MoviesCard({
           <button
             className={!isSavedMovies ? moviesButtonSaved : disabled}
             type="button"
-            onClick={!isSavedMovies ? isLiked? handleAddMovie : handleDeleteMovie : handleDeleteMovie}
+            onClick={!isSavedMovies ? !isLiked? handleAddMovie : handleDeleteMovie : handleDeleteMovie}
           />
         </div>
         <span className="movies__card-time">{durationFormat}</span>
