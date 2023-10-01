@@ -25,8 +25,6 @@ export default function Search({
     event.preventDefault();
     if (!movieFuncDone) {getMovieFunc() } else {
       if(movieFuncDone) {
-        console.log(movieFuncDone)
-
         onSearch(query, isShortFilm);
       }
       else {console.log('ощибка')}
