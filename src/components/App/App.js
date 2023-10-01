@@ -25,14 +25,8 @@ import ProtectedRouteElement from "../ProtectedRoute/ProtectedRoute";
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   React.useEffect(() => {
-    const jwt = localStorage.getItem("token");
-    auth.checkToken(jwt).then((res) => {
-      if (res) {
-        setLoggedIn(true); 
-        console.log(loggedIn)
-       }
-  })
-  }, [navigate]);
+    handleTokenCheck();
+  }, []);
 
 
   const handleTokenCheck = () => {
@@ -42,6 +36,7 @@ function App() {
         if (res) {
           setLoggedIn(true); 
           console.log(loggedIn)
+          navigate(pathname);
          }
          else { console.log('yt')
           handleSignOut()
