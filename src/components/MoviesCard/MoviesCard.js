@@ -19,7 +19,7 @@ function MoviesCard({
   })
     const checkliked = !isSavedMovies? allIdSave.some(i => i === movie.id) : false;
     
-  console.log(isSavedMovies, movie, allIdSave, checkliked, isLiked);
+  
   
      const moviesButtonSaved = `${
       checkliked? enabled : disabled
@@ -31,8 +31,8 @@ function MoviesCard({
   const [isActiveLike, setIsActiveLike] = React.useState(false);
   const imageUrl = !isSavedMovies ? URLIMG + movie.image.url : movie.image;
   const currentUser = React.useContext(CurrentUserContext);
-  console.log(moveSave);
 
+  console.log(isSavedMovies, movie, allIdSave, checkliked, isLiked);
  
 
   const moviesButton = `${isActive ? enabled : disabled}`;
