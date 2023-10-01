@@ -79,6 +79,10 @@ function getUserData() {
   .catch((error) => console.log(`Ошибка: ${error}`))
 }
 
+React.useEffect(() => {
+  getUserData();
+}, [navigate]);
+
 function getFilmUser() {
   mainApi.getMoviesUser()
   .then((moviesUser) => {
