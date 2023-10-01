@@ -125,7 +125,6 @@ function App() {
       .then((movies) => {
         setMovies(movies);
         setMovieFuncDone(true);
-        console.log(setMovies(movies));
       })
       .then(() => {
         setPreloader(false);
