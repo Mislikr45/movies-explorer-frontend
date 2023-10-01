@@ -66,7 +66,7 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
       setVisibleMovies((prevVisibleCards) => prevVisibleCards + CARD_ADD_MOBILE);
     }
   };
-
+  console.log(movieFuncDone);
   useEffect(() => {
     function handleResize() {
       console.log(window.innerWidth)

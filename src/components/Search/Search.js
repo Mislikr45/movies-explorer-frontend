@@ -19,7 +19,7 @@ export default function Search({
     setIsShortFilm(!isShortFilm);
     onFilter(query, !isShortFilm);
   };
-
+  console.log(movieFuncDone)
   const handleSubmit = (event) => {
     getMovieFunc()
     console.log(movieFuncDone)

@@ -122,7 +122,7 @@ React.useEffect(() => {
     .catch((error) => console.log(`Ошибка: ${error}`))
   }
 
-  
+  console.log(movieFuncDone)
 
   function checkRegisterAdd() {
     setCheckRegister(true);
