@@ -8,7 +8,7 @@ import { Navigate } from "react-router-dom";
 import {DURATION,	CARD_ADD_MOBILE, CARD_ADD_HD, CARD_ADD_FULLHD,
   CARD_FULLHD, CARD_HD,	CARD_TABLET, CARD_MOBILE,} from '../../utils/constants'
 
-function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch, isPreloader, moveSave }) {
+function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch, isPreloader, moveSave, movieFuncDone }) {
   // const [isMovieButton, setMovieButton] = React.useState(true);
   const [visibleMovies, setVisibleMovies] = useState(onVisibleMovie());
   const [windowWith, setwindowWith] = useState(window.innerWidth);
@@ -142,6 +142,7 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
         onFilter={filterMovies}
         setSearch={setSearch}
         getMovieFunc={getMovieFunc}
+        movieFuncDone={movieFuncDone}
       />
       {isPreloader ? (
         <Preloader />

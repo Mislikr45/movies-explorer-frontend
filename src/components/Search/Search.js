@@ -8,7 +8,8 @@ export default function Search({
   setIsShortFilm,
   onSearch,
   onFilter,
-  getMovieFunc
+  getMovieFunc,
+  movieFuncDone
 }) {
   const handleInputChange = (event) => {
     setQuery(event.target.value);
@@ -21,8 +22,12 @@ export default function Search({
 
   const handleSubmit = (event) => {
     getMovieFunc()
-    event.preventDefault();
-    onSearch(query, isShortFilm);
+    if(movieFuncDone) {
+      console.log()
+      event.preventDefault();
+      onSearch(query, isShortFilm);
+    }
+    else {console.log('ощибка')}
    
   };
   const handleInputKeyDown = (event) => {

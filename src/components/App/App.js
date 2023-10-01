@@ -70,6 +70,7 @@ function App() {
   const {searchMovie, setSarchMovie}= useState(false);
   const {searchMovieSave, setSarchMovieSave}= useState(false);
   const { pathname } = useLocation();
+  const {movieFuncDone, SetmovieFuncDone} = useState(false)
 
   const navigate = useNavigate();
 
@@ -117,7 +118,7 @@ React.useEffect(() => {
 
   function getMoviesBest() {
     movieApi.getMovies()
-    .then((movies) => { setMovies(movies); console.log(setMovies(movies))})
+    .then((movies) => { setMovies(movies); SetmovieFuncDone(true); console.log(setMovies(movies))})
     .catch((error) => console.log(`Ошибка: ${error}`))
   }
 
@@ -232,6 +233,7 @@ React.useEffect(() => {
                 setSearch={setSarchMovie}
                 isPreloader={isPreloader}
                 moveSave={moviesUser}
+                movieFuncDone={movieFuncDone}
               />
             }
           />
