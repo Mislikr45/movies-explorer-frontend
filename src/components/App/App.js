@@ -23,25 +23,11 @@ import NotFound from "../NotFound/NotFound";
 import ProtectedRouteElement from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
-  //Хуки
-  const [isPreloader, setPreloader] = useState(false);
-  const [currentUser, setCurrentUser] = useState({});
-  const [movies, setMovies] = useState([]);
-  const [moviesUser, setMoviesUser] = useState([]);
-  const [user, setUser] = useState({ email: "" });
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [checkRegister, setCheckRegister] = useState(false); //Регистрация
-  const [erorLogin, setErorLogin]=useState("");
-  const [erorRegister, setErorRegister]=useState("");
-  const {searchMovie, setSarchMovie}= useState(false);
-  const {searchMovieSave, setSarchMovieSave}= useState(false);
-  const { pathname } = useLocation();
-
-  const navigate = useNavigate();
 
   React.useEffect(() => {
     handleTokenCheck();
   }, [loggedIn]);
+
 
   const handleTokenCheck = () => {
     if (localStorage.getItem("token")) {
@@ -57,6 +43,27 @@ function App() {
       });
     }
   };
+
+  //Хуки
+
+  const [isPreloader, setPreloader] = useState(false);
+  const [currentUser, setCurrentUser] = useState({});
+  const [movies, setMovies] = useState([]);
+  const [moviesUser, setMoviesUser] = useState([]);
+  const [user, setUser] = useState({ email: "" });
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [checkRegister, setCheckRegister] = useState(false); //Регистрация
+  const [erorLogin, setErorLogin]=useState("");
+  const [erorRegister, setErorRegister]=useState("");
+  const {searchMovie, setSarchMovie}= useState(false);
+  const {searchMovieSave, setSarchMovieSave}= useState(false);
+  const { pathname } = useLocation();
+
+  const navigate = useNavigate();
+
+
+
+ 
   
 
   function checkRegisterAdd() {
