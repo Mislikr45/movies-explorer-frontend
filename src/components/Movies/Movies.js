@@ -146,10 +146,7 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
         getMovieFunc={getMovieFunc}
         movieFuncDone={movieFuncDone}
       />
-      {isPreloader ? (
-        <Preloader />
-      ) : "" }
-      {isPreloader ? (
+       {isPreloader ? (
         <Preloader />
       ) : !movies || (hasSearched && searchResults.length === 0) ? ( 
 
