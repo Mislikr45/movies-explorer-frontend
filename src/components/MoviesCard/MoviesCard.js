@@ -47,20 +47,16 @@ function MoviesCard({
   const durationFormat = durationHours(movie.duration);
 
   function handleAddMovie() {
-    var deleteMovie = moveSave.filter(function (moviedelete) { if (moviedelete.movieId === movie.id) return moviedelete._id} )
-    var deleteId = deleteMovie.map(function (movie){return movie._id
-    })
-    console.log(deleteMovie, deleteId, movie);
-    // onSave(movie);
-    // setIsLiked(true)
+    onSave(movie);
+    setIsLiked(true)
   }
  
   function handleDeleteMovie() {
     var deleteMovie = moveSave.filter(function (moviedelete) { if (moviedelete.movieId === movie.id) return moviedelete._id} )
     var deleteId = deleteMovie.map(function (movie){return movie._id})
     console.log(deleteMovie, deleteId, movie);
-    // onDelete(movie);
-    // setIsLiked(false)
+    onDelete(deleteId);
+    setIsLiked(false)
   }
 
   return (
