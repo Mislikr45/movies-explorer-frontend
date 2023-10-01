@@ -28,16 +28,16 @@ export default function Search({
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(query);
-    if (!query) {return console.log('жопа')}
-    // if (!movieFuncDone) {getMovieFunc() } else {
-    //   if(movieFuncDone) {onSearch(query, isShortFilm);
-        
-    //   }
-      // else {console.log('ощибка')}
-     
-    // }
+    if (!query) {return console.log('жопа')} else {
+      if (!movieFuncDone) { return getMovieFunc() } else {
+          if(movieFuncDone) {
+           return onSearch(query, isShortFilm);            
+          }
+          else {console.log('ощибка')}
+         
+        }
     }
-
+  }
    
   const handleInputKeyDown = (event) => {
     if (event.key === "Enter") {
