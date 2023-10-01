@@ -129,7 +129,9 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
   console.log(searchResults);
     return;
   };
-  console.log(searchResults.length, onVisibleMovie, visibleMovies );
+  console.log(searchResults.length);
+  console.log(visibleMovies );
+
 
   return (
     <main className="movies">
