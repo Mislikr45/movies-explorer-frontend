@@ -168,7 +168,7 @@ React.useEffect(() => {
   }
 
   function deleteFilm(movie) {
-    console.log(movie._id);
+    console.log(movie);
     mainApi
       .deleteMovie(movie._id)
       .then((item) => {
