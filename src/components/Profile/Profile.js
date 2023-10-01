@@ -36,7 +36,7 @@ export default function Profile({onUpdateData, onOut, func}) {
 	 
 				const InputValid = () => {
 					console.log(formValue)
-					const nameValid = formValue.name.length >= 2 && formValue.name.length <= 10;
+					const nameValid = formValue.name.length >= 2 && formValue.name.length <= 30;
 					const emailValid = EMAIL_CHECK.test(formValue.email.trim());
 	                const equalsName = formValue.name === currentUser.name;
 					const equalsEmail = formValue.email === currentUser.name
@@ -53,8 +53,7 @@ export default function Profile({onUpdateData, onOut, func}) {
 		e.preventDefault();
 		const name = formValue.name ? formValue.name : currentUser.name;
 		const email = formValue.email ? formValue.email : currentUser.email;
-		onUpdateData({ name , email });
-		alert("Редактирование профия прошло успешно");
+		onUpdateData({ name , email });		
 	  };
 	
 	return (

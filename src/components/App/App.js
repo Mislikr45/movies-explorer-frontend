@@ -144,6 +144,7 @@ React.useEffect(() => {
         console.log(profile);
         setCurrentUser(profile);
       })
+      .then(()=>{alert("Редактирование профия прошло успешно");})
       .catch((err) => {
         console.log(err);
       })

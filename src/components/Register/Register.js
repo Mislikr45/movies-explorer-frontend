@@ -20,7 +20,7 @@ export default function Register({onRegister, error}) {
 	 
 		const InputValid = () => {
 			console.log(formValue)
-			const nameValid = formValue.name.length >= 2 && formValue.name.length <= 10;
+			const nameValid = formValue.name.length >= 2 && formValue.name.length <= 30;
 			const emailValid = EMAIL_CHECK.test(formValue.email.trim());
 			const passwordValid = formValue.password.length >= 6;
 	  
