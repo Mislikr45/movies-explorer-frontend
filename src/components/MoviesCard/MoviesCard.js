@@ -43,14 +43,16 @@ function MoviesCard({
     return `${hours} ч ${remainingMinutes} мин`;
   }
   const durationFormat = durationHours(movie.duration);
-
+  let movieHandleAdd;
   function handleAddMovie() {
-    onSave(movie);
-    setIsActive(true);
+    onSave(movie).then((result) =>{ return {movieHandleAdd:result} });
+    setIsLiked(true)
+    console.log(movieHandleAdd)
   }
-
+ 
   function handleDeleteMovie() {
     onDelete(movie);
+    setIsLiked(false)
   }
 
   return (
