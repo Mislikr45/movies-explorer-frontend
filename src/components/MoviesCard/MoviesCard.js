@@ -20,7 +20,8 @@ function MoviesCard({
   const currentUser = React.useContext(CurrentUserContext);
   console.log(moveSave);
 
-  // const allIdSave=moveSave.map(function (movie){return movie.})
+  const allIdSave=moveSave.map(function (movie){return movie.movieId
+})
   // const isLiked =isSavedMovies?  moveSave.some(i => i === movie.image.id) : false;
   // console.log( isLiked, moveSave, movie.image.id );
    const moviesButtonSaved = `${

@@ -6,9 +6,11 @@ import Search from "../Search/Search";
 import {DURATION} from '../../utils/constants'
 
 function SavedMovies({ saveMovies, onDelete, userProfile, setSearch }) {
+
   useEffect(() => {
     localStorage.setItem("currentPath", "/saved-movies");
   }, []);
+  
   const [query, setQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [isShortFilm, setIsShortFilm] = useState(false);
