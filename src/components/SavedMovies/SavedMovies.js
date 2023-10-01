@@ -3,10 +3,15 @@ import "./SavedMovies.css";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import { useEffect, useState } from "react";
 import Search from "../Search/Search";
-import {DURATION} from '../../utils/constants'
+import { DURATION } from "../../utils/constants";
 
-function SavedMovies({ saveMovies, onDelete, userProfile, setSearch, moveSave }) {
-
+function SavedMovies({
+  saveMovies,
+  onDelete,
+  userProfile,
+  setSearch,
+  moveSave,
+}) {
   useEffect(() => {
     localStorage.setItem("currentPath", "/saved-movies");
   }, []);
@@ -16,7 +21,7 @@ function SavedMovies({ saveMovies, onDelete, userProfile, setSearch, moveSave })
   const [isShortFilm, setIsShortFilm] = useState(false);
 
   useEffect(() => {
-    setSearchResults(saveMovies)
+    setSearchResults(saveMovies);
     filterMovies(query, isShortFilm);
   }, [saveMovies, query, isShortFilm]);
 
@@ -40,7 +45,9 @@ function SavedMovies({ saveMovies, onDelete, userProfile, setSearch, moveSave })
   const filterMovies = (query, isShortFilm) => {
     let filteredMovies = saveMovies;
     if (isShortFilm) {
-      filteredMovies = filteredMovies.filter((movie) => movie.duration <= DURATION);
+      filteredMovies = filteredMovies.filter(
+        (movie) => movie.duration <= DURATION,
+      );
     }
     const filteredResults = filteredMovies.filter((movie) => {
       return (

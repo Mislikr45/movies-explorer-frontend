@@ -4,11 +4,28 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Preloader from "./Preloader/Preloader";
 import Search from "../Search/Search";
 import { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
-import {DURATION,	CARD_ADD_MOBILE, CARD_ADD_HD, CARD_ADD_FULLHD,
-  CARD_FULLHD, CARD_HD,	CARD_TABLET, CARD_MOBILE,} from '../../utils/constants'
+import {
+  DURATION,
+  CARD_ADD_MOBILE,
+  CARD_ADD_HD,
+  CARD_ADD_FULLHD,
+  CARD_FULLHD,
+  CARD_HD,
+  CARD_TABLET,
+  CARD_MOBILE,
+} from "../../utils/constants";
 
-function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch, isPreloader, moveSave, movieFuncDone }) {
+function Movies({
+  movies,
+  onSave,
+  onDelete,
+  userProfile,
+  getMovieFunc,
+  setSearch,
+  isPreloader,
+  moveSave,
+  movieFuncDone,
+}) {
   const [visibleMovies, setVisibleMovies] = useState(onVisibleMovie());
   const [windowWith, setwindowWith] = useState(window.innerWidth);
   const [visibleButton, setvisibleButton] = useState(false);
@@ -19,7 +36,6 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
   // результаты запроса
   const [query, setQuery] = useState(localStorage.getItem("query") || "");
   const [hasSearched, setHasSearched] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
 
   const [isShortFilm, setIsShortFilm] = useState(
     localStorage.getItem("isShortFilm") === "true" || false,
@@ -36,7 +52,6 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
   useEffect(() => {
     localStorage.setItem("query", query);
   }, [query]);
-
 
   useEffect(() => {
     localStorage.setItem("isShortFilm", isShortFilm);
@@ -58,18 +73,22 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
   const handleShowMoreClick = () => {
     const screenWidth = window.innerWidth;
     if (screenWidth >= 1279) {
-      setVisibleMovies((prevVisibleCards) => prevVisibleCards + CARD_ADD_FULLHD);
+      setVisibleMovies(
+        (prevVisibleCards) => prevVisibleCards + CARD_ADD_FULLHD,
+      );
     } else if (screenWidth >= 1040) {
       setVisibleMovies((prevVisibleCards) => prevVisibleCards + CARD_ADD_HD);
     } else {
-      setVisibleMovies((prevVisibleCards) => prevVisibleCards + CARD_ADD_MOBILE);
+      setVisibleMovies(
+        (prevVisibleCards) => prevVisibleCards + CARD_ADD_MOBILE,
+      );
     }
   };
   useEffect(() => {
     function handleResize() {
-      console.log(window.innerWidth)
-      console.log(onVisibleMovie)
-      onVisibleMovie()
+      console.log(window.innerWidth);
+      console.log(onVisibleMovie);
+      onVisibleMovie();
       // setVisibleMovies(onVisibleMovie());
     }
     return () => {
@@ -78,12 +97,13 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
   }, [windowWith]);
 
   const filterMovies = (query, isShortFilm) => {
-    console.log(query)
+    console.log(query);
     let filteredMovies = movies;
 
     if (isShortFilm) {
-      filteredMovies = filteredMovies.filter((movie) => movie.duration <= DURATION);
-
+      filteredMovies = filteredMovies.filter(
+        (movie) => movie.duration <= DURATION,
+      );
     }
 
     const filteredResults = filteredMovies.filter((movie) => {
@@ -126,12 +146,11 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
     setHasSearched(true);
     localStorage.setItem("searchResults", JSON.stringify(searchResults));
     setVisibleMovies(onVisibleMovie());
-  console.log(searchResults);
+    console.log(searchResults);
     return;
   };
   console.log(searchResults.length);
-  console.log(visibleMovies );
-
+  console.log(visibleMovies);
 
   return (
     <main className="movies">
@@ -146,13 +165,12 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
         getMovieFunc={getMovieFunc}
         movieFuncDone={movieFuncDone}
       />
-       {isPreloader ? (
+      {isPreloader ? (
         <Preloader />
-      ) : !movies || (hasSearched && searchResults.length === 0) ? ( 
-
+      ) : !movies || (hasSearched && searchResults.length === 0) ? (
         <p className="movies__info">Ничего не найдено.</p>
       ) : (
-         <MoviesCardList
+        <MoviesCardList
           moviesList={searchResults.slice(0, visibleMovies)}
           isMovieButton={false}
           disabled={"movies__card-button movies__card-like"}
@@ -165,7 +183,11 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
         />
       )}
       <button
-        className={searchResults.length === 0 || visibleMovies >= searchResults.length ? "movies__button-more_none" : "movies__button-more"}
+        className={
+          searchResults.length === 0 || visibleMovies >= searchResults.length
+            ? "movies__button-more_none"
+            : "movies__button-more"
+        }
         type="button"
         onClick={handleShowMoreClick}
       >

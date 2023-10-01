@@ -1,7 +1,7 @@
 import React from "react";
 import "./MoviesCard.css";
 import { URLIMG } from "../../utils/constants";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext"
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { Link } from "react-router-dom";
 
 function MoviesCard({
@@ -12,13 +12,13 @@ function MoviesCard({
   onDelete,
   isSavedMovies,
   moveSave,
-  
 }) {
-
-  const allIdSave=moveSave.map(function (movie){return movie.movieId
-  })
-    const checkliked = !isSavedMovies? allIdSave.some(i => i === movie.id) : false;
-
+  const allIdSave = moveSave.map(function (movie) {
+    return movie.movieId;
+  });
+  const checkliked = !isSavedMovies
+    ? allIdSave.some((i) => i === movie.id)
+    : false;
 
   const [isActive, setIsActive] = React.useState(false);
   const [isLiked, setIsLiked] = React.useState(checkliked);
@@ -26,9 +26,7 @@ function MoviesCard({
 
   const currentUser = React.useContext(CurrentUserContext);
 
-  const moviesButtonSaved = `${
-    isLiked? enabled : disabled
-  }`;
+  const moviesButtonSaved = `${isLiked ? enabled : disabled}`;
 
   const moviesButton = `${isActive ? enabled : disabled}`;
 
@@ -41,13 +39,15 @@ function MoviesCard({
 
   function handleAddMovie() {
     onSave(movie);
-    setIsLiked(true)
+    setIsLiked(true);
   }
- 
+
   function handleDeleteMovie() {
-    var deleteMovie = moveSave.find(function (moviedelete) { if (moviedelete.movieId === movie.id) return moviedelete._id} )
+    var deleteMovie = moveSave.find(function (moviedelete) {
+      if (moviedelete.movieId === movie.id) return moviedelete._id;
+    });
     onDelete(deleteMovie);
-    setIsLiked(false)
+    setIsLiked(false);
   }
 
   function handleDeleteSavedMovies() {
@@ -56,13 +56,9 @@ function MoviesCard({
 
   return (
     <li className="movies__card">
-      <Link
-							className="movies__link"
-							target="_blank"
-							to={movie.trailerLink}
-						>
-			      <img className="movies__card-photo" src={imageUrl} alt={movie.nameRU} />
-						</Link>
+      <Link className="movies__link" target="_blank" to={movie.trailerLink}>
+        <img className="movies__card-photo" src={imageUrl} alt={movie.nameRU} />
+      </Link>
 
       <div className="movies__card-about">
         <div className="movies__card-container">
@@ -70,7 +66,13 @@ function MoviesCard({
           <button
             className={!isSavedMovies ? moviesButtonSaved : disabled}
             type="button"
-            onClick={!isSavedMovies ? !isLiked? handleAddMovie : handleDeleteMovie : handleDeleteSavedMovies}
+            onClick={
+              !isSavedMovies
+                ? !isLiked
+                  ? handleAddMovie
+                  : handleDeleteMovie
+                : handleDeleteSavedMovies
+            }
           />
         </div>
         <span className="movies__card-time">{durationFormat}</span>

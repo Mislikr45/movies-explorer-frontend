@@ -9,7 +9,7 @@ export default function Search({
   onSearch,
   onFilter,
   getMovieFunc,
-  movieFuncDone
+  movieFuncDone,
 }) {
   const handleInputChange = (event) => {
     setQuery(event.target.value);
@@ -19,26 +19,30 @@ export default function Search({
     setIsShortFilm(!isShortFilm);
     onFilter(query, !isShortFilm);
   };
-  
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(query);
-    if (!query) {return alert('Нужно ввести ключевое слово')} else {
-      if (!movieFuncDone) { return getMovieFunc() } else {
-          if(movieFuncDone) {
-           return onSearch(query, isShortFilm);            
-          }
-          else {console.log('ощибка')}
-         
+    if (!query) {
+      return alert("Нужно ввести ключевое слово");
+    } else {
+      if (!movieFuncDone) {
+        return getMovieFunc();
+      } else {
+        if (movieFuncDone) {
+          return onSearch(query, isShortFilm);
+        } else {
+          console.log("ощибка");
         }
+      }
     }
-  }
-   
+  };
+
   const handleInputKeyDown = (event) => {
     if (event.key === "Enter") {
       handleSubmit(event);
-      getMovieFunc()
-     }
+      getMovieFunc();
+    }
   };
 
   return (
