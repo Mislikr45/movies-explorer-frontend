@@ -20,16 +20,16 @@ export default function Search({
     onFilter(query, !isShortFilm);
   };
 
-  const sub = (event) => {
-    event.preventDefault();
-    console.log(event.target.value);
-  }
+  // const sub = (event) => {
+  //   event.preventDefault();
+  //   console.log(event.target.value);
+  // }
   
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!movieFuncDone) {getMovieFunc() } else {
-      if(movieFuncDone) {
-        onSearch(query, isShortFilm);
+      if(movieFuncDone) { if (query) {console.log(';jgf 0')} onSearch(query, isShortFilm);
+        
       }
       else {console.log('ощибка')}
      
