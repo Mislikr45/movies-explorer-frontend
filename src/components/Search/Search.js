@@ -22,8 +22,8 @@ export default function Search({
 
   const handleSubmit = (event) => {
     getMovieFunc()
-    console.log(!movieFuncDone)
-    if(movieFuncDone) {
+    console.log(movieFuncDone)
+    if(!movieFuncDone) {
       console.log()
       event.preventDefault();
       onSearch(query, isShortFilm);
