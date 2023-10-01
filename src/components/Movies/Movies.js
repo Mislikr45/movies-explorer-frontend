@@ -157,6 +157,7 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
           onDelete={onDelete}
           userProfile={userProfile}
           moveSave={moveSave}
+          isSavedMovies={false}
         />
       )}
       <button
