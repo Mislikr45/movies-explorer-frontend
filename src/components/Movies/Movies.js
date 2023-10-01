@@ -148,6 +148,9 @@ function Movies({ movies, onSave, onDelete, userProfile, getMovieFunc, setSearch
       />
       {isPreloader ? (
         <Preloader />
+      ) : "" }
+      {isPreloader ? (
+        <Preloader />
       ) : !movies || (hasSearched && searchResults.length === 0) ? ( 
 
         <p className="movies__info">Ничего не найдено.</p>

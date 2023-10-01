@@ -102,8 +102,7 @@ React.useEffect(() => {
 
 function getFilmUser() {
   mainApi.getMoviesUser()
-  .then((moviesUser) => {
-    setPreloader(true)
+  .then((moviesUser) => {    
     setMoviesUser(moviesUser)})
   .catch((error) => console.log(`Ошибка: ${error}`))
   .finally(() => {setPreloader(false)})
@@ -115,8 +114,10 @@ React.useEffect(() => {
 }, [navigate]);
 
   function getMoviesBest() {
+    setPreloader(true);
     movieApi.getMovies()
     .then((movies) => { setMovies(movies); setMovieFuncDone(true); console.log(setMovies(movies))})
+    .then(() => {setPreloader(false);})
     .catch((error) => console.log(`Ошибка: ${error}`))
   }
 
