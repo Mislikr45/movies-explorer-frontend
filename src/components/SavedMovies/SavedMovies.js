@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 import Search from "../Search/Search";
 import {DURATION} from '../../utils/constants'
 
-function SavedMovies({ saveMovies, onDelete, userProfile, setSearch }) {
+function SavedMovies({ saveMovies, onDelete, userProfile, setSearch, moveSave }) {
 
   useEffect(() => {
     localStorage.setItem("currentPath", "/saved-movies");
   }, []);
-  
+
   const [query, setQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [isShortFilm, setIsShortFilm] = useState(false);
@@ -69,6 +69,7 @@ function SavedMovies({ saveMovies, onDelete, userProfile, setSearch }) {
         disabled={"movies__card-button movies__card-delete"}
         enabled={"movies__card-button-enabled"}
         onDelete={onDelete}
+        moveSave={moveSave}
         userProfile={userProfile}
       />
     </main>

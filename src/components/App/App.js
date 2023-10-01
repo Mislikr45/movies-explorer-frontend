@@ -98,7 +98,8 @@ React.useEffect(() => {
     .catch((error) => console.log(`Ошибка: ${error}`))
   }
 
-  // console.log(moviesUser)
+  
+
   function checkRegisterAdd() {
     setCheckRegister(true);
   }
@@ -219,6 +220,7 @@ React.useEffect(() => {
                 saveMovies={moviesUser}
                 loggedIn={loggedIn}
                 onDelete={deleteFilm}
+                moveSave={moviesUser}
               />
             }
           />
