@@ -11,8 +11,6 @@ export default function Search({
   getMovieFunc
 }) {
   const handleInputChange = (event) => {
-    
-    console.log(event.target.value)
     setQuery(event.target.value);
   };
 
@@ -22,14 +20,15 @@ export default function Search({
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
     getMovieFunc()
-    onSearch(query, isShortFilm);   
+    event.preventDefault();
+    onSearch(query, isShortFilm);
+   
   };
   const handleInputKeyDown = (event) => {
-    getMovieFunc()
     if (event.key === "Enter") {
       handleSubmit(event);
+      getMovieFunc()
      }
   };
 
