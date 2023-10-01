@@ -22,6 +22,7 @@ function MoviesCard({
 
   const allIdSave=moveSave.map(function (movie){return movie.movieId
 })
+console.log(allIdSave);
   // const isLiked =isSavedMovies?  moveSave.some(i => i === movie.image.id) : false;
   // console.log( isLiked, moveSave, movie.image.id );
    const moviesButtonSaved = `${
