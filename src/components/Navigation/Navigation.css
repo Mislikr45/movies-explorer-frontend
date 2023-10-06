@@ -53,9 +53,14 @@
     font-weight: 500;
     line-height: 18px;
     letter-spacing: 0em;
-    text-align: right;
-    
+    text-align: right;    
   }
+
+  .navigation__nav-link-underline {
+    text-decoration: underline;
+    text-underline-offset: 7px;	
+  }
+  
   .navigation__nav-link_active {
     font-weight: 500;
   }

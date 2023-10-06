@@ -48,7 +48,7 @@
 	text-decoration: none;
 }
 
-.navigate__rout:nth-child(2) {
+.navigate__rout-underline {
 	text-decoration: underline;
 	text-underline-offset: 7px;	
 	width: 72px;

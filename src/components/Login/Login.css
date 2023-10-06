@@ -5,6 +5,15 @@
 	margin-bottom: 156px;
 }
 
+.login-error {
+	color: #ee3465;
+	margin: 10px 0 0 0;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
 .login__main {
 	margin: 0;
 	color: white;
@@ -43,7 +52,8 @@
 	border-bottom: solid, 1px;
 	border-right: none;
 	padding-bottom: 10px;
-	color: white;
+	background-color: #202020;
+	color: #FFFFFF;
 	text-decoration: none;
 }
 

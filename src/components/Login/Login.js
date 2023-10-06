@@ -1,7 +1,48 @@
 import Form from "../Form/Form";
 import "./Login.css";
+import { EMAIL_CHECK } from "../../utils/constants"
+import React, { useState } from "react";
 
-export default function Login() {
+export default function Login({onLogin, error}) {
+	const [formValue, setFormValue] = useState({
+		email: "",
+		password: "",
+	  });
+
+	  const [isValid, setIsValid] = useState(false);
+	  const [isEmpty, setIsEmpty] = useState(true);
+	
+	  const handleChange = (e) => {
+		const { name, value } = e.target;
+	
+	    setFormValue({
+			...formValue,
+			[name]: value,
+		  });
+		};
+
+		React.useEffect(() => {
+	 
+			const InputValid = () => {
+				const emailValid = EMAIL_CHECK.test(formValue.email.trim());
+				const passwordValid = formValue.password.length >= 6;
+		  
+				return emailValid && passwordValid;
+			  };
+	
+			  setIsValid(InputValid());
+			  setIsEmpty(
+				 formValue.email.trim() === ""
+				|| formValue.password.trim() === ""
+			  );
+		  }, [formValue.email, formValue.password]);
+	
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { email, password } = formValue;
+    onLogin({ email, password });
+  };
 	return (
 		<Form
 			buttonText="Войти"
@@ -11,7 +52,7 @@ export default function Login() {
 			link="/signup"
 		>
 			<main className="login">
-				<form className="login__form">
+				<form className="login__form" onSubmit={handleSubmit}>
 					<label className="login__label">E-mail</label>
 					<input
 						id="email"
@@ -21,7 +62,8 @@ export default function Login() {
 						required
 						placeholder="mislik"
 						minLength="2"
-						maxLength="10"
+						value={formValue.email}
+                        onChange={handleChange}
 					/>
 
 					<label className="login__label">Пароль</label>
@@ -33,8 +75,19 @@ export default function Login() {
 						placeholder="*****"
 						required
 						minLength="6"
-						maxLength="10"
+						value={formValue.password}
+                        onChange={handleChange}
 					/>
+					<p className="login-error">{error}</p>
+					<button 
+					className={`form__button ${isEmpty || !isValid
+                ? "form__button-disable"
+                : ""
+            }`}
+					type="submit" 
+					onSubmit={handleSubmit}
+					disabled={isEmpty || !isValid ? true : false}					
+					>Войти</button>	
 				</form>
 			</main>			
 		</Form>

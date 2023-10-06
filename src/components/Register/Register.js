@@ -1,8 +1,54 @@
 import Form from "../Form/Form";
 import "./Register.css";
-// import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { EMAIL_CHECK } from "../../utils/constants"
 
-export default function Register() {
+
+
+export default function Register({onRegister, error}) {
+	const [formValue, setFormValue] = useState({
+		name:"",
+		email: "",
+		password: "",
+	  });
+
+	  const [isValid, setIsValid] = useState(false);
+	  const [isEmpty, setIsEmpty] = useState(true);
+	
+
+	  React.useEffect(() => {
+	 
+		const InputValid = () => {
+			const nameValid = formValue.name.length >= 2 && formValue.name.length <= 30;
+			const emailValid = EMAIL_CHECK.test(formValue.email.trim());
+			const passwordValid = formValue.password.length >= 6;
+	  
+			return nameValid && emailValid && passwordValid;
+		  };
+
+		  setIsValid(InputValid());
+		  setIsEmpty(
+			formValue.name.trim() === "" || formValue.email.trim() === "" || formValue.password.trim() === ""
+		  );
+	  }, [formValue.name, formValue.email, formValue.password]);
+
+	  const handleChange = (e) => {
+		const { name, value } = e.target;
+	
+	    setFormValue({
+			...formValue,
+			[name]: value,
+		  });
+		};
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { name, email, password } = formValue;
+    onRegister({ name, email, password });
+
+  };
+
+
 	return (
 		<Form
 			buttonText="Зарегистрироваться"
@@ -12,7 +58,7 @@ export default function Register() {
 			link="/signin"
 		>
 			<main className="register">
-				<form className="register__form">
+				<form className="register__form" onSubmit={handleSubmit}>
 					<label className="register__label">Имя</label>
 					<input
 						id="name"
@@ -20,9 +66,8 @@ export default function Register() {
 						type="name"
 						className="register__input"
 						placeholder="Sergey"
-						required
-						minLength="2"
-						maxLength="10"
+						value={formValue.name}
+                        onChange={handleChange}
 					/>
 
 					<label className="register__label">E-mail</label>
@@ -30,9 +75,11 @@ export default function Register() {
 						id="email"
 						name="email"
 						type="email"
-						className="register__input"
+						value={formValue.email}
+                        onChange={handleChange}
+						className={setIsValid ? "register__input" : ""}
 						placeholder="mislikr45@gmail.com"
-						required
+
 					/>
 
 					<label className="register__label">Пароль</label>
@@ -40,13 +87,20 @@ export default function Register() {
 						id="password"
 						name="password"
 						type="password"
+						value={formValue.password}
+                        onChange={handleChange}
 						className="register__input"
-						placeholder="******"
-						minLength="6"
-						maxLength="10"
-						required
+						placeholder="******"					
 					/>
-				</form>			
+					<p className="register-error">{error}</p>
+					<button className={`form__button ${isEmpty || !isValid
+                ? "form__button-disable"
+                : ""
+            }`}
+			disabled={isEmpty || !isValid ? true : false}		
+					type="submit" onSubmit={handleSubmit}>Зарегистрироваться</button>		
+				</form>	
+				
 			</main>
 		</Form>
 	);
